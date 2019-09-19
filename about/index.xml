@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hi, I&#39;m Jovche! on Jovche Mitrejchevski</title>
-    <link>https://jovmit.io/about/</link>
+    <link>https://mitrejcevski.github.io/about/</link>
     <description>Recent content in Hi, I&#39;m Jovche! on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://jovmit.io/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mitrejcevski.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

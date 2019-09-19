@@ -2,68 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog Posts on Jovche Mitrejchevski</title>
-    <link>https://jovmit.io/posts/</link>
+    <link>https://mitrejcevski.github.io/posts/</link>
     <description>Recent content in Blog Posts on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Jan 2019 17:49:54 +0200</lastBuildDate>
     
-	<atom:link href="https://jovmit.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mitrejcevski.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Outside in TDD on Android</title>
-      <link>https://jovmit.io/posts/outside-in-tdd-on-android/</link>
+      <link>https://mitrejcevski.github.io/posts/outside-in-tdd-on-android/</link>
       <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/outside-in-tdd-on-android/</guid>
+      <guid>https://mitrejcevski.github.io/posts/outside-in-tdd-on-android/</guid>
       <description>A quick overview in our industry I&amp;rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&amp;rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.</description>
     </item>
     
     <item>
       <title>Android KTX</title>
-      <link>https://jovmit.io/posts/android-ktx/</link>
+      <link>https://mitrejcevski.github.io/posts/android-ktx/</link>
       <pubDate>Fri, 29 Jun 2018 10:25:45 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/android-ktx/</guid>
+      <guid>https://mitrejcevski.github.io/posts/android-ktx/</guid>
       <description>Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&amp;rsquo;s inside this library and how we can take advantage of it. This library&amp;rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.</description>
     </item>
     
     <item>
       <title>Android Navigation Arch Component — A Curious Investigation</title>
-      <link>https://jovmit.io/posts/android-arch-navigation/</link>
+      <link>https://mitrejcevski.github.io/posts/android-arch-navigation/</link>
       <pubDate>Wed, 23 May 2018 07:19:26 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/android-arch-navigation/</guid>
+      <guid>https://mitrejcevski.github.io/posts/android-arch-navigation/</guid>
       <description>https://www.pexels.com/
   About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.</description>
     </item>
     
     <item>
       <title>Testing Android UI with Pleasure</title>
-      <link>https://jovmit.io/posts/android-testing-ui/</link>
+      <link>https://mitrejcevski.github.io/posts/android-testing-ui/</link>
       <pubDate>Sun, 28 Jan 2018 07:19:48 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/android-testing-ui/</guid>
+      <guid>https://mitrejcevski.github.io/posts/android-testing-ui/</guid>
       <description>Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
 This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests.</description>
     </item>
     
     <item>
       <title>Add offline support using Room</title>
-      <link>https://jovmit.io/posts/android-offline-support-room/</link>
+      <link>https://mitrejcevski.github.io/posts/android-offline-support-room/</link>
       <pubDate>Thu, 23 Nov 2017 07:20:04 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/android-offline-support-room/</guid>
+      <guid>https://mitrejcevski.github.io/posts/android-offline-support-room/</guid>
       <description>Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.</description>
     </item>
     
     <item>
       <title>Android Notifications — An elegant way to build and display</title>
-      <link>https://jovmit.io/posts/android-notifications/</link>
+      <link>https://mitrejcevski.github.io/posts/android-notifications/</link>
       <pubDate>Sat, 26 Aug 2017 07:20:21 +0200</pubDate>
       
-      <guid>https://jovmit.io/posts/android-notifications/</guid>
+      <guid>https://mitrejcevski.github.io/posts/android-notifications/</guid>
       <description>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.</description>
     </item>
     

@@ -3,75 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jovmit.io/posts/</loc>
+    <loc>https://mitrejcevski.github.io/posts/</loc>
     <lastmod>2019-01-18T17:49:54+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/</loc>
+    <loc>https://mitrejcevski.github.io/</loc>
     <lastmod>2019-01-18T17:49:54+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/outside-in-tdd-on-android/</loc>
+    <loc>https://mitrejcevski.github.io/posts/outside-in-tdd-on-android/</loc>
     <lastmod>2019-01-18T17:49:54+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/android-ktx/</loc>
+    <loc>https://mitrejcevski.github.io/posts/android-ktx/</loc>
     <lastmod>2018-06-29T10:25:45+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/android-arch-navigation/</loc>
+    <loc>https://mitrejcevski.github.io/posts/android-arch-navigation/</loc>
     <lastmod>2018-05-23T07:19:26+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/android-testing-ui/</loc>
+    <loc>https://mitrejcevski.github.io/posts/android-testing-ui/</loc>
     <lastmod>2018-01-28T07:19:48+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/android-offline-support-room/</loc>
+    <loc>https://mitrejcevski.github.io/posts/android-offline-support-room/</loc>
     <lastmod>2017-11-23T07:20:04+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/posts/android-notifications/</loc>
+    <loc>https://mitrejcevski.github.io/posts/android-notifications/</loc>
     <lastmod>2017-08-26T07:20:21+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/categories/</loc>
+    <loc>https://mitrejcevski.github.io/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/about/</loc>
+    <loc>https://mitrejcevski.github.io/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/tags/</loc>
+    <loc>https://mitrejcevski.github.io/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
