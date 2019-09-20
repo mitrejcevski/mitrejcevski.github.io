@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski  | Android Navigation Arch Component — A Curious Investigation</title>
+    <title>Jovche Mitrejchevski  | Android Navigation arch component — A curious investigation</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.58.2" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
@@ -17,6 +17,8 @@
       <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
+    
+      <link rel="stylesheet" href="/css/custom.css">
     
 
     
@@ -27,16 +29,16 @@
 
     
 
-    <meta property="og:title" content="Android Navigation Arch Component — A Curious Investigation" />
+    <meta property="og:title" content="Android Navigation arch component — A curious investigation" />
 <meta property="og:description" content="https://www.pexels.com/
-  About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new." />
+ About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jovmit.io/posts/android-arch-navigation/" />
 <meta property="article:published_time" content="2018-05-23T07:19:26+02:00" />
 <meta property="article:modified_time" content="2018-05-23T07:19:26+02:00" />
-<meta itemprop="name" content="Android Navigation Arch Component — A Curious Investigation">
+<meta itemprop="name" content="Android Navigation arch component — A curious investigation">
 <meta itemprop="description" content="https://www.pexels.com/
-  About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.">
+ About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.">
 
 
 <meta itemprop="datePublished" content="2018-05-23T07:19:26&#43;02:00" />
@@ -47,13 +49,26 @@
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android Navigation Arch Component — A Curious Investigation"/>
+<meta name="twitter:title" content="Android Navigation arch component — A curious investigation"/>
 <meta name="twitter:description" content="https://www.pexels.com/
-  About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new."/>
+ About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new."/>
 
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-148368240-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -171,21 +186,22 @@
           
         BLOG POSTS
       </p>
-      <h1 class="f1 athelas mb1">Android Navigation Arch Component — A Curious Investigation</h1>
+      <h1 class="f1 athelas mb1">Android Navigation arch component — A curious investigation</h1>
       
       <time class="f6 mv4 dib tracked" datetime="2018-05-23T07:19:26&#43;02:00">May 23, 2018</time>
       
+      
+        <span class="f6 mv4 dib tracked"> - 11 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 2233 words</span>
       
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<figure>
-    <img src="/images/arch_navigation/navigation.jpeg"
-         alt="https://www.pexels.com/"/> <figcaption>
-            <p><a href="https://www.pexels.com/">https://www.pexels.com/</a></p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/navigation.jpeg" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">https://www.pexels.com/</p>
+</div>
 
 
 <h2 id="about">About</h2>
@@ -210,12 +226,10 @@
 
 <p>I would highly recommend the official guide for the new Navigation component, as well as its documentation to get rolling with the implementation.</p>
 
-<figure><a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-implementing">
-    <img src="https://developer.android.com/images/topic/libraries/architecture/navigation-graph_2x-callouts.png"
-         alt="Get started with the Navigation component"/> </a><figcaption>
-            <p>Get started with the Navigation component</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="https://developer.android.com/images/topic/libraries/architecture/navigation-graph_2x-callouts.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Get started with the Navigation component</p>
+</div>
 
 
 <p>I’ve created a <a href="https://github.com/mitrejcevski/jetpack-playground">simple playground project</a> where I was trying various things with the Navigation component. Keep in mind that I am using the latest version of <a href="https://developer.android.com/studio/preview/">Android Studio</a> from the Canary Channel.</p>
@@ -229,32 +243,26 @@ implementation <span style="color:#e6db74">&#39;android.arch.navigation:navigati
 
 <p>In order to start with the Navigation component, we have to first define the navigation graph. The navigation graph is nothing but an XML file that is getting placed in the <code>navigation</code> folder in the <code>resources</code>. With a right-click on the <strong>res</strong> folder, we choose <strong>New -&gt; Android Resource File</strong></p>
 
-<figure>
-    <img src="/images/arch_navigation/create-new-resource-file.png"
-         alt="Create new resource"/> <figcaption>
-            <p>Create new resource</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/create-new-resource-file.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Create new resource</p>
+</div>
 
 
 <p>Then, in the <strong>New Resource File</strong> window, we specify a name for the file, followed by choosing <strong>Navigation</strong> as <strong>Resource type</strong></p>
 
-<figure>
-    <img src="/images/arch_navigation/new-resource-file-popup.png"
-         alt="Define new navigation graph resource file"/> <figcaption>
-            <p>Define new navigation graph resource file</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/new-resource-file-popup.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Define new navigation graph resource file</p>
+</div>
 
 
 <p>Once done, the newly defined navigation graph is getting opened with the navigation editor in the studio. By using the latest <a href="https://developer.android.com/studio/preview/">Android Studio</a> we are able to see this XML file in <strong>design</strong> preview as well as edit the XML as <strong>text</strong>. The same that we could do with the layout files. The navigation editor provides an ability to wire the things up and configure the navigation in the desired way.</p>
 
-<figure>
-    <img src="/images/arch_navigation/empty-navigation-graph.png"
-         alt="Empty navigation graph in the navigation editor"/> <figcaption>
-            <p>Empty navigation graph in the navigation editor</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/empty-navigation-graph.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Empty navigation graph in the navigation editor</p>
+</div>
 
 
 <p>Next, there is a need for a host fragment to be defined. In the <a href="https://github.com/mitrejcevski/jetpack-playground">example</a> I shared, we have an Activity that has a layout named <code>activity_main</code> where this host fragment is defined. In this layout, we also include a <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>, in order to investigate some interesting things how the new Navigation component works with it.</p>
@@ -274,32 +282,26 @@ implementation <span style="color:#e6db74">&#39;android.arch.navigation:navigati
 
 <p>The latter one is used to define which navigation graph from the <code>navigation</code> resources folder is going to be assigned to the <code>NavHostFragment</code>. Once we define that in the XML, we could get back to the navigation editor in the studio. As we can see, now it displays the host as expected:</p>
 
-<figure>
-    <img src="/images/arch_navigation/nav-graph-host.png"
-         alt="Host of navigation graph"/> <figcaption>
-            <p>Host of navigation graph</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/nav-graph-host.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Host of navigation graph</p>
+</div>
 
 
 <p>Now we can go on and some destinations in the navigation graph, directly in the navigation editor</p>
 
-<figure>
-    <img src="/images/arch_navigation/create-new-destination-window.png"
-         alt="Create new destination window"/> <figcaption>
-            <p>Create new destination window</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/create-new-destination-window.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Create new destination window</p>
+</div>
 
 
 <p>For our case, I defined 4 destinations. The first three to serve the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> we have in the <code>main_activity</code>, and the fourth one to be used as a detailed preview that will get opened after a click on an action. Here is how it looks in the navigation editor</p>
 
-<figure>
-    <img src="/images/arch_navigation/navigation-editor-window.png"
-         alt="Navigation editor"/> <figcaption>
-            <p>Navigation editor</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/navigation-editor-window.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Navigation editor</p>
+</div>
 
 
 <p>Then, as mentioned before, to make this setup work with the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>, we need a very little effort. As we can find out in the navigation graph, the items we defined in it are having <code>id</code> attributes</p>
@@ -337,9 +339,10 @@ As mentioned before, the call to <code>setupActionBarWithNavController</code> is
 
 <p>If you check out and try out the <a href="https://github.com/mitrejcevski/jetpack-playground">example I shared</a>, you will notice a very weird thing. Mainly, the app opens the home destination as we have set it before, but if you try to open some of the other sections on the bottom navigation, it will display its fragment, it will update the title on the <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a>, but also it will add an up action on the toolbar. Now, this looks quite weird and initially, I thought that it is a bug. So I <a href="https://issuetracker.google.com/issues/79671564">reported it as an issue</a>, because, as of the <strong>Bottom Navigation Guidelines</strong>, navigating to another section in the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> and then clicking the system back button should not get the user back to the initial screen, but rather close the screen. So, navigating to a separate section should not add the new section to the stack, and clicking back pop it from the stack. But in my case, the result was unexpected:</p>
 
-<figure>
-    <img src="/images/arch_navigation/nav-back-button.svg"/> 
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/nav-back-button.svg" class="imageRoundedCorners" alt="">
+  <p class="imageCaption"></p>
+</div>
 
 
 <p>Surprisingly enough, as we can see from the response from the Google Devs in the <a href="https://issuetracker.google.com/issues/79671564">reported issue</a>, the guidelines for the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> are now updated and <a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-principles">here is how the new navigation guidelines look like</a>.</p>
@@ -355,22 +358,18 @@ As mentioned before, the call to <code>setupActionBarWithNavController</code> is
 
 <p>Let’s get back to the navigation editor and take a look at the <code>notifications</code> and the <code>notificationDetails</code></p>
 
-<figure>
-    <img src="/images/arch_navigation/navigation_preview_window.png"
-         alt="Navigation preview"/> <figcaption>
-            <p>Navigation preview</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/navigation_preview_window.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Navigation preview</p>
+</div>
 
 
 <p>The arrow that is connecting both fragments is called an action and it essentially defines a way to navigate from the first to the second fragment. By clicking on the action (which will highlight it), we are allowed to edit its attributes in the right-hand side panel</p>
 
-<figure>
-    <img src="/images/arch_navigation/action-attributes-editing-panel.png"
-         alt="Attributes panel"/> <figcaption>
-            <p>Attributes panel</p>
-        </figcaption>
-</figure>
+<div class="centeredDiv">
+  <img src="/images/arch_navigation/action-attributes-editing-panel.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Attributes panel</p>
+</div>
 
 
 <p>As we can see here, the action has an id itself, and that is a very important thing (will see later why). Also, there are the enter and exit transition attributes. We could use here some of the predefined transitions, as well as our own transitions defined in the <code>anim</code> folder in the resources. Also, we could set a pop destination, so when the user closes this screen, the navigation will bring him to the desired screen without any mess with the fragment management from our side. The action can define default argument types and their values as well. From the XML preview, it looks like this</p>
@@ -424,9 +423,28 @@ As mentioned before, the call to <code>setupActionBarWithNavController</code> is
 </ul>
 <div class="mt6">
       
-      <div id="commento"></div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
-
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
       </div>
     </section>
 

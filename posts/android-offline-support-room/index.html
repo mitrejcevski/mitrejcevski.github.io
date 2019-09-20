@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.58.2" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
@@ -17,6 +17,8 @@
       <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
+    
+      <link rel="stylesheet" href="/css/custom.css">
     
 
     
@@ -28,29 +30,45 @@
     
 
     <meta property="og:title" content="Add offline support using Room" />
-<meta property="og:description" content="Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer." />
+<meta property="og:description" content="developer.android.com
+ Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jovmit.io/posts/android-offline-support-room/" />
 <meta property="article:published_time" content="2017-11-23T07:20:04+02:00" />
 <meta property="article:modified_time" content="2017-11-23T07:20:04+02:00" />
 <meta itemprop="name" content="Add offline support using Room">
-<meta itemprop="description" content="Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.">
+<meta itemprop="description" content="developer.android.com
+ Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.">
 
 
 <meta itemprop="datePublished" content="2017-11-23T07:20:04&#43;02:00" />
 <meta itemprop="dateModified" content="2017-11-23T07:20:04&#43;02:00" />
-<meta itemprop="wordCount" content="1396">
+<meta itemprop="wordCount" content="1397">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add offline support using Room"/>
-<meta name="twitter:description" content="Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer."/>
+<meta name="twitter:description" content="developer.android.com
+ Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer."/>
 
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-148368240-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -173,13 +191,17 @@
       <time class="f6 mv4 dib tracked" datetime="2017-11-23T07:20:04&#43;02:00">November 23, 2017</time>
       
       
+        <span class="f6 mv4 dib tracked"> - 7 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1397 words</span>
+      
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<figure>
-    <img src="/images/offline_support/arch-components.png"/> 
-</figure>
+<div class="centeredDiv">
+  <img src="/images/offline_support/arch-components.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">developer.android.com</p>
+</div>
 
 
 <p>Recently, Google has announced the stable version of the <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: <a href="https://developer.android.com/topic/libraries/architecture/viewmodel.html">ViewModel</a>, <a href="https://developer.android.com/topic/libraries/architecture/livedata.html">LiveData</a>, <a href="https://developer.android.com/topic/libraries/architecture/room.html">Room</a>, and the <a href="https://developer.android.com/topic/libraries/architecture/paging.html">Paging Library</a>. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer. This article is focused on the Room part of the architecture components, used for data persistence in order to enable the offline support of an app.</p>
@@ -320,9 +342,28 @@
 </ul>
 <div class="mt6">
       
-      <div id="commento"></div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
-
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
       </div>
     </section>
 

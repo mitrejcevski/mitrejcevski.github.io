@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.58.2" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
@@ -17,6 +17,8 @@
       <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
+    
+      <link rel="stylesheet" href="/css/custom.css">
     
 
     
@@ -48,9 +50,22 @@
 <meta name="twitter:title" content="Android KTX"/>
 <meta name="twitter:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language."/>
 
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-148368240-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -172,6 +187,9 @@
       
       <time class="f6 mv4 dib tracked" datetime="2018-06-29T10:25:45&#43;02:00">June 29, 2018</time>
       
+      
+        <span class="f6 mv4 dib tracked"> - 10 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 2049 words</span>
       
     </header>
 
@@ -357,9 +375,28 @@ toast(R.string.hello)</code></pre></div>
 </ul>
 <div class="mt6">
       
-      <div id="commento"></div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
-
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
       </div>
     </section>
 
