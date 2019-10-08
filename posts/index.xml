@@ -35,8 +35,7 @@
       <pubDate>Wed, 23 May 2018 07:19:26 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/android-arch-navigation/</guid>
-      <description>https://www.pexels.com/
- About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.</description>
+      <description>About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.</description>
     </item>
     
     <item>
@@ -45,8 +44,7 @@
       <pubDate>Sun, 28 Jan 2018 07:19:48 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/android-testing-ui/</guid>
-      <description>developer.android.com
- Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
+      <description>Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
 This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests.</description>
     </item>
     
@@ -56,8 +54,7 @@ This article is focused mainly on the UI tests in an Android application. Tradit
       <pubDate>Thu, 23 Nov 2017 07:20:04 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/android-offline-support-room/</guid>
-      <description>developer.android.com
- Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.</description>
+      <description>Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.</description>
     </item>
     
     <item>
