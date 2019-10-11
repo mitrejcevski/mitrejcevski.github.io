@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski </title>
+    <title>Jovche Mitrejchevski  | Android Studio/IntelliJ Idea side by side working setup</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.58.2" />
     
@@ -28,22 +28,33 @@
     
 
     
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://jovmit.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Jovche Mitrejchevski" />
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://jovmit.io/index.xml%7d" rel="feed" type="application/rss+xml" title="Jovche Mitrejchevski" />
-    
 
-    <meta property="og:title" content="Jovche Mitrejchevski" />
-<meta property="og:description" content="Welcome to Android Academy" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jovmit.io/" />
+    <meta property="og:title" content="Android Studio/IntelliJ Idea side by side working setup" />
+<meta property="og:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+The side-by-side setup (vertical editor splitting) Side by side editor
+ We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jovmit.io/tips/android-studio-side-by-side-editor-setup/" />
+<meta property="article:published_time" content="2019-10-11T11:00:00+02:00" />
+<meta property="article:modified_time" content="2019-10-11T11:00:00+02:00" />
+<meta itemprop="name" content="Android Studio/IntelliJ Idea side by side working setup">
+<meta itemprop="description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+The side-by-side setup (vertical editor splitting) Side by side editor
+ We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad.">
 
-<meta property="og:updated_time" content="2019-10-11T11:00:00+02:00" />
-<meta itemprop="name" content="Jovche Mitrejchevski">
-<meta itemprop="description" content="Welcome to Android Academy">
 
+<meta itemprop="datePublished" content="2019-10-11T11:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2019-10-11T11:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="896">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jovche Mitrejchevski"/>
-<meta name="twitter:description" content="Welcome to Android Academy"/>
+<meta name="twitter:title" content="Android Studio/IntelliJ Idea side by side working setup"/>
+<meta name="twitter:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+The side-by-side setup (vertical editor splitting) Side by side editor
+ We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad."/>
 
       
 <script type="application/javascript">
@@ -63,11 +74,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/theme/side_background.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://jovmit.io" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -169,228 +180,186 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Jovche Mitrejchevski
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        TIPS AND TRICKS
+      </p>
+      <h1 class="f1 athelas mb1">Android Studio/IntelliJ Idea side by side working setup</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-11T11:00:00&#43;02:00">October 11, 2019</time>
+      
+      
+        <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 896 words</span>
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>The <a href="https://www.youtube.com/user/mitrejcevski/videos">way I prefer to work</a> when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.</p>
+
+<h2 id="the-side-by-side-setup-vertical-editor-splitting">The side-by-side setup (vertical editor splitting)</h2>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/overview.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Side by side editor</p>
+</div>
+
+
+<p>We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad. Keeping our hands on the keyboard leads to less destruction and better focus.</p>
+
+<h2 id="keyboard-shortcuts-setup">Keyboard shortcuts setup</h2>
+
+<p>In this article, I iterate over a bunch of keyboard shortcuts using the Mac keyboard. If you happen to have a different keyboard layout, you will have to use the <kbd>Ctrl</kbd>
+ button instead of the <kbd>⌘</kbd>
+ button, and the <kbd>Alt</kbd>
+ button instead of the <kbd>⌥</kbd>
+ button.</p>
+
+<p>To begin with, we need to set up a few shortcuts. Open the IDE preferences by pressing <kbd>⌘,</kbd>
+  <em>(Cmd+Comma)</em> and then select the <code>Keymap</code> section in the menu on the left side.</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/preferences.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Editor Preferences</p>
+</div>
+
+
+<h3 id="move-right-split-vertically">Move Right (Split Vertically)</h3>
+
+<p>In the search box type <strong>move right</strong>. Depending on the IDE version it might show multiple results. The one we need is <em>Main menu -&gt; Window -&gt; Editor Tabs -&gt; Move Right</em>. Double click on it and apply the preferred shortcut. In my case I use <kbd>⌥⇧.</kbd>
+ <em>(Option + Shift + Dot)</em>.</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/move_right.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Move right shortcut</p>
+</div>
+
+
+<p>We will use this shortcut to move the currently editing file in the editor to the right side. It will effectively split the editor vertically.</p>
+
+<h3 id="move-to-the-opposite-group">Move to the opposite group</h3>
+
+<p>Next, we need to set up a shortcut for moving the currently editing file from one to another side. In the search box type <strong>move to opposite group</strong>. The item we need this time is placed under <em>Other -&gt; Tabs -&gt; Move To Opposite Group</em>. Double click on it and apply your desired shortcut. In my case I use <kbd>⌥.</kbd>
+ <em>(Option + Dot)</em>.</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/move_opposite_group.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Move to opposite group shortcut</p>
+</div>
+
+
+<p>We will use this shortcut to move the currently editing file from one group (side) to the other one.</p>
+
+<h3 id="usage">Usage</h3>
+
+<p>Next, let&rsquo;s see how can we use the shortcuts we&rsquo;ve just set up. For the sake of this article, we will create a test class and an implementation class that will be used by the class under test. First, we create the test class:</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/component_test.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Component test</p>
+</div>
+
+
+<p>At this point, we have only that single file opened in the editor. <em>We cannot split the screen now because we have only a single file opened. Split-screen makes sense when there are two or more files that we have to work with at the same time</em>.</p>
+
+<p>Let&rsquo;s go ahead and create an implementation class that will be used by the class under test:</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/component_test_full.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Both files opened</p>
+</div>
+
+
+<p>At this moment we have both files opened in the editor, but to work with them, we have to jump from one file into another which is not very handy. That&rsquo;s where the split-screen comes into power. By using the shortcut we assigned for the <strong>move right</strong> action we can split the screen vertically. The currently editing file will get to the right side:</p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/overview.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Side by side editor</p>
+</div>
+
+
+<p>Now, it&rsquo;s way easier to work with these two files having them side by side. But how do we get from the one side to the other one? - There is an already set keyboard shortcut for that by default: <kbd>⌥⇥</kbd>
+ <em>(Option + Tab)</em>. Just in case the shortcut is not set, or you prefer different shortcut for this action, you can find it under <em>Main menu -&gt; Window -&gt; Editor Tabs -&gt; Goto Next Splitter</em></p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/next_splitter.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Goto Next Splitter</p>
+</div>
+
+
+<p>One more nice shortcut that I personally use quite a lot and I believe is super handy to navigate towards declaration is <kbd>⌘b</kbd>
+ <em>(Cmd + b)</em>. For example, in the test class on the left side we have a function call on the <code>Component</code> type:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">Component().doSomething()</code></pre></div>
+
+<p>By moving the cursor anywhere in the <code>doSomething()</code> text and hitting the <kbd>⌘b</kbd>
+ shortcut we will move the cursor to the declaration of that function, which in this case is on the right side of the editor. You can use this shortcut to go to the declaration of pretty much everything in the IDE.</p>
+
+<p>Very often we need to navigate between the currently opened files (left and right). The shortcuts already set by the IDE are: <kbd>⌘⇧]</kbd>
+ to navigate one file to the right, and <kbd>⌘⇧[</kbd>
+ to navigate one file to the left. By navigating right from the most right it gets to the very left, and same for the other direction. In case we are in a split mode, the navigation works only in the currently selected group. In case you want to change the default shortcuts for this actions, you can find them under <em>Main menu -&gt; Window -&gt; Editor Tabs</em> as <em>Select Next Tab</em> and <em>Select Previous Tab</em></p>
+
+<div class="centeredDiv">
+  <img src="/images/split_setup/navigate_tabs.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption">Navigation between opened files</p>
+</div>
+
+
+<p>Once we are done editing a file, we can use the <kbd>⌘w</kbd>
+ <em>(Cmd+w)</em> shortcut which will close the file we are editing currently.</p>
+
+<p>I find this setup very useful, and it works very well for me. I hope you try it out and see how would it work for you! Please feel free to reach out and let me know about your experience <a href="https://twitter.com/jovchem">on Twitter</a> or in the comments below. Make sure you <a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ so you won&rsquo;t miss new content.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
   </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            Recent Blog Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/outside-in-tdd-on-android/" class="db grow">
-            <img src="https://jovmit.io/images/outside_in/double_loop_of_tdd.png" class="img" alt="image from Outside-In TDD on Android">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/outside-in-tdd-on-android/" class="color-inherit dim link">
-            Outside-In TDD on Android
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
-        </div>
-          <a href="/posts/outside-in-tdd-on-android/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/android-ktx/" class="db grow">
-            <img src="https://jovmit.io/images/ktx/android_ktx.png" class="img" alt="image from Android KTX">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/android-ktx/" class="color-inherit dim link">
-            Android KTX
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.
-        </div>
-          <a href="/posts/android-ktx/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/android-arch-navigation/" class="db grow">
-            <img src="https://jovmit.io/images/arch_navigation/navigation.jpeg" class="img" alt="image from Android Navigation arch component — A curious investigation">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/android-arch-navigation/" class="color-inherit dim link">
-            Android Navigation arch component — A curious investigation
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.
-        </div>
-          <a href="/posts/android-arch-navigation/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/android-testing-ui/" class="db grow">
-            <img src="https://jovmit.io/images/ui_testing/espresso.png" class="img" alt="image from Testing Android UI with pleasure">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/android-testing-ui/" class="color-inherit dim link">
-            Testing Android UI with pleasure
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
-This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests.
-        </div>
-          <a href="/posts/android-testing-ui/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/android-offline-support-room/" class="db grow">
-            <img src="https://jovmit.io/images/offline_support/arch-components.png" class="img" alt="image from Add offline support using Room">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/android-offline-support-room/" class="color-inherit dim link">
-            Add offline support using Room
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer.
-        </div>
-          <a href="/posts/android-offline-support-room/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/android-notifications/" class="link black dim">
-              Android notifications — An elegant way to build and display
-            </a>
-          </h2>
-        
-
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Blog Posts</a>
-        
-        </section>
-      
-
-      </div>
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

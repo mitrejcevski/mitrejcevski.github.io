@@ -6,10 +6,21 @@
     <description>Recent content in Tips and tricks on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Sep 2019 14:15:25 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 11:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://jovmit.io/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Studio/IntelliJ Idea side by side working setup</title>
+      <link>https://jovmit.io/tips/android-studio-side-by-side-editor-setup/</link>
+      <pubDate>Fri, 11 Oct 2019 11:00:00 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tips/android-studio-side-by-side-editor-setup/</guid>
+      <description>The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&amp;rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+The side-by-side setup (vertical editor splitting) Side by side editor
+ We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad.</description>
+    </item>
     
     <item>
       <title>Add custom live templates in Android Studio</title>
