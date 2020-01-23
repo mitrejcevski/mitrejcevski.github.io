@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Add custom live templates in Android Studio</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.58.2" />
+    <meta name="generator" content="Hugo 0.62.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -39,16 +39,13 @@ How is this going to be helpful? Live templates are super handy to boost our spe
 <meta itemprop="name" content="Add custom live templates in Android Studio">
 <meta itemprop="description" content="What is a custom live template In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.
 How is this going to be helpful? Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example RecyclerView.">
-
-
 <meta itemprop="datePublished" content="2019-09-25T14:15:25&#43;02:00" />
 <meta itemprop="dateModified" content="2019-09-25T14:15:25&#43;02:00" />
 <meta itemprop="wordCount" content="893">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add custom live templates in Android Studio"/>
 <meta name="twitter:description" content="What is a custom live template In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.
 How is this going to be helpful? Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example RecyclerView."/>
@@ -202,112 +199,79 @@ if (!doNotTrack) {
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<h2 id="what-is-a-custom-live-template">What is a custom live template</h2>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="what-is-a-custom-live-template">What is a custom live template</h2>
 <p>In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.</p>
-
 <h4 id="how-is-this-going-to-be-helpful">How is this going to be helpful?</h4>
-
 <p>Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example <code>RecyclerView.Adapter</code>, <code>RecyclerView.ViewHolder</code> and so on). Some folks are using live templates extensively when doing live-coding presentations. It saves a lot of time, plus it eliminates many possible mistakes.</p>
-
 <h2 id="how-to-create-a-new-live-template">How to create a new live template</h2>
-
 <p>To configure live templates, we need to open the <code>Live Templates</code> page of the Android Studio settings: <em>Settings -&gt; Editor -&gt; Live Templates</em>. On the <code>Live Templates</code> page, we can see all the available live templates, edit them and create new templates.</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_window.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Live templates window</p>
 </div>
 
-
 <p>To define a new template, on the right side of the window, click the <strong>+</strong> button. There are 2 options available: <strong>Live Template</strong> and <strong>Template group</strong>.</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_new_group.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Define new live templates group</p>
 </div>
 
-
 <p>Go ahead and create a new group and name it <strong>test</strong>. This group will be supposed to hold live templates we will use for writing tests, so the name makes sense.</p>
-
 <p>Next, we have to select the newly created group <strong>test</strong> and click on the <strong>+</strong> again to define new live template inside this group.</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_new_template.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Define new live template</p>
 </div>
 
-
 <p>Once we select this option, on the bottom of the window we can see the live template editor</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_template_setup.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Edit the live template</p>
 </div>
 
-
 <p>Here, the first thing we have to setup is the <code>abbreviation</code>. The abbreviation is something like a keyword that will trigger the insertion of the template inside the editor. We can also apply some description that could be handy, so for example if we have similar abbreviations for different templates, the description will be very helpful to select the correct template later when working with them.</p>
-
-<p>For the sake of this example, let&rsquo;s put <code>test</code> as an abbreviation, and <code>JUnit test function</code> as a description.</p>
-
+<p>For the sake of this example, let's put <code>test</code> as an abbreviation, and <code>JUnit test function</code> as a description.</p>
 <p>Next, we have to define a context where our new template is going to be available. At the very bottom of the live template editor window, there is a little warning sign saying <code>No applicable context</code></p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_context_undefined.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Undefined template context</p>
 </div>
 
-
-<p>Let&rsquo;s go ahead and define a context by clicking on the <code>Define</code> action.</p>
-
+<p>Let's go ahead and define a context by clicking on the <code>Define</code> action.</p>
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_context_selection_popup_window.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Define context popup</p>
 </div>
 
-
-<p>As we can see in the image above, I&rsquo;ve selected <code>Kotlin Class</code> as a template context, which means this template will be available in Kotlin class files.</p>
-
-<p>Next, let&rsquo;s go ahead and set up the actual template that we want to be available for the given abbreviation. Let&rsquo;s apply the following code inside the <code>Template text:</code> field in the editor:</p>
-
+<p>As we can see in the image above, I've selected <code>Kotlin Class</code> as a template context, which means this template will be available in Kotlin class files.</p>
+<p>Next, let's go ahead and set up the actual template that we want to be available for the given abbreviation. Let's apply the following code inside the <code>Template text:</code> field in the editor:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin">@org.junit.jupiter.api.Test
 <span style="color:#66d9ef">fun</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">EXPR</span><span style="color:#960050;background-color:#1e0010">$</span>() {
     org.junit.jupiter.api.Assertions.assertEquals(<span style="color:#960050;background-color:#1e0010">$</span>EXPR1<span style="color:#960050;background-color:#1e0010">$</span>, <span style="color:#960050;background-color:#1e0010">$</span>EXPR2<span style="color:#960050;background-color:#1e0010">$</span>)
 }</code></pre></div>
-
 <p>There are additional setup options on the right side of the live template editor but we will ignore them for now. Finally, here is how the editor looks like:</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_template_ready.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Live template setup</p>
 </div>
 
-
 <p>All we have to do next is just save this and we are done. A little note about the actual template code that we have applied - we are using fully-qualified names for the <code>Test</code> class and the <code>assertEquals()</code> method:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin">org.junit.jupiter.api.Test
 org.junit.jupiter.api.Assertions.assertEquals</code></pre></div>
-
 <p>When we will use this template in the editor, Android Studio will automatically use imports and will prettify the code.
-Let&rsquo;s see how does it look like. Open any Kotlin class file (because that&rsquo;s the context we have set for the template we&rsquo;ve just created), and inside the class&rsquo;s body, type the corresponding template abbreviation: <code>test</code></p>
-
+Let's see how does it look like. Open any Kotlin class file (because that's the context we have set for the template we've just created), and inside the class's body, type the corresponding template abbreviation: <code>test</code></p>
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_usage_hint.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Use live template</p>
 </div>
 
-
 <p>As we can see, Android Studio pops up a little window where we can choose between the available templates. Just because on my side I have set a live template for JUnit4 test function beforehand, I can see both options available and I can choose which one I would like to use. Just by pressing <kbd>⏎</kbd>
  <em>(Enter)</em> or <kbd>⇥</kbd>
  <em>(Tab)</em> Android Studio will insert the selected template in the editor, and it will put the cursor at the first <code>$EXPR$</code> variable from the template (in this case the function name).</p>
-
 <div class="centeredDiv">
   <img src="/images/live_templates/live_templates_template_inserted.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Live template inserted</p>
 </div>
-
 
 <p>Once we are done typing the name, we can press <kbd>⏎</kbd>
  or <kbd>⇥</kbd>
@@ -315,15 +279,10 @@ Let&rsquo;s see how does it look like. Open any Kotlin class file (because that&
  or <kbd>⇥</kbd>
  jumps to the next <code>$EXPR$</code> variable, and <kbd>⇧⇥</kbd>
  <em>(Shift + Tab)</em> jumps to the previous.</p>
-
-<p>It&rsquo;s important to note that when typing while the cursor is at specific <code>$EXPR$</code> variable, the typed text will appear at all of the variables with the very same name. In our example, we have 3 variables in total, and they all differ by adding a number at the end of them: <code>$EXPR$</code>, <code>$EXPR1$</code> and <code>$EXPR2$</code>. The actual numbers are not used as an order for the next/previous jump, rather, to differentiate them.</p>
-
+<p>It's important to note that when typing while the cursor is at specific <code>$EXPR$</code> variable, the typed text will appear at all of the variables with the very same name. In our example, we have 3 variables in total, and they all differ by adding a number at the end of them: <code>$EXPR$</code>, <code>$EXPR1$</code> and <code>$EXPR2$</code>. The actual numbers are not used as an order for the next/previous jump, rather, to differentiate them.</p>
 <h2 id="sharing-live-templates">Sharing live templates</h2>
-
-<p>Recently I&rsquo;ve discovered there is an <a href="https://github.com/pranaypatel512/AndroidLiveTemplates">open source repository</a> created by <a href="https://twitter.com/pranaypatel_">Pranay Patel</a> with a bunch of cool live templates ready to be used. This repository is welcoming pull requests so anyone can contribute and add some more live templates.</p>
-
-<p>That&rsquo;s all for now, hope you find this useful! Feel free to <a href="https://twitter.com/jovchem">follow me on Twitter</a> so you won&rsquo;t miss new content.</p>
-
+<p>Recently I've discovered there is an <a href="https://github.com/pranaypatel512/AndroidLiveTemplates">open source repository</a> created by <a href="https://twitter.com/pranaypatel_">Pranay Patel</a> with a bunch of cool live templates ready to be used. This repository is welcoming pull requests so anyone can contribute and add some more live templates.</p>
+<p>That's all for now, hope you find this useful! Feel free to <a href="https://twitter.com/jovchem">follow me on Twitter</a> so you won't miss new content.</p>
 <a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <ul class="pa0">
@@ -369,7 +328,7 @@ Let&rsquo;s see how does it look like. Open any Kotlin class file (because that&
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jovmit.io" >
-    &copy; 2019 Jovche Mitrejchevski
+    &copy; 2020 Jovche Mitrejchevski
   </a>
     <div>
 

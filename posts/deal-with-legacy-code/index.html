@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski  | Android Navigation arch component — A curious investigation</title>
+    <title>Jovche Mitrejchevski  | Refactoring Legacy Code</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.62.2" />
     
@@ -29,23 +29,26 @@
 
     
 
-    <meta property="og:title" content="Android Navigation arch component — A curious investigation" />
-<meta property="og:description" content="About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new." />
+    <meta property="og:title" content="Refactoring Legacy Code" />
+<meta property="og:description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jovmit.io/posts/android-arch-navigation/" />
-<meta property="article:published_time" content="2018-05-23T07:19:26+02:00" />
-<meta property="article:modified_time" content="2018-05-23T07:19:26+02:00" />
-<meta itemprop="name" content="Android Navigation arch component — A curious investigation">
-<meta itemprop="description" content="About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.">
-<meta itemprop="datePublished" content="2018-05-23T07:19:26&#43;02:00" />
-<meta itemprop="dateModified" content="2018-05-23T07:19:26&#43;02:00" />
-<meta itemprop="wordCount" content="2232">
+<meta property="og:url" content="https://jovmit.io/posts/deal-with-legacy-code/" />
+<meta property="article:published_time" content="2020-01-23T10:00:00+02:00" />
+<meta property="article:modified_time" content="2020-01-23T10:00:00+02:00" />
+<meta itemprop="name" content="Refactoring Legacy Code">
+<meta itemprop="description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.">
+<meta itemprop="datePublished" content="2020-01-23T10:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2020-01-23T10:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="1500">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android Navigation arch component — A curious investigation"/>
-<meta name="twitter:description" content="About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new."/>
+<meta name="twitter:title" content="Refactoring Legacy Code"/>
+<meta name="twitter:description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general."/>
 
       
 <script type="application/javascript">
@@ -70,7 +73,7 @@ if (!doNotTrack) {
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/arch_navigation/navigation.jpeg');">
+  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/refactoring/craftsman.jpg');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -175,7 +178,7 @@ if (!doNotTrack) {
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Android Navigation arch component — A curious investigation</h1>
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Refactoring Legacy Code</h1>
           
         
       </div>
@@ -194,155 +197,76 @@ if (!doNotTrack) {
           
         BLOG POSTS
       </p>
-      <h1 class="f1 athelas mb1">Android Navigation arch component — A curious investigation</h1>
+      <h1 class="f1 athelas mb1">Refactoring Legacy Code</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2018-05-23T07:19:26&#43;02:00">May 23, 2018</time>
+      <time class="f6 mv4 dib tracked" datetime="2020-01-23T10:00:00&#43;02:00">January 23, 2020</time>
       
       
-        <span class="f6 mv4 dib tracked"> - 11 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 2232 words</span>
+        <span class="f6 mv4 dib tracked"> - 8 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1500 words</span>
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="about">About</h2>
-<p>On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new. One of the new libraries is the Navigation.</p>
-<h2 id="what-is-navigation">What is Navigation</h2>
-<p>The Navigation component is a new architecture component that is supposed to simplify the implementation of the navigation in an application. At the very beginning, it’s important to mention that the Navigation component is scoped to a single Activity. It means that it embraces the idea of using single activity with multiple fragments for navigating through different parts of the application. So, an Activity(preferably an entry point into the application) would contain a Navigation component. Then, one of the fragments of this Activity could potentially point to another Activity, which would have to define its own Navigation scope. Now, this does sound a little bit tricky because of the well-known problems with the fragments and the fragment manager, but the good news is that this Navigation component is there to do these things for us. So the fragment management is done by itself.</p>
-<h2 id="why-navigation">Why Navigation</h2>
-<p>This is one of the first questions that come to mind when thinking about the Navigation component. As mentioned earlier, there was a well-known problem with the fragments and many developers were trying to avoid using fragments, or at least avoid working with the <code>FragmentManager</code>. Turns out, the need of such component lays in the fact that the activities are having some limitations too.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It is more that Activities are inherently limited in unfixable ways. Trying to use property animations? Not with activities. Trying to pop multiple activities off the stack as an atomic operation? Nope. Want a consistent default animation? Not with manufacturer customizations</p>&mdash; Ian Lake (@ianhlake) <a href="https://twitter.com/ianhlake/status/996426634541522944?ref_src=twsrc%5Etfw">May 15, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="intro">Intro</h2>
 
-<p>Fair enough, the arguments that <a href="https://twitter.com/ianhlake">Ian Lake</a> points out in this tweet are more than enough to think about making more robust and easy to use solution. The Navigation component is not only helping to sort out those problems mentioned by <a href="https://twitter.com/ianhlake">Ian Lake</a> in that tweet, but it brings some awesome features like safe arguments passing, default arguments, handling deep links, automatic setup with side <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a> and with the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>. Furthermore, there is also a visual editor where all these things can be wired up together, and the developers can take an overview of what’s going around and understand and manage the structure lot easier. Let’s take a closer look.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>I would highly recommend the official guide for the new Navigation component, as well as its documentation to get rolling with the implementation.</p>
-<div class="centeredDiv">
-  <img src="https://developer.android.com/images/topic/libraries/architecture/navigation-graph_2x-callouts.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Get started with the Navigation component</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/1ap11RbVGik" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>I’ve created a <a href="https://github.com/mitrejcevski/jetpack-playground">simple playground project</a> where I was trying various things with the Navigation component. Keep in mind that I am using the latest version of <a href="https://developer.android.com/studio/preview/">Android Studio</a> from the Canary Channel.</p>
-<p>To begin with, we have to declare the Navigation component dependencies in our build file, followed by sync: (note: the versions of the dependencies are aligned with the time this article is written)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">implementation <span style="color:#e6db74">&#39;android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha01&#39;</span>
-implementation <span style="color:#e6db74">&#39;android.arch.navigation:navigation-ui-ktx:1.0.0-alpha01&#39;</span></code></pre></div>
-<h2 id="define-navigation-graph">Define Navigation Graph</h2>
-<p>In order to start with the Navigation component, we have to first define the navigation graph. The navigation graph is nothing but an XML file that is getting placed in the <code>navigation</code> folder in the <code>resources</code>. With a right-click on the <strong>res</strong> folder, we choose <strong>New -&gt; Android Resource File</strong></p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/create-new-resource-file.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Create new resource</p>
-</div>
+<p>Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.</p>
+<p>Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general. I'm very thankful that he asked that because I took it as a motivation to record a series of screencast videos where I explain and demonstrate a bunch of techniques that everyone can learn and use in their daily job.</p>
+<h2 id="books">Books</h2>
+<p>The techniques I am working with while refactoring the code in the screencast are heavily based on the following books:</p>
+<ul>
+<li><a href="%22https://bit.ly/2R8lkVM%22">Working effectively with legacy code</a> by <a href="%22https://twitter.com/mfeathers%22">Michael Feathers</a></li>
+<li><a href="%22https://amzn.to/2ucyGaB%22">Refactoring</a> by <a href="%22https://twitter.com/martinfowler%22">Martin Fowler</a>
+I find those books very valuable when it comes to software development, and I would strongly recommend everyone to read them.</li>
+</ul>
+<h2 id="code-refactoring">Code Refactoring</h2>
+<p>Code refactoring is a process of changing an existing computer code in such a way that it does not alter the external behavior of the code while it improves its internal structure.</p>
+<h4 id="automated-refactoring-supported-by-the-ide">Automated Refactoring (Supported by the IDE)</h4>
+<p>The IDEs that are widely used today, especially the ones for the strongly-typed programming languages, provide a variety of automated refactoring, often even suggesting possible refactoring that would improve the code. It's safe to perform such refactoring because the behavior of the code it is getting applied to is going to stay the same. In that sense, the more we use the automated refactoring provided by the IDE, the better. Minimizing manual refactoring is always a good idea.</p>
+<h4 id="frequent-commits">Frequent commits</h4>
+<p>Generally, making frequent commits are a valuable consideration to be taken, especially when it comes to refactoring legacy code. It's quite common to make a mistake when working with code so that we have to revert the latest changes. By committing frequently, we are minimizing the changes we might have to undo, and we make the actual revert easy to be done. Given that the legacy code could be quite complex, having the ability to make easy revert is becoming very valuable.</p>
+<p>One may argue that creating too many commits might become problematic in some cases, and if that's the case, we can easily squash them into fewer before merging into the targeting branch. However, I will advocate for keeping the full history for better evidence.</p>
+<h4 id="test-harness">Test Harness</h4>
+<p>In the &ldquo;Working effectively with legacy code&rdquo; book, the term <strong>test harness</strong> refers to a testing code that we write to exercise a piece of software and the code that we use to run it. In that sense, when working with legacy code, the tests that we write together with the running set up to cover a piece of functionality is called <strong>test harness</strong>. Once we have the code under test harness, we have the safety and the confidence to start refactoring.</p>
+<h4 id="code-coverage">Code Coverage</h4>
+<p>The code coverage tool comes to great help when refactoring legacy code. It plays an important role when putting code under test harness by allowing us to see which parts of that code are getting executed. Once we see the parts which are getting covered, we can focus on a particular region and understand what it is doing. An essential note at that point is not to get tricked if a line of code is covered. A covered line of code means that the line is getting executed, but it does not mean that its behavior is preserving. We need additional checks to make sure that we are maintaining the side effect of its execution. That's where the <strong>defect injection</strong> comes into play.</p>
+<h4 id="defect-injection">Defect Injection</h4>
+<p>The defect injection is a technique that we use to make sure a particular test is failing for the right reason. As mentioned previously, a covered line of code is not the same as preserved behavior. Usually, the test that makes sure a block of code is covered is different than the test that checks its behavior. It is not impossible, but often, those are separate tests. So, to prove a behavior is remaining the same, we can inject a defect in a block of code that we are exercising, so that the test that penetrates that code will fail. To do so, we can comment out a line of code, or make a small change that would make the test fail. Then we would observe if the test fails because of the defect we have injected. Once we have the confidence that the behavior is not changed, we can undo the injected defect and continue.</p>
+<h4 id="test-data-builders">Test Data Builders</h4>
+<p>A good test is the well-focused one, the one that clearly describes its intention and involves only the relevant details. Very often, we need to involve data in a test. Thus, we might end up initializing and arranging not particularly relevant data structures into its setup. In those situations, we can make use of a data builder - a helper used in the tests that leverage the builder pattern. Let's take a look at a concrete example. Here is a DTO class with a handful of properties:</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/eff3e55a81f6551acd13ea2a0bd132c7.js"></script>
 
-<p>Then, in the <strong>New Resource File</strong> window, we specify a name for the file, followed by choosing <strong>Navigation</strong> as <strong>Resource type</strong></p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/new-resource-file-popup.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Define new navigation graph resource file</p>
-</div>
+<p>and a test where we are checking the result of a search call:</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/6ef41a6f04090e338305d59d2e6bf4a8.js"></script>
 
-<p>Once done, the newly defined navigation graph is getting opened with the navigation editor in the studio. By using the latest <a href="https://developer.android.com/studio/preview/">Android Studio</a> we are able to see this XML file in <strong>design</strong> preview as well as edit the XML as <strong>text</strong>. The same that we could do with the layout files. The navigation editor provides an ability to wire the things up and configure the navigation in the desired way.</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/empty-navigation-graph.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Empty navigation graph in the navigation editor</p>
-</div>
+<p>In the test setup, we are initializing a new user object, and doing that, besides the value for the <code>userId</code>, we have to provide values for the <code>firstName</code>, <code>lastName</code>, <code>age</code>, and <code>location</code>. However, all the values in that test except the <code>userId</code> are <strong>completely irrelevant</strong>. By using a data builder, we can significantly improve the readability and the intention of the test.</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/380433c58d9688d877db6137952b5fc6.js"></script>
 
-<p>Next, there is a need for a host fragment to be defined. In the <a href="https://github.com/mitrejcevski/jetpack-playground">example</a> I shared, we have an Activity that has a layout named <code>activity_main</code> where this host fragment is defined. In this layout, we also include a <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>, in order to investigate some interesting things how the new Navigation component works with it.</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/3fda05fa14ad513da8a372bf58a7c806.js"></script>
+<p>Now, we have dropped the irrelevant details from the test, and we ended up with a more focused test.</p>
+<h4 id="seam">Seam</h4>
+<p>When refactoring legacy code, often there are parts of the code involving static calls, calls that are expensive to be made (like querying database), or usage of constant fields. Putting those parts under test harness is not a straight forward task. By extracting such a call into another function, we are opening an ability to replace it with something that makes more sense for the test harness. That newly extracted function is called <strong>seam</strong>.</p>
+<h4 id="subclass-to-test">Subclass to Test</h4>
+<p>To make use of the seam, we need to create a <strong>subclass</strong> and override the function, so that it will call or return whatever we need in the particular test. This subclass is relevant only in the tests, and we are calling it <strong>subclass to test</strong> or a <strong>testing subclass</strong>. Let's take a look at a concrete example. Here is a piece of code that we want to put under a test harness:</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/cbe0b4a1ecae6619753f13be575620b7.js"></script>
 
-<p>We see 2 new attributes in the definition of the host navigation fragment: <code>app:defaultNavHost=&quot;true&quot;</code> and <code>app:navGraph=&quot;@navigation/navigation_graph&quot;</code>.</p>
-<p>The former one makes sure that the <code>NavHostFragment</code> intercepts the system <strong>Back</strong> button. In our activity we also have to overwrite <code>onSupportNavigateUp()</code> method as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : AppCompatActivity() {
-    ...
-    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onSupportNavigateUp</span>() =
-        findNavController(R.id.mainNavigationFragment).navigateUp()    
-}</code></pre></div>
-<p>The latter one is used to define which navigation graph from the <code>navigation</code> resources folder is going to be assigned to the <code>NavHostFragment</code>. Once we define that in the XML, we could get back to the navigation editor in the studio. As we can see, now it displays the host as expected:</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/nav-graph-host.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Host of navigation graph</p>
-</div>
+<p>There is a static call to find trips <code>TripsDao.findTripsFor(userId)</code>, so if we call this function in a test, it might try to make a real query to the database, which in turn will take a lot of time, it might throw an exception, but there is no way for us to know the exact return result. Furthermore, making real calls to a database from a test will lead to flaky tests and might corrupt the database records. To get over that problem, we can create a seam, so that we will allow ourselves to put this code under test harness easily:</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/9e90b88381003d81c8af61b8106f21e1.js"></script>
 
-<p>Now we can go on and some destinations in the navigation graph, directly in the navigation editor</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/create-new-destination-window.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Create new destination window</p>
-</div>
+<p>It's essential to note that by creating this seam, we are not changing the behavior of the code. We only delegate the call to the new function we created.</p>
+<p>In languages like <a href="%22https://kotlinlang.org/%22">Kotlin</a>, where the classes and functions are implicitly <code>final</code>, we need to make them <code>open</code> to be able to override them, but more about that in the <a href="#complexity">Complexity</a> section.</p>
+<p>Once we have created the seam, in the tests, we can easily create a <strong>testing subclass</strong> where we can override the function and return a result that we can control.</p>
+<script type="application/javascript" src="https://gist.github.com/mitrejcevski/1295abb3ee3a602adc1ea35ea7a12697.js"></script>
 
-<p>For our case, I defined 4 destinations. The first three to serve the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> we have in the <code>main_activity</code>, and the fourth one to be used as a detailed preview that will get opened after a click on an action. Here is how it looks in the navigation editor</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/navigation-editor-window.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Navigation editor</p>
-</div>
-
-<p>Then, as mentioned before, to make this setup work with the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>, we need a very little effort. As we can find out in the navigation graph, the items we defined in it are having <code>id</code> attributes</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/9525cfd90b5191a0be2c3d859c2ef497.js"></script>
-
-<p>By simply making the ids of the menu items for the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> same as these <code>ids</code> in the navigation graph, the setup is almost done. An important note on this is that this can be used for menu items in a side <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a> drawer and <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a>’s menu items too. It does not, however, work for the popup menus. There are just two lines of code that we have to add in the activity to wire them up, so that clicking on a particular menu item will navigate to the desired destination.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> navController = findNavController(R.id.mainNavigationFragment)
-bottomNavigationView.setupWithNavController(navController)</code></pre></div>
-<p>But, since we also have a toolbar, we also want to set up the toolbar with the navigation, so when we navigate to a new screen, we would like to update the <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a>’s title. To achieve that, we add one more line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">setupActionBarWithNavController(navController)</code></pre></div>
-<p>This line is a Kotlin extension function on the <a href="https://developer.android.com/reference/android/support/v7/app/AppCompatActivity">AppCompatActivity</a> class. Eventually, the activity’s code became like this:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/131347f9f046d5fc350acb7d1b2d1ece.js"></script>
-
-<p>With a very little effort we made the navigation work together with the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> and the <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a>.
-As mentioned before, the call to <code>setupActionBarWithNavController</code> is an extension function, and here is how it is defined:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">AppCompatActivity</span>.setupActionBarWithNavController(
- navController: NavController,
- drawerLayout: DrawerLayout? = <span style="color:#66d9ef">null</span>
-) {
- NavigationUI.setupActionBarWithNavController(<span style="color:#66d9ef">this</span>, navController, drawerLayout)
-}</code></pre></div>
-<p>It’s interesting that optionally, we could pass in that function a <code>DrawerLayout</code> if we had one. So it will set up both the <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a> and the side <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a> to work with the Navigation. However, there is no option to pass a <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> and it has to be done by making that additional call in the activity. I was wondering why is that, and I did a little investigation, and the result is the following.</p>
-<h2 id="guideline-updates">Guideline Updates</h2>
-<p>If you check out and try out the <a href="https://github.com/mitrejcevski/jetpack-playground">example I shared</a>, you will notice a very weird thing. Mainly, the app opens the home destination as we have set it before, but if you try to open some of the other sections on the bottom navigation, it will display its fragment, it will update the title on the <a href="https://developer.android.com/reference/android/widget/Toolbar">Toolbar</a>, but also it will add an up action on the toolbar. Now, this looks quite weird and initially, I thought that it is a bug. So I <a href="https://issuetracker.google.com/issues/79671564">reported it as an issue</a>, because, as of the <strong>Bottom Navigation Guidelines</strong>, navigating to another section in the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> and then clicking the system back button should not get the user back to the initial screen, but rather close the screen. So, navigating to a separate section should not add the new section to the stack, and clicking back pop it from the stack. But in my case, the result was unexpected:</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/nav-back-button.svg" class="imageRoundedCorners" alt="">
-  <p class="imageCaption"></p>
-</div>
-
-<p>Surprisingly enough, as we can see from the response from the Google Devs in the <a href="https://issuetracker.google.com/issues/79671564">reported issue</a>, the guidelines for the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a> are now updated and <a href="https://developer.android.com/topic/libraries/architecture/navigation/navigation-principles">here is how the new navigation guidelines look like</a>.</p>
-<p>However, the new guidelines stay as they used to be for the side <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a>. What I’ve also found in the implementation details of the new Navigation component, here is a part of the code I would like to share:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/d5b76a006ed9bb7556e941aaf47e3140.js"></script>
-
-<p>As we can see in this code snippet, especially on the line 11, the Navigation library internally only checks agains the drawer layout which actually is the <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a>. That is why setting up the Navigation with a side <a href="https://developer.android.com/reference/android/support/design/widget/NavigationView">NavigationView</a> is not adding the up navigation action to the toolbar, but it does for the <a href="https://developer.android.com/reference/android/support/design/widget/BottomNavigationView">BottomNavigationView</a>.</p>
-<h2 id="transitions-out-of-box">Transitions out of box</h2>
-<p>Let’s get back to the navigation editor and take a look at the <code>notifications</code> and the <code>notificationDetails</code></p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/navigation_preview_window.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Navigation preview</p>
-</div>
-
-<p>The arrow that is connecting both fragments is called an action and it essentially defines a way to navigate from the first to the second fragment. By clicking on the action (which will highlight it), we are allowed to edit its attributes in the right-hand side panel</p>
-<div class="centeredDiv">
-  <img src="/images/arch_navigation/action-attributes-editing-panel.png" class="imageRoundedCorners" alt="">
-  <p class="imageCaption">Attributes panel</p>
-</div>
-
-<p>As we can see here, the action has an id itself, and that is a very important thing (will see later why). Also, there are the enter and exit transition attributes. We could use here some of the predefined transitions, as well as our own transitions defined in the <code>anim</code> folder in the resources. Also, we could set a pop destination, so when the user closes this screen, the navigation will bring him to the desired screen without any mess with the fragment management from our side. The action can define default argument types and their values as well. From the XML preview, it looks like this</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/135a745eecad44532a7b4571388078a7.js"></script>
-
-<p>It’s up to us whether we use the UI editor or the XML, or combination of both. At this point, all we have done is the definition of the things. We also have to make a call to the navigation to navigate to a destination on a specific event like a button click or so. Here is how we can do it with, and without passing arguments.</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/3dab316187d6568945a601e72864a162.js"></script>
-
-<p>As I mentioned before, the action has an <code>id</code> and we can see from the code snippets above that in the <code>navController.navigate</code> call we pass that <code>id</code>. That is how the navigation takes into account all the attributes specified, such as transitions and arguments. Just for the sake of trying, we can replace <code>R.id.openNotificationDetailsAction</code> with <code>R.id.notificationDetails</code>. The navigation will still be able to open the details fragment because in the navigation graph that fragment is defined with <code>R.id.notificationDetails</code> id. However, there will be no transition.</p>
-<h2 id="safe-args">Safe Args</h2>
-<p>The last thing I’d like to mention is the safe args plugin which is part of this library. In order to make use of it, we have to define a dependency in the main build file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">classpath <span style="color:#e6db74">&#39;android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha01&#39;</span></code></pre></div>
-<p>followed by defining a plugin in the module's <code>build.gradle</code> file in the <code>plugins</code> section.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">apply plugin:<span style="color:#e6db74">&#39;androidx.navigation.safeargs&#39;</span></code></pre></div>
-<p>This plugin is essentially generating code based on the arguments we have defined in the actions in our XML. It generates a class named <strong>[Destination Fragment Name]Args</strong>. This generated class can be used to simplify the work with the arguments. In our <code>notificationDetails</code> action in the navigation graph, we have defined an argument attribute like this:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/3220db77b2bfd3a83b8c2bbd2b1b74f9.js"></script>
-
-<p>Inside the fragment, thanks to the applied plugin, we can read the arguments we passed with pleasure, rather then reading the arguments by id</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/7e7a6b2a02760c44054ce7431aaa516a.js"></script>
-
-<p>Also, on the call side, we used to create the bundle ourself with this line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> bundle = Bundle().also { it.putString(<span style="color:#e6db74">&#34;notificationId&#34;</span>, <span style="color:#e6db74">&#34;Test&#34;</span>) }</code></pre></div>
-<p>which means we were doing the mapping of the key-values in the bundle ourselves. After applying the safe args plugin, we can update the code to this</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/4ea26e9627db514b2b7b396d4d15e380.js"></script>
-
+<h4 id="complexity">Complexity</h4>
+<p>When dealing with legacy code, we are trying to reduce the complexity of complicated software. During that process, it is very natural to get that complexity increased at the beginning, and simplified at the end. As we've seen in the example above, depending on the language, we might end up introducing undesired changes. But since we know that eventually, we will get to an exceedingly better place, it's worth to make those considerations.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The new Navigation component is quite a nice library and a powerful concept, which embraces the single activity approach. I would strongly suggest to everybody to give it a try in a pet project, or just <a href="https://github.com/mitrejcevski/jetpack-playground">clone my example</a> and play with it a little bit. It’s very important to note that this library is in its alpha version, which means that the API is still not final and may change over time. In case you find any bug or misbehaviors while working with it, do a good thing for the community and report it in the <a href="https://issuetracker.google.com/issues">issue tracker</a>.</p>
-<p>The Navigation component also improves the deep-linking possibilities and I believe it deserves an article on itself, so I didn’t include that here. Finally, it would be great to find out the different aspects of writing tests for these new things, so stay tuned.</p>
+<p>Improving legacy code is not a trivial task, and it always takes a lot of effort and energy. It's very crucial to have a good arsenal of tools available to fight against it and to know how to use those tools properly. Getting confident to use them involves a lot of practice, routine, and discipline. The more we use those tools, the more confident we become, and that helps us pick the right tool for a particular case easier.</p>
+<p>I hope you find this article, and the screencast videos useful, and you learned something new that you could apply at your daily job. Feel free to <a href="https://twitter.com/jovchem">follow me on Twitter</a>, so you will stay up to date with new content.</p>
+<a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <ul class="pa0">
   
 </ul>

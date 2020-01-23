@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Android notifications — An elegant way to build and display</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.58.2" />
+    <meta name="generator" content="Hugo 0.62.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -37,16 +37,13 @@
 <meta property="article:modified_time" content="2017-08-26T07:20:21+02:00" />
 <meta itemprop="name" content="Android notifications — An elegant way to build and display">
 <meta itemprop="description" content="Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.">
-
-
 <meta itemprop="datePublished" content="2017-08-26T07:20:21&#43;02:00" />
 <meta itemprop="dateModified" content="2017-08-26T07:20:21&#43;02:00" />
 <meta itemprop="wordCount" content="1114">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android notifications — An elegant way to build and display"/>
 <meta name="twitter:description" content="Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now."/>
 
@@ -208,95 +205,63 @@ if (!doNotTrack) {
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/LTqvVWvmACY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.</p>
-
 <p>Displaying notifications on Android is fairly easy. The <a href="https://developer.android.com/guide/topics/ui/notifiers/notifications.html">documentation</a> is very nice and clean, and describes the best practices and requirements to make the UX compliant to the standards. Nova days, the standard way to send a push to a device is by using the <a href="https://firebase.google.com/">Firebase</a>. If there are no customizations or custom payload, the effort on the Android side in oder to display a notification, branded specifically for the app is matter of defining some properties (like icon etc) in xml. However, this post is about receiving push notifications with custom payload, and display different notification based on that payload. The way I solve this I find pretty handy and I think it deserves to be shared, so other people may find it useful too, or they may get inspired to write a better one.</p>
-
-<h2 id="let-s-dig-into-the-code">Let’s dig into the code</h2>
-
+<h2 id="lets-dig-into-the-code">Let’s dig into the code</h2>
 <p>First of all, we have to define the dependencies for google play services and Firebase. It’s very well explained <a href="https://firebase.google.com/docs/cloud-messaging/android/client">here</a> what are the dependencies and their latest versions, so we will skip that step and start with defining services in our <code>AndroidManifest.xml</code> file:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/c4a57ed65aaa8fbc74a18b0da3739419.js"></script>
 
-
 <p>The first one is the one in charge of receiving the events when Firebase is refreshing the device token, and the second one is about receiving the push notifications coming from Firebase. When Firebase refreshes the token, we have to send it to our backend so it gets updated and the device will keep receiving pushes. The implementation is rather pretty straight forward:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/f37d8318d6ef8c2e43aa41717dac9c8c.js"></script>
 
-
 <p>And the second service is the one that receives the push notifications. All it does is just deliver the received data into the PushNotification class that knows how to display a notification. Here is how it looks like:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/3a13f0cb5cc88cb719c9c907b6ab107c.js"></script>
 
-
 <h2 id="the-interesting-part">The interesting part</h2>
-
 <p>It’s important to mention that the data that is received in the remote message is a <code>Map</code>, and one of key-value pairs inside is an <code>id</code>. This id is very important, because by using that id we will distinguish different types of push notifications, and ultimately we will display different notification. Let’s take a look at the implementation of the <code>PushNotification</code> class:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/a2d810a707d2249883d09cc74aede9f7.js"></script>
 
-
 <p>To start of, let’s get through the class dependencies:</p>
-
 <ul>
-<li><p><code>NotificationManager</code> is the Android’s SDK notification manager that is used for showing the notifications by it’s <code>notify()</code> method.</p></li>
-
-<li><p><code>NotificationItemResolver</code> is an interface that provides a contract for resolving the received data into a type that will be used to build a displayable notification</p></li>
-
-<li><p><code>NotificationBuilder</code> is an interface that provides a contract for making <code>android.app.Notification</code> out of the type that was resolved by the resolver.</p></li>
+<li>
+<p><code>NotificationManager</code> is the Android’s SDK notification manager that is used for showing the notifications by it’s <code>notify()</code> method.</p>
+</li>
+<li>
+<p><code>NotificationItemResolver</code> is an interface that provides a contract for resolving the received data into a type that will be used to build a displayable notification</p>
+</li>
+<li>
+<p><code>NotificationBuilder</code> is an interface that provides a contract for making <code>android.app.Notification</code> out of the type that was resolved by the resolver.</p>
+</li>
 </ul>
-
 <p>And here is how they are constructed</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/4c721c37080a91d07ba747c06881e079.js"></script>
 
-
 <p>Since the <code>NotificationManager</code> is pretty straight forward, let’s take a look at the <code>NotificationItemResolver</code> and it’s concrete implementation:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/3741815cde5f8097de5cdd3822b008f1.js"></script>
 
-
 <p>The implementation of the interface is basically a factory that produces different types of <code>PushNotificationItem</code> based on the <code>id</code> value that comes from Firebase that we discussed before. When we would like to add new type, we will have to add new implementation of <code>PushNotificationItem</code> (which we will check in a moment) and define the mapping in the <code>resolve()</code> method. The <code>PushNotificationItem</code> is an interface that defines the basics of the notification that will be displayed:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/28c2f9546b4ab529833205af16b9b230.js"></script>
 
-
 <p>When targeting O, the API requires us to provide a channel in order to display a notification. The channel is sort of a group, and the user could enable/disable different channels. Therefore, the channel has an <code>id</code> and a <code>title</code>, and this is what it looks like:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/13eb9936ad0c325fa64c2fc0c878baff.js"></script>
 
-
 <p>Next, the <code>PushNotificationItem</code> interface defines <code>title</code>, <code>message</code>, <code>smallIcon</code>, and <code>pendingIntent</code>. When the notification will be displayed, this are the items that are going to be displayed. A notification can have many other different things for content, but for this example we take only the basics. Also, a very important thing is the <code>PendingIntent</code> which describes what is going to be opened in the app upon click on the notification.</p>
-
 <p>So far, we have defined two <code>PushNotificationItem</code> types that are resolved in our <code>PushNotificationItemResolver</code> implementation, mainly the <code>PushNotificationItem.Empty</code>, and <code>FriendSuggestionNotification</code>. Let’s get through the second one:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/d177815a9f00cc7050767c19376b17c6.js"></script>
 
-
 <p>The empty one is quite same, just with different values correspondingly. And it just creates pending intent that opens the app’s main screen.</p>
-
 <p>So far we’ve seen the mechanism behind mapping and preparing the notification data based on the received data from Firebase. We’ve seen that adding new type is as easy as defining a new class that derives from the <code>PushNotificationItem</code> and defining it in the resolver. If it has to go to a new channel that doesn’t exist, we will also have to define new channel class that derives from <code>PushNotificationChannel</code> and that’s it.</p>
-
 <p>Now, let’s take a look at the definition and the implementation of the <code>NotificationBuilder</code> that actually creates a notification that would be actually displayed:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/3dcf75066ea640ed95fe2f5adee86737.js"></script>
 
-
 <p>As we may see, the implementation here is fairly simple. It just maps the values from the <code>PushNotificationItem</code> into an <code>android.app.Notification</code> using the <code>NotificationCompat.Builder</code></p>
-
 <p>Getting back to the <code>show()</code> method of the <code>PushNotification</code> class where we started off, it does the things pretty straight forward: first maps the data into a <code>PushNotificationItem</code>, and if the current build version is O, it also creates a channel. Then it triggers a <code>notify()</code> on the manager with the <code>android.app.Notification</code> that got built out of the <code>PushNotificationItem</code></p>
-
 <p>As we’ve seen so far, this solution is quite well separated and easy to deal with. It’s easy to provide translation for the notification texts, as all that has to be done is defining translated <code>strings.xml</code> without a need to do any changes on the notifications themselves. Defining a new type of notification requires the backend to send different <code>id</code> for that type, and a new class for it on the Android side. Changing the way the data is mapped, or extending the functionality is as easy as replacing the implementations of the interfaces. And ultimately, and very importantly — this solution is testable. It’s easy to write unit tests for the way the <code>NotificationItemResolver</code> does resolve the data and if it does properly, as well as writing tests for the actual <code>PushNotificationItem</code> types, and check if they return the desired values.</p>
-
 <h2 id="wrap-up">Wrap up</h2>
-
 <p>That’s it, folks, I hope (and I’d be very glad) if somebody finds this useful and handy, and of course, I’m ready to get into some more explanations or general discussions if required.</p>
 <ul class="pa0">
   
@@ -341,7 +306,7 @@ if (!doNotTrack) {
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jovmit.io" >
-    &copy; 2019 Jovche Mitrejchevski
+    &copy; 2020 Jovche Mitrejchevski
   </a>
     <div>
 

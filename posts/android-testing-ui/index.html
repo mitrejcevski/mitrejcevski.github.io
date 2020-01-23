@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Testing Android UI with pleasure</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.58.2" />
+    <meta name="generator" content="Hugo 0.62.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -39,16 +39,13 @@ This article is focused mainly on the UI tests in an Android application. Tradit
 <meta itemprop="name" content="Testing Android UI with pleasure">
 <meta itemprop="description" content="Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
 This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests.">
-
-
 <meta itemprop="datePublished" content="2018-01-28T07:19:48&#43;02:00" />
 <meta itemprop="dateModified" content="2018-01-28T07:19:48&#43;02:00" />
 <meta itemprop="wordCount" content="1323">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testing Android UI with pleasure"/>
 <meta name="twitter:description" content="Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
 This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests."/>
@@ -210,71 +207,42 @@ if (!doNotTrack) {
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<h2 id="intro">Intro</h2>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="intro">Intro</h2>
 <p>Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.</p>
-
 <p>This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests. The mocked backend would provide the test-doubles for the running tests. However, this approach is quite tricky. The reason is that, in order to run the tests, there is an external dependency — a running backend. Therefore, beside the problem with the network latency, there is even bigger problem to run the tests in a CI or CD systems which are not maintained by ourselves. So in order to run the tests under those cloud based systems, the app would have to either reach out to real backend, or a backend that would mock the real one, and that would require quite some maintenance. On the other hand, <strong>the goal is only to test the UI, not the network or the backend</strong>. So how could this get solved?</p>
-
 <p>Thinking about that, the test should make sure the UI acts properly. For a given input, the test should exercise if the proper output is being displayed, or with other words, should make sure the UI is changed as expected. Therefore, there is an idea to keep the test-doubles in the source code of the app. That way, the app will be independent in terms of having a mocked backend and it would be able to run the tests anywhere. Furthermore, the tests would be rock-solid and would run very fast, without any idling resources required. Let’s have a look how could this be achieved.</p>
-
 <h2 id="details">Details</h2>
-
 <p>For the purposes of this article, I’ve created a <a href="https://github.com/mitrejcevski/ui-testing">simple demo</a> that would help sorting out the ideas and the approach this article describes. <em>The demo is a login screen that shows error in case the username or the password is empty, or the auth is incorrect, otherwise it would open the main screen</em>. In order to make it as simple as possible, I decided to use only espresso, and no other 3rd party libraries. The project has 2 flavours <strong>mock</strong> and <strong>prod</strong>, and there in an implementation of the data source in each of them. The <strong>prod</strong> flavor has an implementation that does the real work, and the <strong>mock</strong> flavour has an implementation that provides the test-doubles. That is the key point in this approach. Since we know exactly what we could expect from the backend for a given input, we could mock that data and return back towards the UI instantly, instead of making any actual calls. So the <strong>mock</strong> would be used in order to run the UI tests, and the <strong>prod</strong> for everything else (like unit tests, or making release builds). As mentioned before, instead of adding flavours, Dagger would have done a great job too, but the idea is to avoid any additional setups, and get to the point in a very simple way. Let’s take a closer look:</p>
-
 <div class="centeredDiv">
   <img src="/images/ui_testing/login_home.svg" class="imageRoundedCorners" alt="">
   <p class="imageCaption">The login and the main screen</p>
 </div>
 
-
 <p>Initially, the app opens the login screen. As described before, if the username or the password is empty, the screen should show an error. Also, we need to have tests that will make sure for given incorrect auth an error is being shown, and for given correct auth, the main screen is open. Here is the test case:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/ec7f9ddddfae52946e89ed046cbd9c9f.js"></script>
 
-
 <p>The test case should provide enough information about what is expected from the login screen. Since I wanted to put the focus on the UI tests, I made the <code>Activity</code> to talk directly to a data source without adding <code>Presenter</code> or <code>ViewModel</code>. There is a <a href="https://github.com/mitrejcevski/ui-testing/tree/full">branch</a> with that implementation in the <a href="https://github.com/mitrejcevski/ui-testing">project</a>, and that is discussed later. For now, the <code>Activity</code> talks to the data source interface which looks like this:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/0a31140caead3bbbcd46adb3680b8cbd.js"></script>
 
-
 <p>This interface has 2 implementations, one for each flavour respectively. The code structure looks like this:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">src/mock/java/nl/jovmit/login/RemoteLoginDataSource.kt
 src/prod/java/nl/jovmit/login/RemoteLoginDataSource.kt</code></pre></div>
-
 <p>This way, the data source implementation would be chosen by the selected flavor. For the sake of the simplicity, we would take a look only in the mock implementation:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/653ac65a9cf7f415914881ddbdbcd221.js"></script>
 
-
 <p>As we could see, the implementation just provides the desired test-doubles based on the input, so we could directly focus on the UI tests. This way, there is no need to reach out to a real backend or any other mocking backend. We know what the backend would return and in which way it would return it, so we could simply mock its response and have it in the source code. Ultimately, the code in the <code>Activity</code> is rather naive and quite out of real world, but for the sake of the example it does the job:</p>
-
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/12f8f04a742f891684f588b7a0752727.js"></script>
 
-
 <p>Now, by selecting the <strong>mock</strong> flavour and executing the test case, all tests would pass. The tests are quite solid and stable and more importantly they can run wherever we want, without thinking about having an up and running backend (real or mocked). The rest of the code can be easily unit tested, and those tests are included in the repository. Just they are out of the scope of this article to be discussed here. The implementation in the <strong>prod</strong> flavour on the other hand, would do the real work and make call to real backend. As we could conclude, it would be pointless to make calls if the username or the password is empty. Therefore, that case can be and should be covered by the unit tests for the <strong>prod</strong> implementation.</p>
-
 <h2 id="the-other-branch">The other branch</h2>
-
 <p>As I mentioned earlier, the <a href="https://github.com/mitrejcevski/ui-testing">project</a> also contains a <a href="https://github.com/mitrejcevski/ui-testing/tree/full">branch</a> named <strong>full</strong> which includes the Android Architecture Components (<a href="https://developer.android.com/topic/libraries/architecture/livedata.html">LiveData</a> and <a href="https://developer.android.com/topic/libraries/architecture/viewmodel.html">ViewModel</a>) and it makes a little bit more sense from a real-world perspective. There is not a single change in the UI tests, and they still pass. However, there is some tweaks in the implementation details underneath. Mainly, the branch introduces a <code>LoginViewModel</code> that takes the responsibility of performing the login and exposing live data to be observed by the <code>LoginActivity</code>. The <code>LoginViewModel</code> then talks to the data source. The <code>LoginViewModel</code> and the <code>RemoteLoginDataSource</code> are both unit-tested.</p>
-
 <h2 id="wrap-up">Wrap up</h2>
-
 <p>Using this approach for a while now, and I found it as a very nice way to test the UI. The tests are very solid and stable. Having both UI and unit tests brings so much confidence that makes the development very joyful and fun. No matter if we are about to run the tests in the local development machine, a CI server or a test lab, tests would run nicely. And to bring the whole thing a step further, we could deliver the testing report in a Slack channel once the tests are done, so we got an immediate feedback and we know if everything’s fine.</p>
-
 <p>In this particular case, going by the flavours approach, there would be 2 commands to run the UI and the unit tests, one for each respectively:</p>
-
 <p><code>./gradlew testProdDebug</code> to run the unit tests. We want to run the unit tests agains the production implementation, because that’s the one providing the relevant business logic.</p>
-
 <p><code>./gradlew connectedMockDebugAndroidTest</code> to run the UI tests. We want to run the UI tests agains the mock implementation, so it will use the test-doubles for fast response, and performing the UI tests reliably.</p>
-
 <p>Espresso is an amazing framework and it does an incredibly good job. In comparison to the old android instrumentation framework, it’s way more superior and lot more stable and reliable.</p>
-
-<h2 id="having-different-and-or-better-ideas">Having different and/or better ideas?</h2>
-
+<h2 id="having-different-andor-better-ideas">Having different and/or better ideas?</h2>
 <p>If you know a better or nicer or simpler way for doing this, please feel free to open a PR or just another branch, or at least an issue so we could discuss, share knowledge and learn from each other.</p>
 <ul class="pa0">
   
@@ -319,7 +287,7 @@ src/prod/java/nl/jovmit/login/RemoteLoginDataSource.kt</code></pre></div>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jovmit.io" >
-    &copy; 2019 Jovche Mitrejchevski
+    &copy; 2020 Jovche Mitrejchevski
   </a>
     <div>
 

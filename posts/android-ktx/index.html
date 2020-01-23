@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Android KTX</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.58.2" />
+    <meta name="generator" content="Hugo 0.62.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -30,25 +30,22 @@
     
 
     <meta property="og:title" content="Android KTX" />
-<meta property="og:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language." />
+<meta property="og:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&#39;s inside this library and how we can take advantage of it. This library&#39;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jovmit.io/posts/android-ktx/" />
 <meta property="article:published_time" content="2018-06-29T10:25:45+02:00" />
 <meta property="article:modified_time" content="2018-06-29T10:25:45+02:00" />
 <meta itemprop="name" content="Android KTX">
-<meta itemprop="description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.">
-
-
+<meta itemprop="description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&#39;s inside this library and how we can take advantage of it. This library&#39;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.">
 <meta itemprop="datePublished" content="2018-06-29T10:25:45&#43;02:00" />
 <meta itemprop="dateModified" content="2018-06-29T10:25:45&#43;02:00" />
-<meta itemprop="wordCount" content="2049">
+<meta itemprop="wordCount" content="2047">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android KTX"/>
-<meta name="twitter:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language."/>
+<meta name="twitter:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&#39;s inside this library and how we can take advantage of it. This library&#39;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language."/>
 
       
 <script type="application/javascript">
@@ -203,112 +200,69 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 10 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 2049 words</span>
+        <span class="f6 mv4 dib tracked"> - 2047 words</span>
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<h2 id="intro">Intro</h2>
-
-<p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.</p>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="intro">Intro</h2>
+<p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what's inside this library and how we can take advantage of it. This library's goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.</p>
 <h2 id="structure">Structure</h2>
-
-<p>A very important thing to note at the beginning is that <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> provides functionalities which would be added to many individual projects by the developers most of the time anyway. Arguably, there are also many things that will get included by adding the dependency, which are not going to be used. Thanks to the <a href="https://developer.android.com/studio/build/shrink-code">ProGuard</a>, all the unused code will get stripped out, so there should be no worry regarding the library footprint. Now, let&rsquo;s take a look at some of the very important and crucial concepts of the Kotlin language which are used for building the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>.</p>
-
+<p>A very important thing to note at the beginning is that <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> provides functionalities which would be added to many individual projects by the developers most of the time anyway. Arguably, there are also many things that will get included by adding the dependency, which are not going to be used. Thanks to the <a href="https://developer.android.com/studio/build/shrink-code">ProGuard</a>, all the unused code will get stripped out, so there should be no worry regarding the library footprint. Now, let's take a look at some of the very important and crucial concepts of the Kotlin language which are used for building the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>.</p>
 <h3 id="extension-functions">Extension functions</h3>
-
-<p>An extension function is one of the Kotlin&rsquo;s features that allows us to add a functionality to an existing class without modifying it directly. By adding extension functions to a class, they are represented as simple static methods on bytecode level. Then, we can call those functions on the objects of that class type, just as they were part of the class&rsquo;s API initially. Here is an example to give a little better insight into the way it&rsquo;s done. Say, we want to add an extension function to the <code>String</code> class to print itself. Here is how we can do it:</p>
-
+<p>An extension function is one of the Kotlin's features that allows us to add a functionality to an existing class without modifying it directly. By adding extension functions to a class, they are represented as simple static methods on bytecode level. Then, we can call those functions on the objects of that class type, just as they were part of the class's API initially. Here is an example to give a little better insight into the way it's done. Say, we want to add an extension function to the <code>String</code> class to print itself. Here is how we can do it:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.printSelf() {
     println(<span style="color:#66d9ef">this</span>)
 }</code></pre></div>
-
 <p>Inside the extension function, we can use <code>this</code> to refer to the current object on which the function is being executed. Then, this function becomes available to be called on any object of <code>String</code> type. So we can do:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">usage</span>() {
     <span style="color:#e6db74">&#34;Kotlin Rocks&#34;</span>.printSelf()
 }</code></pre></div></p>
-
 <h3 id="extension-properties">Extension properties</h3>
-
 <p>Similarly to extension function, Kotlin supports extension properties. Also, the way we define them is quite the same:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> String.isLongEnough: Boolean
     <span style="color:#66d9ef">get</span>() = <span style="color:#66d9ef">this</span>.length &gt; <span style="color:#ae81ff">5</span></code></pre></div>
-
 <p>Then, we can use this extension property on any object of <code>String</code> type:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#e6db74">&#34;Kotlin&#34;</span>.isLongEnough</code></pre></div>
-
-<p>The behavior of the extension property can only be defined by explicitly providing getter (plus setter for <code>var</code>s). Initializing those properties the ordinary way doesn&rsquo;t work. The reason behind this is that an extension property does not insert members into the type, so there is no efficient way for it to have a <a href="https://kotlinlang.org/docs/reference/properties.html#backing-fields">backing field</a>.</p>
-
+<p>The behavior of the extension property can only be defined by explicitly providing getter (plus setter for <code>var</code>s). Initializing those properties the ordinary way doesn't work. The reason behind this is that an extension property does not insert members into the type, so there is no efficient way for it to have a <a href="https://kotlinlang.org/docs/reference/properties.html#backing-fields">backing field</a>.</p>
 <h3 id="top-level-functions">Top level functions</h3>
-
 <p>In Kotlin, a function is a first-class citizen. We are allowed to define functions in Kotlin files (.kt) which could afterward be accessed and used from other Kotlin files. This is a very powerful concept. If we define a file inside a package <code>com.example</code> and define functions in it, they can be used simply by importing them into the usage side. Here is an example:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">package</span> com.example
 
 <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">sum</span>(x: Int, y: Int): Int = x + y</code></pre></div>
-
 <p>now this function can be accessed and used from any other Kotlin file by simply importing it like this:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">import</span> com.example.sum
 
 <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">test</span>() {
     println(sum(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>))
 }</code></pre></div>
-
-<p>An important note here is the access modifier. In the example above, the function <code>sum</code> does not have defined an access modifier, and in Kotlin it&rsquo;s <code>public</code> by default. Being public, it makes the <code>sum</code> function accessible from any other Kotlin file. Kotlin also has an <code>internal</code> access modifier keyword, which would make this function accessible only in the module where this file exists (a <a href="https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules">module</a> could contain many different packages). Ultimately, the function could also be <code>private</code> which will make it accessible only from inside the file where it is defined.</p>
-
+<p>An important note here is the access modifier. In the example above, the function <code>sum</code> does not have defined an access modifier, and in Kotlin it's <code>public</code> by default. Being public, it makes the <code>sum</code> function accessible from any other Kotlin file. Kotlin also has an <code>internal</code> access modifier keyword, which would make this function accessible only in the module where this file exists (a <a href="https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules">module</a> could contain many different packages). Ultimately, the function could also be <code>private</code> which will make it accessible only from inside the file where it is defined.</p>
 <h3 id="default-arguments">Default arguments</h3>
-
-<p>Most probably, you are familiar with the overloading concept like in Java already. Overloading is a concept that allows us to define constructors or methods with the same signature, only differing in their parameter list (both types and number of parameters could be different). In Kotlin, this concept is taken a step further, so we could achieve the same result by defining a single function, by specifying default values to some or all of the arguments. Eventually, it boils down to the approach used in Java again. Let&rsquo;s take a look at the following example:</p>
-
+<p>Most probably, you are familiar with the overloading concept like in Java already. Overloading is a concept that allows us to define constructors or methods with the same signature, only differing in their parameter list (both types and number of parameters could be different). In Kotlin, this concept is taken a step further, so we could achieve the same result by defining a single function, by specifying default values to some or all of the arguments. Eventually, it boils down to the approach used in Java again. Let's take a look at the following example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">greet</span>(firstName: String, lastName: String = <span style="color:#e6db74">&#34;&#34;</span>) {
     println(<span style="color:#e6db74">&#34;Hello $firstName $lastName&#34;</span>)
 }</code></pre></div>
-
 <p>In this example, the function takes two arguments, but the <code>lastName</code> is optional because by default its value is going to be an empty <code>String</code>. So, when calling this function we are only required to supply a <code>firstName</code>, and we can call it this way:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">greet(<span style="color:#e6db74">&#34;John&#34;</span>)</code></pre></div>
-
 <p>Kotlin also supports named arguments, so we could call a function supplying the arguments by their names:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">greet(<span style="color:#e6db74">&#34;John&#34;</span>, lastName = <span style="color:#e6db74">&#34;Doe&#34;</span>)</code></pre></div>
-
 <p>This is particularly useful when we have a function with multiple optional arguments and we want to call it with supplying only specific ones, or in a different order.</p>
-
 <h2 id="deep-dive">Deep Dive</h2>
-
-<p>Now, as we know what the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> library is based on, let&rsquo;s dig and observe some of the most common extension functions.</p>
-
+<p>Now, as we know what the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> library is based on, let's dig and observe some of the most common extension functions.</p>
 <h4 id="converting-url-to-uri">Converting URL to URI</h4>
-
 <p>To begin with, there is a very simple extension function on the <code>Uri</code> class. Many times in Android, we need to convert a <code>String</code> URL into a <code>Uri</code> object, for instance when creating an <code>Intent</code> with data etc. The way we are usually doing this is by calling <code>Uri.parse(&quot;string_url&quot;)</code>. <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> defines an extension function that does the job. Here is how it looks like:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.toUri(): Uri = Uri.parse(<span style="color:#66d9ef">this</span>)</code></pre></div>
-
 <p>so we can use it by calling <code>toUri()</code> on any string, like this:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#e6db74">&#34;any_sting_url&#34;</span>.toUri()</code></pre></div>
-
 <h4 id="editing-shared-preferences">Editing shared preferences</h4>
-
-<p>Next, let&rsquo;s take a look at an extension function defined on the <code>SharedPreferences</code> interface. The usual way of putting values into the <code>SharedPreferences</code> in Android is to call <code>edit()</code> in order to obtain the <code>SharedPreferences.Editor</code> instance. Then, we can insert the values by calling <code>editor.putType(&quot;key&quot;, typeValue)</code>. After that, it is very important to call <code>apply()</code> or <code>commit()</code> on the editor, in order for the values to be stored in the <code>SharedPreferences</code>. Many times we forget doing so, and we waste some time debugging until we notice what is happening. A usual example of storing values in the <code>SharedPreferences</code> looks like this:</p>
-
+<p>Next, let's take a look at an extension function defined on the <code>SharedPreferences</code> interface. The usual way of putting values into the <code>SharedPreferences</code> in Android is to call <code>edit()</code> in order to obtain the <code>SharedPreferences.Editor</code> instance. Then, we can insert the values by calling <code>editor.putType(&quot;key&quot;, typeValue)</code>. After that, it is very important to call <code>apply()</code> or <code>commit()</code> on the editor, in order for the values to be stored in the <code>SharedPreferences</code>. Many times we forget doing so, and we waste some time debugging until we notice what is happening. A usual example of storing values in the <code>SharedPreferences</code> looks like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> editor = sharedPreferences.edit()
 editor.putString(<span style="color:#e6db74">&#34;key&#34;</span>, value)
 editor.apply()</code></pre></div>
-
 <p>By using the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> extension on the <code>SharedPreferences</code> the code shortens and simplifies quite a lot, and it becomes:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">sharedPreferences.edit {
     putString(<span style="color:#e6db74">&#34;key&#34;</span>, value)
 }</code></pre></div>
-
 <p>The relevant extension function looks like this:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">SharedPreferences</span>.edit(
     commit: Boolean = <span style="color:#66d9ef">false</span>,
     action: SharedPreferences.Editor.() -&gt; Unit
@@ -321,69 +275,47 @@ editor.apply()</code></pre></div>
         editor.apply()
     }
 }</code></pre></div>
-
-<p>The first parameter to this function is a <code>Boolean</code> value that controls the call to the editor, whether it would use the <code>commit()</code> or the <code>apply()</code> call. Clearly, by default this value is set to <code>false</code> which means by default the function will call <code>apply()</code> on the editor. A more interesting parameter is the second one. It&rsquo;s a function literal with a receiver, and the receiver is of type <code>SharedPreferences.Editor</code>. It means that when calling this function, we can use lambda over the receiver, so we can directly call functions that are exposed by the receiver type without additional qualifiers. This is shown with the <code>putString</code> call.</p>
-
+<p>The first parameter to this function is a <code>Boolean</code> value that controls the call to the editor, whether it would use the <code>commit()</code> or the <code>apply()</code> call. Clearly, by default this value is set to <code>false</code> which means by default the function will call <code>apply()</code> on the editor. A more interesting parameter is the second one. It's a function literal with a receiver, and the receiver is of type <code>SharedPreferences.Editor</code>. It means that when calling this function, we can use lambda over the receiver, so we can directly call functions that are exposed by the receiver type without additional qualifiers. This is shown with the <code>putString</code> call.</p>
 <h4 id="operating-on-view-before-drawing">Operating on view before drawing</h4>
-
-<p>Most of the apps we are using every day are having some sort of lists where some images are being loaded. Often, those images are of a different size, and the image sizes are usually provided in the response. Since the images are normally loaded in the background, we want to allocate the space required for the image to be displayed, and once it&rsquo;s loaded we already have the space allocated, so we would avoid UI expanding when the image is being displayed, which prevents the UI flickering effect. This is usually done by using a <code>ViewTreeObserver</code> which provides an <code>OnPreDrawListener</code>. This listener has a callback that is being called before the view drawing. For our images example, usually we set the view sizes that are provided in the response inside this callback, and we apply some default background (for example gray). That is one of the many use cases of the <code>ViewTreeObserver</code> observer and its <code>OnPreDrawListener</code>. Here is a snippet that shows the way we normally approach it:</p>
-
+<p>Most of the apps we are using every day are having some sort of lists where some images are being loaded. Often, those images are of a different size, and the image sizes are usually provided in the response. Since the images are normally loaded in the background, we want to allocate the space required for the image to be displayed, and once it's loaded we already have the space allocated, so we would avoid UI expanding when the image is being displayed, which prevents the UI flickering effect. This is usually done by using a <code>ViewTreeObserver</code> which provides an <code>OnPreDrawListener</code>. This listener has a callback that is being called before the view drawing. For our images example, usually we set the view sizes that are provided in the response inside this callback, and we apply some default background (for example gray). That is one of the many use cases of the <code>ViewTreeObserver</code> observer and its <code>OnPreDrawListener</code>. Here is a snippet that shows the way we normally approach it:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">view.viewTreeObserver.addOnPreDrawListener(
-    <span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">ViewTreeObserver</span>.OnPreDrawListener {
+    <span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">ViewTreeObserver</span>.OnPreDrawListener {
         <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onPreDraw</span>(): Boolean {
             viewTreeObserver.removeOnPreDrawListener(<span style="color:#66d9ef">this</span>)
             performSomethingOverTheView()
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
         }
     })</code></pre></div>
-
 <p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> has defined an extension function on the <code>View</code> type named <code>doOnPreDraw()</code> that simplifies the above snippet, so it would become:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">view.doOnPreDraw {
      performSomethingOverTheView()
 }</code></pre></div>
-
 <p>There are also some other nice extensions defined on the <code>View</code> type which are working with the view visibility, updating view padding or layout params etc.</p>
-
 <h4 id="working-with-bundle">Working with bundle</h4>
-
 <p>Bundles are a very common thing in Android, but working with bundles is often quite a boilerplate. The way we normally compose a bundle looks like this:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> bundle = Bundle()
 bundle.putString(<span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#e6db74">&#34;value&#34;</span>)
 bundle.putString(<span style="color:#e6db74">&#34;keyBoolean&#34;</span>, <span style="color:#66d9ef">true</span>)
 bundle.putString(<span style="color:#e6db74">&#34;keyInt&#34;</span>, <span style="color:#ae81ff">1</span>)</code></pre></div></p>
-
 <p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> defines a top-level function named <code>bundleOf()</code>, and by using it, composing bundle becomes a lot nicer:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> bundle = bundleOf(<span style="color:#e6db74">&#34;key&#34;</span> to <span style="color:#e6db74">&#34;value&#34;</span>, <span style="color:#e6db74">&#34;keyBoolean&#34;</span> to <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#34;keyInt&#34;</span> to <span style="color:#ae81ff">1</span>)</code></pre></div>
-
-<p>There is also a <code>persistableBundleOf()</code> function for creating a <code>PersistableBundle</code> but it&rsquo;s available for API version 21 and up. Similarly, there is a <code>contentValuesOf()</code> function that could be used in the same way as the functions for creating bundle above, and it returns a <code>ContentValues</code> object.</p>
-
+<p>There is also a <code>persistableBundleOf()</code> function for creating a <code>PersistableBundle</code> but it's available for API version 21 and up. Similarly, there is a <code>contentValuesOf()</code> function that could be used in the same way as the functions for creating bundle above, and it returns a <code>ContentValues</code> object.</p>
 <h4 id="iteration-over-view-group">Iteration over view group</h4>
-
 <p>Working with <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> in Android is quite a common thing.  The <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> is a kind of container that could contain other views called children. Many times we need to loop through its children, but the traditional way to do so could be quite a mess. <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> has defined an extension property that exposes its children, and here is how it looks like:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> ViewGroup.children: Sequence&lt;View&gt;
-    <span style="color:#66d9ef">get</span>() = <span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">Sequence</span>&lt;View&gt; {
+    <span style="color:#66d9ef">get</span>() = <span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Sequence</span>&lt;View&gt; {
         <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">iterator</span>() = <span style="color:#66d9ef">this</span>@children.iterator()
     }</code></pre></div>
-
 <p>As we can see, the children property is returning a sequence of child views, and it allows us to write very concise loops over any <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> type:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">viewGroup.children.forEach {
     doSomething(it)
 }</code></pre></div>
-
 <h4 id="displaying-toast">Displaying toast</h4>
-
 <p>One of the most common ways of displaying some sort of short info to the user is a <code>Toast</code>. When displaying a toast by using the standard API, we have to pass the <code>Context</code>, the actual message that we want to be displayed, whether it is a <code>String</code> or a resource reference to load value from the <code>strings.xml</code>, and the toast duration. Since we cannot display a toast without having a <code>Context</code>, and since most of the time the toast duration is its <code>Toast.LENGTH_SHORT</code> constant, it would be great to have an option to display a toast by simply calling a function and passing the actual message argument. A common way to achieve this is by defining some sort of base class that defines such method, and then it would be called from the subclasses. However, <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> defines an extension functions to the <code>Context</code> type for displaying toasts. It takes 2 arguments, the message and the duration, while the duration is being set to <code>Toast.LENGTH_SHORT</code> by default. So we can call to display toast wherever we have a <code>Context</code> by simply passing the message argument, whether it is a <code>String</code> type or a reference to the string resources:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">toast(<span style="color:#e6db74">&#34;Hello&#34;</span>)
 toast(R.string.hello)</code></pre></div>
-
 <h2 id="wrap-up">Wrap Up</h2>
-
-<p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> is a very nice part of the <a href="https://developer.android.com/jetpack/">Android JetPack</a> project, and as we&rsquo;ve seen it contains quite some nice ways to improve the Android development we are used to. As told before, it doesn&rsquo;t provide any new functionalities, but rather simplifies the APIs which are already provided by the Android SDK. <a href="https://www.youtube.com/watch?v=st1XVfkDWqk">Here</a> is a nice talk from the <a href="https://events.google.com/io/recap/">Google I/O 2018</a> by <a href="https://jakewharton.com/">Jake Wharton</a>, where he elaborates more on the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>. This article only scratches the surface, and there are many more fun things to be revealed inside the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>, related to <code>animation</code>, <code>database</code>, <code>location</code>, <code>graphics</code>, <code>text</code> and so on. Also, the team is welcoming new contributions, which is great, so if you have an idea that is not there yet, feel free to submit it.</p>
+<p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> is a very nice part of the <a href="https://developer.android.com/jetpack/">Android JetPack</a> project, and as we've seen it contains quite some nice ways to improve the Android development we are used to. As told before, it doesn't provide any new functionalities, but rather simplifies the APIs which are already provided by the Android SDK. <a href="https://www.youtube.com/watch?v=st1XVfkDWqk">Here</a> is a nice talk from the <a href="https://events.google.com/io/recap/">Google I/O 2018</a> by <a href="https://jakewharton.com/">Jake Wharton</a>, where he elaborates more on the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>. This article only scratches the surface, and there are many more fun things to be revealed inside the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>, related to <code>animation</code>, <code>database</code>, <code>location</code>, <code>graphics</code>, <code>text</code> and so on. Also, the team is welcoming new contributions, which is great, so if you have an idea that is not there yet, feel free to submit it.</p>
 <ul class="pa0">
   
 </ul>
@@ -427,7 +359,7 @@ toast(R.string.hello)</code></pre></div>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jovmit.io" >
-    &copy; 2019 Jovche Mitrejchevski
+    &copy; 2020 Jovche Mitrejchevski
   </a>
     <div>
 

@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Android Studio/IntelliJ Idea side by side working setup</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.58.2" />
+    <meta name="generator" content="Hugo 0.62.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -30,7 +30,7 @@
     
 
     <meta property="og:title" content="Android Studio/IntelliJ Idea side by side working setup" />
-<meta property="og:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+<meta property="og:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&#39;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
 The side-by-side setup (vertical editor splitting) Side by side editor
  We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad." />
 <meta property="og:type" content="article" />
@@ -38,21 +38,18 @@ The side-by-side setup (vertical editor splitting) Side by side editor
 <meta property="article:published_time" content="2019-10-11T11:00:00+02:00" />
 <meta property="article:modified_time" content="2019-10-11T11:00:00+02:00" />
 <meta itemprop="name" content="Android Studio/IntelliJ Idea side by side working setup">
-<meta itemprop="description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+<meta itemprop="description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&#39;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
 The side-by-side setup (vertical editor splitting) Side by side editor
  We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad.">
-
-
 <meta itemprop="datePublished" content="2019-10-11T11:00:00&#43;02:00" />
 <meta itemprop="dateModified" content="2019-10-11T11:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="896">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android Studio/IntelliJ Idea side by side working setup"/>
-<meta name="twitter:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
+<meta name="twitter:description" content="The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&#39;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
 The side-by-side setup (vertical editor splitting) Side by side editor
  We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad."/>
 
@@ -205,123 +202,89 @@ if (!doNotTrack) {
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<p>The <a href="https://www.youtube.com/user/mitrejcevski/videos">way I prefer to work</a> when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.</p>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The <a href="https://www.youtube.com/user/mitrejcevski/videos">way I prefer to work</a> when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I'd like to describe the setup and the shortcuts I use, so someone might find it useful as well.</p>
 <h2 id="the-side-by-side-setup-vertical-editor-splitting">The side-by-side setup (vertical editor splitting)</h2>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/overview.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Side by side editor</p>
 </div>
 
-
 <p>We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad. Keeping our hands on the keyboard leads to less destruction and better focus.</p>
-
 <h2 id="keyboard-shortcuts-setup">Keyboard shortcuts setup</h2>
-
 <p>In this article, I iterate over a bunch of keyboard shortcuts using the Mac keyboard. If you happen to have a different keyboard layout, you will have to use the <kbd>Ctrl</kbd>
  button instead of the <kbd>⌘</kbd>
  button, and the <kbd>Alt</kbd>
  button instead of the <kbd>⌥</kbd>
  button.</p>
-
 <p>To begin with, we need to set up a few shortcuts. Open the IDE preferences by pressing <kbd>⌘,</kbd>
   <em>(Cmd+Comma)</em> and then select the <code>Keymap</code> section in the menu on the left side.</p>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/preferences.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Editor Preferences</p>
 </div>
 
-
 <h3 id="move-right-split-vertically">Move Right (Split Vertically)</h3>
-
 <p>In the search box type <strong>move right</strong>. Depending on the IDE version it might show multiple results. The one we need is <em>Main menu -&gt; Window -&gt; Editor Tabs -&gt; Move Right</em>. Double click on it and apply the preferred shortcut. In my case I use <kbd>⌥⇧.</kbd>
  <em>(Option + Shift + Dot)</em>.</p>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/move_right.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Move right shortcut</p>
 </div>
 
-
 <p>We will use this shortcut to move the currently editing file in the editor to the right side. It will effectively split the editor vertically.</p>
-
 <h3 id="move-to-the-opposite-group">Move to the opposite group</h3>
-
 <p>Next, we need to set up a shortcut for moving the currently editing file from one to another side. In the search box type <strong>move to opposite group</strong>. The item we need this time is placed under <em>Other -&gt; Tabs -&gt; Move To Opposite Group</em>. Double click on it and apply your desired shortcut. In my case I use <kbd>⌥.</kbd>
  <em>(Option + Dot)</em>.</p>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/move_opposite_group.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Move to opposite group shortcut</p>
 </div>
 
-
 <p>We will use this shortcut to move the currently editing file from one group (side) to the other one.</p>
-
 <h3 id="usage">Usage</h3>
-
-<p>Next, let&rsquo;s see how can we use the shortcuts we&rsquo;ve just set up. For the sake of this article, we will create a test class and an implementation class that will be used by the class under test. First, we create the test class:</p>
-
+<p>Next, let's see how can we use the shortcuts we've just set up. For the sake of this article, we will create a test class and an implementation class that will be used by the class under test. First, we create the test class:</p>
 <div class="centeredDiv">
   <img src="/images/split_setup/component_test.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Component test</p>
 </div>
 
-
 <p>At this point, we have only that single file opened in the editor. <em>We cannot split the screen now because we have only a single file opened. Split-screen makes sense when there are two or more files that we have to work with at the same time</em>.</p>
-
-<p>Let&rsquo;s go ahead and create an implementation class that will be used by the class under test:</p>
-
+<p>Let's go ahead and create an implementation class that will be used by the class under test:</p>
 <div class="centeredDiv">
   <img src="/images/split_setup/component_test_full.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Both files opened</p>
 </div>
 
-
-<p>At this moment we have both files opened in the editor, but to work with them, we have to jump from one file into another which is not very handy. That&rsquo;s where the split-screen comes into power. By using the shortcut we assigned for the <strong>move right</strong> action we can split the screen vertically. The currently editing file will get to the right side:</p>
-
+<p>At this moment we have both files opened in the editor, but to work with them, we have to jump from one file into another which is not very handy. That's where the split-screen comes into power. By using the shortcut we assigned for the <strong>move right</strong> action we can split the screen vertically. The currently editing file will get to the right side:</p>
 <div class="centeredDiv">
   <img src="/images/split_setup/overview.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Side by side editor</p>
 </div>
 
-
-<p>Now, it&rsquo;s way easier to work with these two files having them side by side. But how do we get from the one side to the other one? - There is an already set keyboard shortcut for that by default: <kbd>⌥⇥</kbd>
+<p>Now, it's way easier to work with these two files having them side by side. But how do we get from the one side to the other one? - There is an already set keyboard shortcut for that by default: <kbd>⌥⇥</kbd>
  <em>(Option + Tab)</em>. Just in case the shortcut is not set, or you prefer different shortcut for this action, you can find it under <em>Main menu -&gt; Window -&gt; Editor Tabs -&gt; Goto Next Splitter</em></p>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/next_splitter.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Goto Next Splitter</p>
 </div>
 
-
 <p>One more nice shortcut that I personally use quite a lot and I believe is super handy to navigate towards declaration is <kbd>⌘b</kbd>
  <em>(Cmd + b)</em>. For example, in the test class on the left side we have a function call on the <code>Component</code> type:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">Component().doSomething()</code></pre></div>
-
 <p>By moving the cursor anywhere in the <code>doSomething()</code> text and hitting the <kbd>⌘b</kbd>
  shortcut we will move the cursor to the declaration of that function, which in this case is on the right side of the editor. You can use this shortcut to go to the declaration of pretty much everything in the IDE.</p>
-
 <p>Very often we need to navigate between the currently opened files (left and right). The shortcuts already set by the IDE are: <kbd>⌘⇧]</kbd>
  to navigate one file to the right, and <kbd>⌘⇧[</kbd>
  to navigate one file to the left. By navigating right from the most right it gets to the very left, and same for the other direction. In case we are in a split mode, the navigation works only in the currently selected group. In case you want to change the default shortcuts for this actions, you can find them under <em>Main menu -&gt; Window -&gt; Editor Tabs</em> as <em>Select Next Tab</em> and <em>Select Previous Tab</em></p>
-
 <div class="centeredDiv">
   <img src="/images/split_setup/navigate_tabs.png" class="imageRoundedCorners" alt="">
   <p class="imageCaption">Navigation between opened files</p>
 </div>
 
-
 <p>Once we are done editing a file, we can use the <kbd>⌘w</kbd>
  <em>(Cmd+w)</em> shortcut which will close the file we are editing currently.</p>
-
 <p>I find this setup very useful, and it works very well for me. I hope you try it out and see how would it work for you! Please feel free to reach out and let me know about your experience <a href="https://twitter.com/jovchem">on Twitter</a> or in the comments below. Make sure you <a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
- so you won&rsquo;t miss new content.</p>
+ so you won't miss new content.</p>
 <ul class="pa0">
   
 </ul>
@@ -365,7 +328,7 @@ if (!doNotTrack) {
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jovmit.io" >
-    &copy; 2019 Jovche Mitrejchevski
+    &copy; 2020 Jovche Mitrejchevski
   </a>
     <div>
 
