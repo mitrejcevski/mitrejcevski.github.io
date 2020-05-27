@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Android Navigation arch component — A curious investigation</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.71.0" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -327,7 +327,7 @@ As mentioned before, the call to <code>setupActionBarWithNavController</code> is
 <h2 id="safe-args">Safe Args</h2>
 <p>The last thing I’d like to mention is the safe args plugin which is part of this library. In order to make use of it, we have to define a dependency in the main build file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">classpath <span style="color:#e6db74">&#39;android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha01&#39;</span></code></pre></div>
-<p>followed by defining a plugin in the module's <code>build.gradle</code> file in the <code>plugins</code> section.</p>
+<p>followed by defining a plugin in the module&rsquo;s <code>build.gradle</code> file in the <code>plugins</code> section.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">apply plugin:<span style="color:#e6db74">&#39;androidx.navigation.safeargs&#39;</span></code></pre></div>
 <p>This plugin is essentially generating code based on the arguments we have defined in the actions in our XML. It generates a class named <strong>[Destination Fragment Name]Args</strong>. This generated class can be used to simplify the work with the arguments. In our <code>notificationDetails</code> action in the navigation graph, we have defined an argument attribute like this:</p>
 <script type="application/javascript" src="https://gist.github.com/mitrejcevski/3220db77b2bfd3a83b8c2bbd2b1b74f9.js"></script>

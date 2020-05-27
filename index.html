@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.71.0" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -36,7 +36,7 @@
 <meta property="og:description" content="Welcome to Android Academy" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jovmit.io/" />
-<meta property="og:updated_time" content="2020-01-23T10:00:00+02:00" />
+<meta property="og:updated_time" content="2020-05-25T08:46:04+02:00" />
 <meta itemprop="name" content="Jovche Mitrejchevski">
 <meta itemprop="description" content="Welcome to Android Academy"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jovche Mitrejchevski"/>
@@ -213,6 +213,39 @@ if (!doNotTrack) {
           
         
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+          <a href="/posts/simple-design/" class="db grow">
+            <img src="https://jovmit.io/images/simple_design/simple-design.jpg" class="img" alt="image from Improving Design - Separating responsibilities">
+          </a>
+        </div>
+      
+      <div class="blah w-100 w-60-ns pl3-ns">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/simple-design/" class="color-inherit dim link">
+            Improving Design - Separating responsibilities
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Let&rsquo;s take a look at the following piece of code:
+fun search(query: String): List&lt;String&gt; { val allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&lt;String&gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems.
+        </div>
+          <a href="/posts/simple-design/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+          
+        
+        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="/posts/deal-with-legacy-code/" class="db grow">
             <img src="https://jovmit.io/images/refactoring/craftsman.jpg" class="img" alt="image from Refactoring Legacy Code">
           </a>
@@ -258,7 +291,7 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Problem definition Recently I've come to a problem running my UI tests because of a DefinitionOverrideException. That's an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:
+          Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:
         </div>
           <a href="/posts/koin-setup-android/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -290,7 +323,7 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          A quick overview in our industry I'm in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it's been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
+          A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
         </div>
           <a href="/posts/outside-in-tdd-on-android/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -322,41 +355,9 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what's inside this library and how we can take advantage of it. This library's goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.
+          Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.
         </div>
           <a href="/posts/android-ktx/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/android-arch-navigation/" class="db grow">
-            <img src="https://jovmit.io/images/arch_navigation/navigation.jpeg" class="img" alt="image from Android Navigation arch component — A curious investigation">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/android-arch-navigation/" class="color-inherit dim link">
-            Android Navigation arch component — A curious investigation
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.
-        </div>
-          <a href="/posts/android-arch-navigation/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -371,6 +372,12 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/android-arch-navigation/" class="link black dim">
+              Android Navigation arch component — A curious investigation
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/android-testing-ui/" class="link black dim">

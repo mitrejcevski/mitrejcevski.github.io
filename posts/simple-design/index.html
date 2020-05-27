@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski  | Blog Posts</title>
+    <title>Jovche Mitrejchevski  | Improving Design - Separating responsibilities</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.71.0" />
     
@@ -28,19 +28,27 @@
     
 
     
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/posts/index.xml%20https://jovmit.io/posts/index.xml%7d" rel="alternate" type="application/rss+xml" title="Jovche Mitrejchevski" />
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/posts/index.xml%20https://jovmit.io/posts/index.xml%7d" rel="feed" type="application/rss+xml" title="Jovche Mitrejchevski" />
-    
 
-    <meta property="og:title" content="Blog Posts" />
-<meta property="og:description" content="Welcome to Android Academy" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jovmit.io/posts/" />
-<meta property="og:updated_time" content="2020-05-25T08:46:04+02:00" />
-<meta itemprop="name" content="Blog Posts">
-<meta itemprop="description" content="Welcome to Android Academy"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blog Posts"/>
-<meta name="twitter:description" content="Welcome to Android Academy"/>
+    <meta property="og:title" content="Improving Design - Separating responsibilities" />
+<meta property="og:description" content="Let&rsquo;s take a look at the following piece of code:
+fun search(query: String): List&lt;String&gt; { val allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&lt;String&gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jovmit.io/posts/simple-design/" />
+<meta property="article:published_time" content="2020-05-25T08:46:04+02:00" />
+<meta property="article:modified_time" content="2020-05-25T08:46:04+02:00" />
+<meta itemprop="name" content="Improving Design - Separating responsibilities">
+<meta itemprop="description" content="Let&rsquo;s take a look at the following piece of code:
+fun search(query: String): List&lt;String&gt; { val allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&lt;String&gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems.">
+<meta itemprop="datePublished" content="2020-05-25T08:46:04&#43;02:00" />
+<meta itemprop="dateModified" content="2020-05-25T08:46:04&#43;02:00" />
+<meta itemprop="wordCount" content="1316">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Improving Design - Separating responsibilities"/>
+<meta name="twitter:description" content="Let&rsquo;s take a look at the following piece of code:
+fun search(query: String): List&lt;String&gt; { val allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&lt;String&gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems."/>
 
       
 <script type="application/javascript">
@@ -60,11 +68,13 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/theme/side_background.jpg');">
-    <div class="bg-black-60">
+  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/simple_design/simple-design.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://jovmit.io" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -166,163 +176,249 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Blog Posts
-        </h1>
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Improving Design - Separating responsibilities</h1>
+          
         
       </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOG POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Improving Design - Separating responsibilities</h1>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/simple-design/" class="link black dim">
-        Improving Design - Separating responsibilities
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Let&rsquo;s take a look at the following piece of code:
-fun search(query: String): List&lt;String&gt; { val allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&lt;String&gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems.
-    </div>
-  </div>
-</div>
-</div>
+      <time class="f6 mv4 dib tracked" datetime="2020-05-25T08:46:04&#43;02:00">May 25, 2020</time>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/deal-with-legacy-code/" class="link black dim">
-        Refactoring Legacy Code
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.
-    </div>
-  </div>
-</div>
-</div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/koin-setup-android/" class="link black dim">
-        Setting up Koin for Android UI testing
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:
-    </div>
-  </div>
-</div>
-</div>
+        <span class="f6 mv4 dib tracked"> - 7 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1316 words</span>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/outside-in-tdd-on-android/" class="link black dim">
-        Outside-In TDD on Android
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
-    </div>
-  </div>
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Let&rsquo;s take a look at the following piece of code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">search</span>(query: String): List&lt;String&gt; {
+    <span style="color:#66d9ef">val</span> allItems: List&lt;String&gt; = ExternalSystem.fetchAllItems()
+    <span style="color:#66d9ef">val</span> filtered = allItems.filter { it.contains(query) }
+    <span style="color:#66d9ef">val</span> reordered = filtered.sortedWith(<span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">Comparator</span>&lt;String&gt; {
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">compare</span>(lhs: String, rhs: String): Int {
+            <span style="color:#66d9ef">if</span> (lhs == query) {
+                <span style="color:#66d9ef">return</span> -<span style="color:#ae81ff">1</span>
+            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rhs == query) {
+                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+            }
+            <span style="color:#66d9ef">return</span> lhs.compareTo(rhs)
+        }
+    })
+    <span style="color:#66d9ef">return</span> reordered
+}</code></pre></div>
+<p>From a behavioral point of view, this code has no problems. Assuming it is correct, it will do its job, and everything seems OK.
+However, from a design point of view, this code has a bunch of problems. Let&rsquo;s pass through them and see how we can tackle them down, ultimately improving the design.</p>
+<h4 id="fetching">Fetching</h4>
+<p>The first line is fetching items from an external system. Additionally, the call to the external system is static, which makes this code hard or maybe impossible to test. We&rsquo;ll look into the testability problem later in the article.</p>
+<h4 id="filtering">Filtering</h4>
+<p>In the following line, the results are being filtered out, keeping only the items where the <code>query</code> argument is fully contained.</p>
+<h4 id="ordering">Ordering</h4>
+<p>Finally, the results are being reordered alphabetically, moving the more exact results at the beginning of the list.</p>
+<p>This function does at least three things: <strong>fetching</strong>, <strong>filtering</strong>, and <strong>ordering</strong>. Arguably, it touches different <em>levels of abstraction</em>. In particular, it delegates the <strong>fetching</strong> operation; it leverages the <code>filter</code> function from the SDK for the <strong>filtering</strong> operation, and it uses a custom <code>comparator</code> that does low-level operations inside for the <strong>ordering</strong>.</p>
+<p>The first step towards improving this code&rsquo;s design is to split the different operations into different functions. Bear in mind that we always want to keep our steps small. We might end up with something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">search</span>(query: String): List&lt;String&gt; {
+    <span style="color:#66d9ef">val</span> allItems: List&lt;String&gt; = fetchAllItems()
+    <span style="color:#66d9ef">val</span> filtered = filterItems(allItems, query)
+    <span style="color:#66d9ef">val</span> reordered = reorderItems(filtered, query)
+    <span style="color:#66d9ef">return</span> reordered
+}
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">fetchAllItems</span>(): List&lt;String&gt; {
+    <span style="color:#66d9ef">return</span> ExternalSystem.fetchAllItems()
+}
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">filterItems</span>(
+        items: List&lt;String&gt;,
+        query: String
+): List&lt;String&gt; {
+    <span style="color:#66d9ef">return</span> items.filter { it.contains(query) }
+}
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">reorderItems</span>(
+        items: List&lt;String&gt;,
+        query: String
+): List&lt;String&gt; {
+    <span style="color:#66d9ef">return</span> items.sortedWith(<span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">Comparator</span>&lt;String&gt; {
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">compare</span>(lhs: String, rhs: String): Int {
+            <span style="color:#66d9ef">if</span> (lhs == query) {
+                <span style="color:#66d9ef">return</span> -<span style="color:#ae81ff">1</span>
+            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rhs == query) {
+                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+            }
+            <span style="color:#66d9ef">return</span> lhs.compareTo(rhs)
+        }
+    })
+}</code></pre></div>
+<p>Now the operations are done by different functions. The <code>search</code> function became the so-called <a href="https://scrutinizer-ci.com/docs/refactorings/compose-method"><strong>compose method</strong></a>, which only delegates the appropriate calls and eventually returns the result. Additionally, it operates at the same <em>level of abstraction</em>.
+Sill, the class that holds these methods has at least three reasons to change. That violates the <strong>Single Responsibility Principle</strong>.</p>
+<p>One reason to make a change in the class would be updating the call to the external system. Altering the search algorithm will add up another reason for changing the class. The third reason to make a change in the class would be changing the ordering algorithm. Let&rsquo;s fix that!</p>
+<p>We can start by moving each different responsibility into a standalone component, and then inject those components as collaborators to this class. We may end up with something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Searcher</span>(
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> inventory: RemoteInventory,
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> filter: ContainsFilter,
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> order: KeywordMatchingOrder
+) {
+
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">search</span>(query: String): List&lt;String&gt; {
+        <span style="color:#66d9ef">val</span> allItems: List&lt;String&gt; = inventory.fetchAllItems()
+        <span style="color:#66d9ef">val</span> filtered = filter.filterItems(allItems, query)
+        <span style="color:#66d9ef">val</span> reordered = order.reorderItems(filtered, query)
+        <span style="color:#66d9ef">return</span> reordered
+    }
+}</code></pre></div>
+<p>We see an improvement, but we are not done yet. Now the class <code>Searcher</code> is injecting its collaborators through the constructor, and at this stage, they are concrete types. Even their names are referring to concrete implementations. Therefore, replacing an implementation will imply a change in this class again. It would be way better to depend on abstractions instead.</p>
+<p>To do so, first, we will extract an interface from each concrete implementation:</p>
+<h2 id="hahahugoshortcode-s3-hbhb"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Inventory</span> {
+
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">fetchAllItems</span>(): List&lt;String&gt;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RemoteInventory</span> : Inventory {
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">fetchAllItems</span>(): List&lt;String&gt; {
+        <span style="color:#66d9ef">return</span> ExternalSystem.fetchAllItems()
+    }
+}</code></pre></div></h2>
+<h2 id="hahahugoshortcode-s4-hbhb"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Filter</span> {
+
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">filterItems</span>(
+            items: List&lt;String&gt;,
+            query: String
+    ): List&lt;String&gt;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContainsFilter</span> : Filter {
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">filterItems</span>(
+            items: List&lt;String&gt;,
+            query: String
+    ): List&lt;String&gt; {
+        <span style="color:#66d9ef">return</span> items.filter { it.contains(query) }
+    }
+}</code></pre></div></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Order</span> {
+
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">reorderItems</span>(
+            items: List&lt;String&gt;,
+            keyword: String
+    ): List&lt;String&gt;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeywordMatchingOrder</span> : Order {
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">reorderItems</span>(
+            items: List&lt;String&gt;,
+            keyword: String
+    ): List&lt;String&gt; {
+        <span style="color:#66d9ef">return</span> items.sortedWith(<span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">Comparator</span>&lt;String&gt; {
+            <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">compare</span>(lhs: String, rhs: String): Int {
+                <span style="color:#66d9ef">if</span> (lhs == keyword) {
+                    <span style="color:#66d9ef">return</span> -<span style="color:#ae81ff">1</span>
+                } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (rhs == keyword) {
+                    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+                }
+                <span style="color:#66d9ef">return</span> lhs.compareTo(rhs)
+            }
+        })
+    }
+}</code></pre></div>
+<p>And then, we will replace the injected types in the class:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Searcher</span>(
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> inventory: Inventory,
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> filter: Filter,
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> order: Order
+) {
+
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">search</span>(query: String): List&lt;String&gt; {
+        <span style="color:#66d9ef">val</span> allItems: List&lt;String&gt; = inventory.fetchAllItems()
+        <span style="color:#66d9ef">val</span> filtered = filter.filterItems(allItems, query)
+        <span style="color:#66d9ef">val</span> reordered = order.reorderItems(filtered, query)
+        <span style="color:#66d9ef">return</span> reordered
+    }
+}</code></pre></div>
+<p>Essentially, we have applied the <strong>Open-Closed Principle</strong> to the collaborators, and the <strong>Dependency Inversion Principle</strong> to the actual class.</p>
+<p>At this stage, we ended up in a way better place. The collaborators are open for extension but closed for modification. The <code>Searcher</code> class is depending on abstractions instead of concrete types. Now, if we want to change the items loading, we can write a new implementation of the <code>Inventory</code> interface and provide that one when constructing the <code>Searcher</code> class. What if we need a filter that checks the exact matches of the keyword? - We will write a new implementation of the <code>Filter</code> type, and provide it in the constructor of the <code>Searcher.</code> The same applies if we want to change the ordering.</p>
+<p>So, we can provide different implementations to the <code>Searcher</code> as long as they agree on the contract, and the <code>Searcher</code> doesn&rsquo;t care about the concrete implementations, aka <em>implementation details</em>.</p>
+<h4 id="testing">Testing</h4>
+<p>Early on, we stated that the static call to the external system (in the first version of the code) makes it hard or maybe impossible to test. What are the problems with this call?</p>
+<ul>
+<li>If the external call is fetching the results over the network, the test will depend on an active connection and the server that provides the results being up and running. Missing any of the conditions will make the test fail, so the test doesn&rsquo;t work 100% of the time. We end up with a <em>flaky</em> test.</li>
+<li>If the external call is making calls to a database, despite the dependency on the database itself, it may corrupt the data in the database, causing lots of damage.</li>
+<li>In both cases, the test might end up running slow.</li>
+</ul>
+<p>All we need from the actual test for the <code>Searcher</code> is to verify its behavior, and to achieve it - we need data. We don&rsquo;t need to make calls to any external systems. We can set up the required data in memory and use it in the test. Given the <code>Inventory</code> abstraction that we came up with, setting up an in-memory implementation for the testing purposes is pretty straightforward.</p>
+<h4 id="screecast">Screecast</h4>
+<p>Here is a demonstration videos where we can see the step-by-step refactoring to apply the improvements to the initial code. The first part works on preparation for the refactoring:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/_pTEx9DToGo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
+<p>and in the second part we can see the actual refactoring and improving the design:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/JM8PEgeBQ04" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
+<h4 id="wrap-up">Wrap up</h4>
+<p>The key for keeping the design simple is always in small things. It does take a little more time to keep it nice, but that&rsquo;s a really valuable long-term investment. It&rsquo;s almost like cutting a loan: we pay it monthly - we won&rsquo;t notice it. We stop paying for a while - we end up in a though situation. We need to be persistent in paying attention to small things and doing them right. There are situations when it feels like we can skip over a problem because it&rsquo;s easy to come back and change when needed, but usually that doesn&rsquo;t happen, so those small places pile up overtime into a bigger mess way more expensive to fix.</p>
+<a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-ktx/" class="link black dim">
-        Android KTX
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.
-    </div>
-  </div>
-</div>
-</div>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-arch-navigation/" class="link black dim">
-        Android Navigation arch component — A curious investigation
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.
-    </div>
-  </div>
-</div>
-</div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-testing-ui/" class="link black dim">
-        Testing Android UI with pleasure
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Intro Although it should be very clear by now, testing is a very important part of the software development. Tests are, in a way, a construction around the software, which provides confidence for altering its structure (mostly to improve it) while being sure the behaviour stays the same.
-This article is focused mainly on the UI tests in an Android application. Traditionally, testing the UI was done by running a mocked backend on the same machine where the device/emulator is exercising the UI tests.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-offline-support-room/" class="link black dim">
-        Add offline support using Room
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer. This article is focused on the Room part of the architecture components, used for data persistence in order to enable the offline support of an app.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-notifications/" class="link black dim">
-        Android notifications — An elegant way to build and display
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.
-    </div>
-  </div>
-</div>
-</div>
-      
+      </div>
     </section>
 
-</article>
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
