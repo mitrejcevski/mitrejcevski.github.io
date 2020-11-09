@@ -6,9 +6,105 @@
     <description>Recent content in Tags on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 25 May 2020 08:46:04 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Refactoring</title>
+      <link>https://jovmit.io/tags/refactoring/</link>
+      <pubDate>Mon, 25 May 2020 08:46:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/refactoring/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://jovmit.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TDD</title>
+      <link>https://jovmit.io/tags/tdd/</link>
+      <pubDate>Mon, 25 May 2020 08:46:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/tdd/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>Android</title>
+      <link>https://jovmit.io/tags/android/</link>
+      <pubDate>Sat, 14 Dec 2019 09:11:33 +0100</pubDate>
+      
+      <guid>https://jovmit.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DI</title>
+      <link>https://jovmit.io/tags/di/</link>
+      <pubDate>Sat, 14 Dec 2019 09:11:33 +0100</pubDate>
+      
+      <guid>https://jovmit.io/tags/di/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://jovmit.io/tags/testing/</link>
+      <pubDate>Sat, 14 Dec 2019 09:11:33 +0100</pubDate>
+      
+      <guid>https://jovmit.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outside-In</title>
+      <link>https://jovmit.io/tags/outside-in/</link>
+      <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/outside-in/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sequence Diagram</title>
+      <link>https://jovmit.io/tags/sequence-diagram/</link>
+      <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/sequence-diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jetpack</title>
+      <link>https://jovmit.io/tags/jetpack/</link>
+      <pubDate>Wed, 23 May 2018 07:19:26 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/jetpack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Navigation</title>
+      <link>https://jovmit.io/tags/navigation/</link>
+      <pubDate>Wed, 23 May 2018 07:19:26 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/navigation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://jovmit.io/tags/database/</link>
+      <pubDate>Thu, 23 Nov 2017 07:20:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Room</title>
+      <link>https://jovmit.io/tags/room/</link>
+      <pubDate>Thu, 23 Nov 2017 07:20:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/tags/room/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

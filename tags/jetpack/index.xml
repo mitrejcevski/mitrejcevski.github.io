@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jetpack on Jovche Mitrejchevski</title>
+    <link>https://jovmit.io/tags/jetpack/</link>
+    <description>Recent content in Jetpack on Jovche Mitrejchevski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 May 2018 07:19:26 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/jetpack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android Navigation Arch Component</title>
+      <link>https://jovmit.io/posts/android-arch-navigation/</link>
+      <pubDate>Wed, 23 May 2018 07:19:26 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/android-arch-navigation/</guid>
+      <description>About On the Google IO 2018 event, there was an announcement of JetPack — a set of libraries to help and boost the Android development. These libraries are bringing the development of the essential parts of an application to a completely new level. By essential parts I mean things like handling configuration change, persisting data, executing operations in the background and so on. Some of those libraries were announced at Google IO 2017, and by now are having a stable release, and some of them are completely new.</description>
+    </item>
+    
+  </channel>
+</rss>

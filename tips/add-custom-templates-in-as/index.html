@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Add custom live templates in Android Studio</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.71.0" />
+    <meta name="generator" content="Hugo 0.78.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -39,13 +39,14 @@ How is this going to be helpful? Live templates are super handy to boost our spe
 <meta itemprop="name" content="Add custom live templates in Android Studio">
 <meta itemprop="description" content="What is a custom live template In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.
 How is this going to be helpful? Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example RecyclerView.">
-<meta itemprop="datePublished" content="2019-09-25T14:15:25&#43;02:00" />
-<meta itemprop="dateModified" content="2019-09-25T14:15:25&#43;02:00" />
+<meta itemprop="datePublished" content="2019-09-25T14:15:25+02:00" />
+<meta itemprop="dateModified" content="2019-09-25T14:15:25+02:00" />
 <meta itemprop="wordCount" content="893">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add custom live templates in Android Studio"/>
 <meta name="twitter:description" content="What is a custom live template In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.
 How is this going to be helpful? Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example RecyclerView."/>
@@ -245,7 +246,7 @@ if (!doNotTrack) {
 
 <p>As we can see in the image above, I&rsquo;ve selected <code>Kotlin Class</code> as a template context, which means this template will be available in Kotlin class files.</p>
 <p>Next, let&rsquo;s go ahead and set up the actual template that we want to be available for the given abbreviation. Let&rsquo;s apply the following code inside the <code>Template text:</code> field in the editor:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin">@org.junit.jupiter.api.Test
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Kotlin" data-lang="Kotlin"><span style="color:#a6e22e">@org</span>.junit.jupiter.api.Test
 <span style="color:#66d9ef">fun</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">EXPR</span><span style="color:#960050;background-color:#1e0010">$</span>() {
     org.junit.jupiter.api.Assertions.assertEquals(<span style="color:#960050;background-color:#1e0010">$</span>EXPR1<span style="color:#960050;background-color:#1e0010">$</span>, <span style="color:#960050;background-color:#1e0010">$</span>EXPR2<span style="color:#960050;background-color:#1e0010">$</span>)
 }</code></pre></div>

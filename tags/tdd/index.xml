@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TDD on Jovche Mitrejchevski</title>
+    <link>https://jovmit.io/tags/tdd/</link>
+    <description>Recent content in TDD on Jovche Mitrejchevski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 May 2020 08:46:04 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improving Design - Separating responsibilities</title>
+      <link>https://jovmit.io/posts/simple-design/</link>
+      <pubDate>Mon, 25 May 2020 08:46:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/simple-design/</guid>
+      <description>Let&amp;rsquo;s take a look at the following piece of code:
+fun search(query: String): List&amp;lt;String&amp;gt; { val allItems: List&amp;lt;String&amp;gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&amp;lt;String&amp;gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring Legacy Code</title>
+      <link>https://jovmit.io/posts/deal-with-legacy-code/</link>
+      <pubDate>Thu, 23 Jan 2020 10:00:00 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/deal-with-legacy-code/</guid>
+      <description>Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.</description>
+    </item>
+    
+    <item>
+      <title>On Test-Driven Development</title>
+      <link>https://jovmit.io/posts/outside-in-tdd-on-android/</link>
+      <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/outside-in-tdd-on-android/</guid>
+      <description>A quick overview in our industry I&amp;rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&amp;rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.</description>
+    </item>
+    
+  </channel>
+</rss>

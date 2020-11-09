@@ -6,11 +6,7 @@
     <description>Recent content in Tips and tricks on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Oct 2019 11:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://jovmit.io/tips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Oct 2019 11:00:00 +0200</lastBuildDate><atom:link href="https://jovmit.io/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android Studio/IntelliJ Idea side by side working setup</title>
       <link>https://jovmit.io/tips/android-studio-side-by-side-editor-setup/</link>

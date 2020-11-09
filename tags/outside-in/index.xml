@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outside-In on Jovche Mitrejchevski</title>
+    <link>https://jovmit.io/tags/outside-in/</link>
+    <description>Recent content in Outside-In on Jovche Mitrejchevski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jan 2019 17:49:54 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/outside-in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Test-Driven Development</title>
+      <link>https://jovmit.io/posts/outside-in-tdd-on-android/</link>
+      <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/outside-in-tdd-on-android/</guid>
+      <description>A quick overview in our industry I&amp;rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&amp;rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,10 +5,6 @@
     <link>https://jovmit.io/about/</link>
     <description>Recent content in Hi, I&#39;m Jovche! on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://jovmit.io/about/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://jovmit.io/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

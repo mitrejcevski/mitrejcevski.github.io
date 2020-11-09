@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Jovche Mitrejchevski</title>
+    <link>https://jovmit.io/tags/database/</link>
+    <description>Recent content in Database on Jovche Mitrejchevski</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Nov 2017 07:20:04 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add offline support using Room</title>
+      <link>https://jovmit.io/posts/android-offline-support-room/</link>
+      <pubDate>Thu, 23 Nov 2017 07:20:04 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/android-offline-support-room/</guid>
+      <description>Recently, Google has announced the stable version of the architecture components, which arguably were quite stable before getting to 1.0.0. This library contains 4 parts: ViewModel, LiveData, Room, and the Paging Library. This parts work great together because as one may assume — they are designed to do so. The architecture components could drastically influence and change the traditional way of developing Android apps, so they are potential game changer. This article is focused on the Room part of the architecture components, used for data persistence in order to enable the offline support of an app.</description>
+    </item>
+    
+  </channel>
+</rss>

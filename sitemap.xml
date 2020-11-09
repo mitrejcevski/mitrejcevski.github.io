@@ -24,6 +24,27 @@
   </url>
   
   <url>
+    <loc>https://jovmit.io/tags/refactoring/</loc>
+    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/</loc>
+    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/tdd/</loc>
+    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jovmit.io/posts/deal-with-legacy-code/</loc>
     <lastmod>2020-01-23T10:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -31,7 +52,28 @@
   </url>
   
   <url>
+    <loc>https://jovmit.io/tags/android/</loc>
+    <lastmod>2019-12-14T09:11:33+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/di/</loc>
+    <lastmod>2019-12-14T09:11:33+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jovmit.io/posts/koin-setup-android/</loc>
+    <lastmod>2019-12-14T09:11:33+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/testing/</loc>
     <lastmod>2019-12-14T09:11:33+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -66,6 +108,20 @@
   </url>
   
   <url>
+    <loc>https://jovmit.io/tags/outside-in/</loc>
+    <lastmod>2019-01-18T17:49:54+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/sequence-diagram/</loc>
+    <lastmod>2019-01-18T17:49:54+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jovmit.io/posts/android-ktx/</loc>
     <lastmod>2018-06-29T10:25:45+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -74,6 +130,20 @@
   
   <url>
     <loc>https://jovmit.io/posts/android-arch-navigation/</loc>
+    <lastmod>2018-05-23T07:19:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/jetpack/</loc>
+    <lastmod>2018-05-23T07:19:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/navigation/</loc>
     <lastmod>2018-05-23T07:19:26+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -94,6 +164,20 @@
   </url>
   
   <url>
+    <loc>https://jovmit.io/tags/database/</loc>
+    <lastmod>2017-11-23T07:20:04+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/room/</loc>
+    <lastmod>2017-11-23T07:20:04+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jovmit.io/posts/android-notifications/</loc>
     <lastmod>2017-08-26T07:20:21+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -101,19 +185,7 @@
   </url>
   
   <url>
-    <loc>https://jovmit.io/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jovmit.io/about/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jovmit.io/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

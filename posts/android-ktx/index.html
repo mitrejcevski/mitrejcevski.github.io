@@ -6,7 +6,7 @@
     
     <title>Jovche Mitrejchevski  | Android KTX</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.71.0" />
+    <meta name="generator" content="Hugo 0.78.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -37,13 +37,14 @@
 <meta property="article:modified_time" content="2018-06-29T10:25:45+02:00" />
 <meta itemprop="name" content="Android KTX">
 <meta itemprop="description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language.">
-<meta itemprop="datePublished" content="2018-06-29T10:25:45&#43;02:00" />
-<meta itemprop="dateModified" content="2018-06-29T10:25:45&#43;02:00" />
-<meta itemprop="wordCount" content="2049">
+<meta itemprop="datePublished" content="2018-06-29T10:25:45+02:00" />
+<meta itemprop="dateModified" content="2018-06-29T10:25:45+02:00" />
+<meta itemprop="wordCount" content="2048">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Android," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android KTX"/>
 <meta name="twitter:description" content="Intro Android KTX is an open source library or set of functionalities designed to make the Android development with Kotlin even more pleasant. The abbreviation KTX stands for Kotlin Extensions, so this library is basically a set of extension functions, extension properties and other top-level functions. In this article, we take a look at what&rsquo;s inside this library and how we can take advantage of it. This library&rsquo;s goal is not to add new features to the existing Android APIs, but rather make those APIs easier to use by leveraging the features of the Kotlin language."/>
 
@@ -200,7 +201,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 10 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 2049 words</span>
+        <span class="f6 mv4 dib tracked"> - 2048 words</span>
       
     </header>
 
@@ -239,7 +240,7 @@ if (!doNotTrack) {
 <h3 id="default-arguments">Default arguments</h3>
 <p>Most probably, you are familiar with the overloading concept like in Java already. Overloading is a concept that allows us to define constructors or methods with the same signature, only differing in their parameter list (both types and number of parameters could be different). In Kotlin, this concept is taken a step further, so we could achieve the same result by defining a single function, by specifying default values to some or all of the arguments. Eventually, it boils down to the approach used in Java again. Let&rsquo;s take a look at the following example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">greet</span>(firstName: String, lastName: String = <span style="color:#e6db74">&#34;&#34;</span>) {
-    println(<span style="color:#e6db74">&#34;Hello $firstName $lastName&#34;</span>)
+    println(<span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">$firstName</span><span style="color:#e6db74"> </span><span style="color:#e6db74">$lastName</span><span style="color:#e6db74">&#34;</span>)
 }</code></pre></div>
 <p>In this example, the function takes two arguments, but the <code>lastName</code> is optional because by default its value is going to be an empty <code>String</code>. So, when calling this function we are only required to supply a <code>firstName</code>, and we can call it this way:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">greet(<span style="color:#e6db74">&#34;John&#34;</span>)</code></pre></div>
@@ -265,7 +266,7 @@ editor.apply()</code></pre></div>
 <p>The relevant extension function looks like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">SharedPreferences</span>.edit(
     commit: Boolean = <span style="color:#66d9ef">false</span>,
-    action: SharedPreferences.Editor.() -&gt; Unit
+    action: SharedPreferences.Editor.() <span style="color:#f92672">-&gt;</span> Unit
 ) {
     <span style="color:#66d9ef">val</span> editor = edit()
     action(editor)
@@ -304,11 +305,11 @@ bundle.putString(<span style="color:#e6db74">&#34;keyInt&#34;</span>, <span styl
 <p>Working with <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> in Android is quite a common thing.  The <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> is a kind of container that could contain other views called children. Many times we need to loop through its children, but the traditional way to do so could be quite a mess. <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> has defined an extension property that exposes its children, and here is how it looks like:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> ViewGroup.children: Sequence&lt;View&gt;
     <span style="color:#66d9ef">get</span>() = <span style="color:#66d9ef">object</span> <span style="color:#960050;background-color:#1e0010">: </span><span style="color:#a6e22e">Sequence</span>&lt;View&gt; {
-        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">iterator</span>() = <span style="color:#66d9ef">this</span>@children.iterator()
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">iterator</span>() = <span style="color:#66d9ef">this</span><span style="color:#a6e22e">@children</span>.iterator()
     }</code></pre></div>
 <p>As we can see, the children property is returning a sequence of child views, and it allows us to write very concise loops over any <a href="https://developer.android.com/reference/android/view/ViewGroup">ViewGroup</a> type:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">viewGroup.children.forEach {
-    doSomething(it)
+    doSomething(<span style="color:#66d9ef">it</span>)
 }</code></pre></div>
 <h4 id="displaying-toast">Displaying toast</h4>
 <p>One of the most common ways of displaying some sort of short info to the user is a <code>Toast</code>. When displaying a toast by using the standard API, we have to pass the <code>Context</code>, the actual message that we want to be displayed, whether it is a <code>String</code> or a resource reference to load value from the <code>strings.xml</code>, and the toast duration. Since we cannot display a toast without having a <code>Context</code>, and since most of the time the toast duration is its <code>Toast.LENGTH_SHORT</code> constant, it would be great to have an option to display a toast by simply calling a function and passing the actual message argument. A common way to achieve this is by defining some sort of base class that defines such method, and then it would be called from the subclasses. However, <a href="https://developer.android.com/kotlin/ktx">Android KTX</a> defines an extension functions to the <code>Context</code> type for displaying toasts. It takes 2 arguments, the message and the duration, while the duration is being set to <code>Toast.LENGTH_SHORT</code> by default. So we can call to display toast wherever we have a <code>Context</code> by simply passing the message argument, whether it is a <code>String</code> type or a reference to the string resources:</p>
@@ -317,6 +318,10 @@ toast(R.string.hello)</code></pre></div>
 <h2 id="wrap-up">Wrap Up</h2>
 <p><a href="https://developer.android.com/kotlin/ktx">Android KTX</a> is a very nice part of the <a href="https://developer.android.com/jetpack/">Android JetPack</a> project, and as we&rsquo;ve seen it contains quite some nice ways to improve the Android development we are used to. As told before, it doesn&rsquo;t provide any new functionalities, but rather simplifies the APIs which are already provided by the Android SDK. <a href="https://www.youtube.com/watch?v=st1XVfkDWqk">Here</a> is a nice talk from the <a href="https://events.google.com/io/recap/">Google I/O 2018</a> by <a href="https://jakewharton.com/">Jake Wharton</a>, where he elaborates more on the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>. This article only scratches the surface, and there are many more fun things to be revealed inside the <a href="https://developer.android.com/kotlin/ktx">Android KTX</a>, related to <code>animation</code>, <code>database</code>, <code>location</code>, <code>graphics</code>, <code>text</code> and so on. Also, the team is welcoming new contributions, which is great, so if you have an idea that is not there yet, feel free to submit it.</p>
 <ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/android" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Android</a>
+   </li>
   
 </ul>
 <div class="mt6">
@@ -350,6 +355,29 @@ toast(R.string.hello)</code></pre></div>
 
 
 
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/android-arch-navigation/">Android Navigation Arch Component</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/android-testing-ui/">Testing Android UI with pleasure</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/android-offline-support-room/">Add offline support using Room</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/android-notifications/">Android notifications — An elegant way to build and display</a>
+        </li>
+	    
+    </ul>
+</div>
 
 </aside>
 

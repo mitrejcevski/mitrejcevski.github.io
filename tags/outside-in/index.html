@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski  | Refactoring Legacy Code</title>
+    <title>Jovche Mitrejchevski  | Outside-In</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.78.1" />
     
@@ -28,28 +28,20 @@
     
 
     
+      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/tags/outside-in/index.xml%20https://jovmit.io/tags/outside-in/index.xml%7d" rel="alternate" type="application/rss+xml" title="Jovche Mitrejchevski" />
+      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/tags/outside-in/index.xml%20https://jovmit.io/tags/outside-in/index.xml%7d" rel="feed" type="application/rss+xml" title="Jovche Mitrejchevski" />
+    
 
-    <meta property="og:title" content="Refactoring Legacy Code" />
-<meta property="og:description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jovmit.io/posts/deal-with-legacy-code/" />
-<meta property="article:published_time" content="2020-01-23T10:00:00+02:00" />
-<meta property="article:modified_time" content="2020-01-23T10:00:00+02:00" />
-<meta itemprop="name" content="Refactoring Legacy Code">
-<meta itemprop="description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.">
-<meta itemprop="datePublished" content="2020-01-23T10:00:00+02:00" />
-<meta itemprop="dateModified" content="2020-01-23T10:00:00+02:00" />
-<meta itemprop="wordCount" content="1500">
-
-
-
-<meta itemprop="keywords" content="TDD,Refactoring," />
+    <meta property="og:title" content="Outside-In" />
+<meta property="og:description" content="Welcome to TDD on Android Academy" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jovmit.io/tags/outside-in/" />
+<meta property="og:updated_time" content="2019-01-18T17:49:54+02:00" />
+<meta itemprop="name" content="Outside-In">
+<meta itemprop="description" content="Welcome to TDD on Android Academy">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Refactoring Legacy Code"/>
-<meta name="twitter:description" content="Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general."/>
+<meta name="twitter:title" content="Outside-In"/>
+<meta name="twitter:description" content="Welcome to TDD on Android Academy"/>
 
       
 <script type="application/javascript">
@@ -69,13 +61,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
-   
-  
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/refactoring/craftsman.jpg');">
-    <div class="pb3-m pb6-l bg-black-60">
+  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/theme/side_background.jpg');">
+    <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://jovmit.io" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -177,154 +167,45 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv6 ph3 ph4-ns">
-        
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Refactoring Legacy Code</h1>
-          
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+          Outside-In
+        </h1>
         
       </div>
     </div>
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        BLOG POSTS
-      </p>
-      <h1 class="f1 athelas mb1">Refactoring Legacy Code</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2020-01-23T10:00:00&#43;02:00">January 23, 2020</time>
-      
-      
-        <span class="f6 mv4 dib tracked"> - 8 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 1500 words</span>
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="intro">Intro</h2>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/playlist?list=PLqew6vQ7CzHI4gR0u3t7-F_suq8W044us" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.</p>
-<p>Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general. I&rsquo;m very thankful that he asked that because I took it as a motivation to record a series of screencast videos where I explain and demonstrate a bunch of techniques that everyone can learn and use in their daily job.</p>
-<h2 id="books">Books</h2>
-<p>The techniques I am working with while refactoring the code in the screencast are heavily based on the following books:</p>
-<ul>
-<li><a href="%22https://bit.ly/2R8lkVM%22">Working effectively with legacy code</a> by <a href="%22https://twitter.com/mfeathers%22">Michael Feathers</a></li>
-<li><a href="%22https://amzn.to/2ucyGaB%22">Refactoring</a> by <a href="%22https://twitter.com/martinfowler%22">Martin Fowler</a>
-I find those books very valuable when it comes to software development, and I would strongly recommend everyone to read them.</li>
-</ul>
-<h2 id="code-refactoring">Code Refactoring</h2>
-<p>Code refactoring is a process of changing an existing computer code in such a way that it does not alter the external behavior of the code while it improves its internal structure.</p>
-<h4 id="automated-refactoring-supported-by-the-ide">Automated Refactoring (Supported by the IDE)</h4>
-<p>The IDEs that are widely used today, especially the ones for the strongly-typed programming languages, provide a variety of automated refactoring, often even suggesting possible refactoring that would improve the code. It&rsquo;s safe to perform such refactoring because the behavior of the code it is getting applied to is going to stay the same. In that sense, the more we use the automated refactoring provided by the IDE, the better. Minimizing manual refactoring is always a good idea.</p>
-<h4 id="frequent-commits">Frequent commits</h4>
-<p>Generally, making frequent commits are a valuable consideration to be taken, especially when it comes to refactoring legacy code. It&rsquo;s quite common to make a mistake when working with code so that we have to revert the latest changes. By committing frequently, we are minimizing the changes we might have to undo, and we make the actual revert easy to be done. Given that the legacy code could be quite complex, having the ability to make easy revert is becoming very valuable.</p>
-<p>One may argue that creating too many commits might become problematic in some cases, and if that&rsquo;s the case, we can easily squash them into fewer before merging into the targeting branch. However, I will advocate for keeping the full history for better evidence.</p>
-<h4 id="test-harness">Test Harness</h4>
-<p>In the &ldquo;Working effectively with legacy code&rdquo; book, the term <strong>test harness</strong> refers to a testing code that we write to exercise a piece of software and the code that we use to run it. In that sense, when working with legacy code, the tests that we write together with the running set up to cover a piece of functionality is called <strong>test harness</strong>. Once we have the code under test harness, we have the safety and the confidence to start refactoring.</p>
-<h4 id="code-coverage">Code Coverage</h4>
-<p>The code coverage tool comes to great help when refactoring legacy code. It plays an important role when putting code under test harness by allowing us to see which parts of that code are getting executed. Once we see the parts which are getting covered, we can focus on a particular region and understand what it is doing. An essential note at that point is not to get tricked if a line of code is covered. A covered line of code means that the line is getting executed, but it does not mean that its behavior is preserving. We need additional checks to make sure that we are maintaining the side effect of its execution. That&rsquo;s where the <strong>defect injection</strong> comes into play.</p>
-<h4 id="defect-injection">Defect Injection</h4>
-<p>The defect injection is a technique that we use to make sure a particular test is failing for the right reason. As mentioned previously, a covered line of code is not the same as preserved behavior. Usually, the test that makes sure a block of code is covered is different than the test that checks its behavior. It is not impossible, but often, those are separate tests. So, to prove a behavior is remaining the same, we can inject a defect in a block of code that we are exercising, so that the test that penetrates that code will fail. To do so, we can comment out a line of code, or make a small change that would make the test fail. Then we would observe if the test fails because of the defect we have injected. Once we have the confidence that the behavior is not changed, we can undo the injected defect and continue.</p>
-<h4 id="test-data-builders">Test Data Builders</h4>
-<p>A good test is the well-focused one, the one that clearly describes its intention and involves only the relevant details. Very often, we need to involve data in a test. Thus, we might end up initializing and arranging not particularly relevant data structures into its setup. In those situations, we can make use of a data builder - a helper used in the tests that leverage the builder pattern. Let&rsquo;s take a look at a concrete example. Here is a DTO class with a handful of properties:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/eff3e55a81f6551acd13ea2a0bd132c7.js"></script>
-
-<p>and a test where we are checking the result of a search call:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/6ef41a6f04090e338305d59d2e6bf4a8.js"></script>
-
-<p>In the test setup, we are initializing a new user object, and doing that, besides the value for the <code>userId</code>, we have to provide values for the <code>firstName</code>, <code>lastName</code>, <code>age</code>, and <code>location</code>. However, all the values in that test except the <code>userId</code> are <strong>completely irrelevant</strong>. By using a data builder, we can significantly improve the readability and the intention of the test.</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/380433c58d9688d877db6137952b5fc6.js"></script>
-
-<p>Now, we have dropped the irrelevant details from the test, and we ended up with a more focused test.</p>
-<h4 id="seam">Seam</h4>
-<p>When refactoring legacy code, often there are parts of the code involving static calls, calls that are expensive to be made (like querying database), or usage of constant fields. Putting those parts under test harness is not a straight forward task. By extracting such a call into another function, we are opening an ability to replace it with something that makes more sense for the test harness. That newly extracted function is called <strong>seam</strong>.</p>
-<h4 id="subclass-to-test">Subclass to Test</h4>
-<p>To make use of the seam, we need to create a <strong>subclass</strong> and override the function, so that it will call or return whatever we need in the particular test. This subclass is relevant only in the tests, and we are calling it <strong>subclass to test</strong> or a <strong>testing subclass</strong>. Let&rsquo;s take a look at a concrete example. Here is a piece of code that we want to put under a test harness:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/cbe0b4a1ecae6619753f13be575620b7.js"></script>
-
-<p>There is a static call to find trips <code>TripsDao.findTripsFor(userId)</code>, so if we call this function in a test, it might try to make a real query to the database, which in turn will take a lot of time, it might throw an exception, but there is no way for us to know the exact return result. Furthermore, making real calls to a database from a test will lead to flaky tests and might corrupt the database records. To get over that problem, we can create a seam, so that we will allow ourselves to put this code under test harness easily:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/9e90b88381003d81c8af61b8106f21e1.js"></script>
-
-<p>It&rsquo;s essential to note that by creating this seam, we are not changing the behavior of the code. We only delegate the call to the new function we created.</p>
-<p>In languages like <a href="%22https://kotlinlang.org/%22">Kotlin</a>, where the classes and functions are implicitly <code>final</code>, we need to make them <code>open</code> to be able to override them, but more about that in the <a href="#complexity">Complexity</a> section.</p>
-<p>Once we have created the seam, in the tests, we can easily create a <strong>testing subclass</strong> where we can override the function and return a result that we can control.</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/1295abb3ee3a602adc1ea35ea7a12697.js"></script>
-
-<h4 id="complexity">Complexity</h4>
-<p>When dealing with legacy code, we are trying to reduce the complexity of complicated software. During that process, it is very natural to get that complexity increased at the beginning, and simplified at the end. As we&rsquo;ve seen in the example above, depending on the language, we might end up introducing undesired changes. But since we know that eventually, we will get to an exceedingly better place, it&rsquo;s worth to make those considerations.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Improving legacy code is not a trivial task, and it always takes a lot of effort and energy. It&rsquo;s very crucial to have a good arsenal of tools available to fight against it and to know how to use those tools properly. Getting confident to use them involves a lot of practice, routine, and discipline. The more we use those tools, the more confident we become, and that helps us pick the right tool for a particular case easier.</p>
-<p>I hope you find this article, and the screencast videos useful, and you learned something new that you could apply at your daily job. Feel free to <a href="https://twitter.com/jovchem">follow me on Twitter</a>, so you will stay up to date with new content.</p>
-<a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/tdd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">TDD</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/refactoring" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Refactoring</a>
-   </li>
-  
-</ul>
-<div class="mt6">
-      
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-      
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/posts/outside-in-tdd-on-android/">On Test-Driven Development</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “Outside-In”</p>
+    </div>
   </article>
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/outside-in-tdd-on-android/" class="link black dim">
+        On Test-Driven Development
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

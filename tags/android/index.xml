@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jovche Mitrejchevski</title>
-    <link>https://jovmit.io/</link>
-    <description>Recent content on Jovche Mitrejchevski</description>
+    <title>Android on Jovche Mitrejchevski</title>
+    <link>https://jovmit.io/tags/android/</link>
+    <description>Recent content in Android on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 May 2020 08:46:04 +0200</lastBuildDate><atom:link href="https://jovmit.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Improving Design - Separating responsibilities</title>
-      <link>https://jovmit.io/posts/simple-design/</link>
-      <pubDate>Mon, 25 May 2020 08:46:04 +0200</pubDate>
-      
-      <guid>https://jovmit.io/posts/simple-design/</guid>
-      <description>Let&amp;rsquo;s take a look at the following piece of code:
-fun search(query: String): List&amp;lt;String&amp;gt; { val allItems: List&amp;lt;String&amp;gt; = ExternalSystem.fetchAllItems() val filtered = allItems.filter { it.contains(query) } val reordered = filtered.sortedWith(object : Comparator&amp;lt;String&amp;gt; { override fun compare(lhs: String, rhs: String): Int { if (lhs == query) { return -1 } else if (rhs == query) { return 0 } return lhs.compareTo(rhs) } }) return reordered } From a behavioral point of view, this code has no problems.</description>
-    </item>
-    
-    <item>
-      <title>Refactoring Legacy Code</title>
-      <link>https://jovmit.io/posts/deal-with-legacy-code/</link>
-      <pubDate>Thu, 23 Jan 2020 10:00:00 +0200</pubDate>
-      
-      <guid>https://jovmit.io/posts/deal-with-legacy-code/</guid>
-      <description>Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 14 Dec 2019 09:11:33 +0100</lastBuildDate><atom:link href="https://jovmit.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up Koin for Android UI testing</title>
       <link>https://jovmit.io/posts/koin-setup-android/</link>
@@ -34,36 +14,6 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
       
       <guid>https://jovmit.io/posts/koin-setup-android/</guid>
       <description>Problem definition Recently I&amp;rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&amp;rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:</description>
-    </item>
-    
-    <item>
-      <title>Android Studio/IntelliJ Idea side by side working setup</title>
-      <link>https://jovmit.io/tips/android-studio-side-by-side-editor-setup/</link>
-      <pubDate>Fri, 11 Oct 2019 11:00:00 +0200</pubDate>
-      
-      <guid>https://jovmit.io/tips/android-studio-side-by-side-editor-setup/</guid>
-      <description>The way I prefer to work when I use Android Studio or IntelliJ Idea is splitting the production code and the related tests side-by-side. In this article I&amp;rsquo;d like to describe the setup and the shortcuts I use, so someone might find it useful as well.
-The side-by-side setup (vertical editor splitting) Side by side editor
- We aim to use keyboard shortcuts for fast split and navigation instead of using mouse/trackpad.</description>
-    </item>
-    
-    <item>
-      <title>Add custom live templates in Android Studio</title>
-      <link>https://jovmit.io/tips/add-custom-templates-in-as/</link>
-      <pubDate>Wed, 25 Sep 2019 14:15:25 +0200</pubDate>
-      
-      <guid>https://jovmit.io/tips/add-custom-templates-in-as/</guid>
-      <description>What is a custom live template In Android Studio, there is a concept of inserting a block of any textual content as a template wherever it is required, just by typing a keyword. By using live templates, we can insert frequently-used constructions into our code.
-How is this going to be helpful? Live templates are super handy to boost our speed while writing code. Overtime we use the same or similar constructions in our code like loops, conditions, declarations and even whole class templates (think of for example RecyclerView.</description>
-    </item>
-    
-    <item>
-      <title>On Test-Driven Development</title>
-      <link>https://jovmit.io/posts/outside-in-tdd-on-android/</link>
-      <pubDate>Fri, 18 Jan 2019 17:49:54 +0200</pubDate>
-      
-      <guid>https://jovmit.io/posts/outside-in-tdd-on-android/</guid>
-      <description>A quick overview in our industry I&amp;rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&amp;rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.</description>
     </item>
     
     <item>
