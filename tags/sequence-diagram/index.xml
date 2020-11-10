@@ -6,7 +6,18 @@
     <description>Recent content in Sequence Diagram on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Jan 2019 17:49:54 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/sequence-diagram/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Nov 2020 22:00:00 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/sequence-diagram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Sequence Diagram</title>
+      <link>https://jovmit.io/posts/the-sequence-diagram/</link>
+      <pubDate>Tue, 10 Nov 2020 22:00:00 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/the-sequence-diagram/</guid>
+      <description>⚠️ Disclaimer Any kinds of diagrams have nothing to do with TDD at all. We find the diagrams handy when we want to visualize, explain, teach, or learn something. That&amp;rsquo;s all. It&amp;rsquo;s a drawing on a sheet of paper that we throw afterward. We don&amp;rsquo;t keep the diagrams around; we don&amp;rsquo;t maintain them. That&amp;rsquo;d be a massive waste of time.
+Sequence Diagram Example
+ What&amp;rsquo;s this Sequence Diagram thingy? As mentioned in the disclaimer, the sequence diagram is a tool we can use to visualize an approximation of where we want to go when working on the unit in question.</description>
+    </item>
+    
     <item>
       <title>On Test-Driven Development</title>
       <link>https://jovmit.io/posts/outside-in-tdd-on-android/</link>

@@ -4,7 +4,49 @@
   
   <url>
     <loc>https://jovmit.io/posts/</loc>
-    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/outside-in/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/sequence-diagram/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/tdd/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/posts/the-sequence-diagram/</loc>
+    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,28 +59,7 @@
   </url>
   
   <url>
-    <loc>https://jovmit.io/</loc>
-    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jovmit.io/tags/refactoring/</loc>
-    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jovmit.io/tags/</loc>
-    <lastmod>2020-05-25T08:46:04+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jovmit.io/tags/tdd/</loc>
     <lastmod>2020-05-25T08:46:04+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -102,20 +123,6 @@
   
   <url>
     <loc>https://jovmit.io/posts/outside-in-tdd-on-android/</loc>
-    <lastmod>2019-01-18T17:49:54+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jovmit.io/tags/outside-in/</loc>
-    <lastmod>2019-01-18T17:49:54+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jovmit.io/tags/sequence-diagram/</loc>
     <lastmod>2019-01-18T17:49:54+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
