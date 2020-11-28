@@ -38,7 +38,7 @@
 <meta property="og:description" content="Welcome to TDD on Android Academy" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jovmit.io/" />
-<meta property="og:updated_time" content="2020-11-10T22:00:00+02:00" />
+<meta property="og:updated_time" content="2020-11-28T09:08:00+02:00" />
 <meta itemprop="name" content="Jovche Mitrejchevski">
 <meta itemprop="description" content="Welcome to TDD on Android Academy">
 <meta name="twitter:card" content="summary"/>
@@ -215,6 +215,32 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/state_vs_behaviour/" class="color-inherit dim link">
+            State vs. Behaviour Verification
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Suppose we have the following interface:
+interface Validator { fun validate(query: String): Boolean } and suppose it&rsquo;s being used as a collaborator in a few places:
+class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:
+        </div>
+          <a href="/posts/state_vs_behaviour/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/the-sequence-diagram/" class="color-inherit dim link">
             The Sequence Diagram
             </a>
@@ -331,44 +357,18 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-          
-        
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/posts/outside-in-tdd-on-android/" class="db grow">
-            <img src="https://jovmit.io/images/outside_in/double_loop_of_tdd.png" class="img" alt="image from On Test-Driven Development">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/outside-in-tdd-on-android/" class="color-inherit dim link">
-            On Test-Driven Development
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
-        </div>
-          <a href="/posts/outside-in-tdd-on-android/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/outside-in-tdd-on-android/" class="link black dim">
+              On Test-Driven Development
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/android-ktx/" class="link black dim">
@@ -385,12 +385,6 @@ Recently a friend of mine posted a piece of code in a public Slack channel, and 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/android-testing-ui/" class="link black dim">
               Testing Android UI with pleasure
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/android-offline-support-room/" class="link black dim">
-              Add offline support using Room
             </a>
           </h2>
         

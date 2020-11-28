@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jovche Mitrejchevski  | Outside-In</title>
+    <title>Jovche Mitrejchevski  | State vs. Behaviour Verification</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.78.1" />
     
@@ -30,20 +30,31 @@
     
 
     
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/tags/outside-in/index.xml%20https://jovmit.io/tags/outside-in/index.xml%7d" rel="alternate" type="application/rss+xml" title="Jovche Mitrejchevski" />
-      <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/tags/outside-in/index.xml%20https://jovmit.io/tags/outside-in/index.xml%7d" rel="feed" type="application/rss+xml" title="Jovche Mitrejchevski" />
-    
 
-    <meta property="og:title" content="Outside-In" />
-<meta property="og:description" content="Welcome to TDD on Android Academy" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jovmit.io/tags/outside-in/" />
-<meta property="og:updated_time" content="2020-11-28T09:08:00+02:00" />
-<meta itemprop="name" content="Outside-In">
-<meta itemprop="description" content="Welcome to TDD on Android Academy">
+    <meta property="og:title" content="State vs. Behaviour Verification" />
+<meta property="og:description" content="Suppose we have the following interface:
+interface Validator { fun validate(query: String): Boolean } and suppose it&rsquo;s being used as a collaborator in a few places:
+class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jovmit.io/posts/state_vs_behaviour/" />
+<meta property="article:published_time" content="2020-11-28T09:08:00+02:00" />
+<meta property="article:modified_time" content="2020-11-28T09:08:00+02:00" />
+<meta itemprop="name" content="State vs. Behaviour Verification">
+<meta itemprop="description" content="Suppose we have the following interface:
+interface Validator { fun validate(query: String): Boolean } and suppose it&rsquo;s being used as a collaborator in a few places:
+class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:">
+<meta itemprop="datePublished" content="2020-11-28T09:08:00+02:00" />
+<meta itemprop="dateModified" content="2020-11-28T09:08:00+02:00" />
+<meta itemprop="wordCount" content="1206">
+
+
+
+<meta itemprop="keywords" content="TDD,Outside-In,Acceptance Test,Contract Tests," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Outside-In"/>
-<meta name="twitter:description" content="Welcome to TDD on Android Academy"/>
+<meta name="twitter:title" content="State vs. Behaviour Verification"/>
+<meta name="twitter:description" content="Suppose we have the following interface:
+interface Validator { fun validate(query: String): Boolean } and suppose it&rsquo;s being used as a collaborator in a few places:
+class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:"/>
 
       
 <script type="application/javascript">
@@ -63,11 +74,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/theme/side_background.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://jovmit.io" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -169,83 +180,216 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Outside-In
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Outside-In”</p>
-    </div>
-  </article>
-  <div class="mw8 center">    
-    <section class="flex-ns flex-wrap justify-around mt5">
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOG POSTS
+      </p>
+      <h1 class="f1 athelas mb1">State vs. Behaviour Verification</h1>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/state_vs_behaviour/" class="link black dim">
-        State vs. Behaviour Verification
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Suppose we have the following interface:
-interface Validator { fun validate(query: String): Boolean } and suppose it&rsquo;s being used as a collaborator in a few places:
-class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:
-    </div>
-  </div>
+      <time class="f6 mv4 dib tracked" datetime="2020-11-28T09:08:00&#43;02:00">November 28, 2020</time>
+      
+      
+        <span class="f6 mv4 dib tracked"> - 6 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1206 words</span>
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="centeredDiv">
+  <img src="/images/state_vs_behaviour/state_vs_behaviour.png" class="imageRoundedCorners" alt="">
+  <p class="imageCaption"></p>
 </div>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/the-sequence-diagram/" class="link black dim">
-        The Sequence Diagram
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ⚠️ Disclaimer Any kinds of diagrams have nothing to do with TDD at all. We find the diagrams handy when we want to visualize, explain, teach, or learn something. That&rsquo;s all. It&rsquo;s a drawing on a sheet of paper that we throw afterward. We don&rsquo;t keep the diagrams around; we don&rsquo;t maintain them. That&rsquo;d be a massive waste of time.
-Sequence Diagram Example
- What&rsquo;s this Sequence Diagram thingy? As mentioned in the disclaimer, the sequence diagram is a tool we can use to visualize an approximation of where we want to go when working on the unit in question.
-    </div>
-  </div>
+<p>Suppose we have the following interface:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Validator</span> {
+  <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">validate</span>(query: String): Boolean
+}</code></pre></div>
+<p>and suppose it&rsquo;s being used as a collaborator in a few places:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FindItems</span>(
+  <span style="color:#66d9ef">val</span> validator: Validator,
+  <span style="color:#66d9ef">val</span> repository: Repository
+) {
+
+  <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">search</span>(keyword: String) {
+    <span style="color:#66d9ef">if</span> (validator.validate(keyword)) {
+      repository.findItemsContaining(keyword)
+    }
+  }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeleteItems</span>(
+  <span style="color:#66d9ef">val</span> validator: Validator,
+  <span style="color:#66d9ef">val</span> repository: Repository
+) {
+
+  <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">deleteMatches</span>(value: String) {
+    <span style="color:#66d9ef">if</span> (validator.validate(value)) {
+      repository.deleteItemsMatching(value)
+    }
+  }
+}</code></pre></div>
+<p>Of course, we would have some tests for these functionalities, which might look something like this respectively:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">findMatches</span>() {
+  <span style="color:#66d9ef">val</span> validator = mock&lt;Validator&gt;()
+  <span style="color:#66d9ef">val</span> lookup = FindItems(validator, repository)
+  given(validator.validate(query)).willReturn(<span style="color:#66d9ef">true</span>)
+
+  lookup.search(query)
+
+  validateTheOutputOfTheOperation
+}
+
+<span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">deletesMatches</span>() {
+  <span style="color:#66d9ef">val</span> validator = mock&lt;Validator&gt;()
+  <span style="color:#66d9ef">val</span> cleanup = DeleteItems(validator, repository)
+  given(validator.validate(query)).willReturn(<span style="color:#66d9ef">true</span>)
+
+  cleanup.deleteMatches(query)
+
+  validateTheOutputOfTheOperation
+}</code></pre></div>
+<p>In this case, we are using a <code>mock</code> validator, and we are setting it up to return a specific result.</p>
+<p>Let&rsquo;s suppose that the shipping implementation of the validator looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultValidator</span>: Validator {
+  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">validate</span>(query: String): Boolean {
+    <span style="color:#66d9ef">return</span> query.trim().length &gt; <span style="color:#ae81ff">3</span>
+  }
+}</code></pre></div>
+<p>Now, here are a bunch of interesting questions:</p>
+<ol>
+<li>What&rsquo;s the relationship between the shipping implementation of the Validator and the mocks?</li>
+<li>How many tests would fail when the business rule for valid query changes (say from <code>length &gt; 3</code> to <code>length &gt; 8</code>)?</li>
+<li>How many tests should fail?</li>
+<li>How different would it be if we use a <code>stub</code> validator instead of the <code>mock</code>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PassingValidator</span> : Validator {
+  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">validate</span>(query: String): Boolean {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+  }
+}</code></pre></div></li>
+<li>What if we used an instance of the shipping <code>DefaultValidator</code> in the tests?</li>
+</ol>
+<hr>
+<p>Let&rsquo;s get through the items of that list one by one.</p>
+<h4 id="answer_1">1. What&rsquo;s the relationship between the shipping implementation of the Validator and the mocks?</h4>
+<p>In this case, the relations are the type of the <code>Validator</code> being passed when constructing the collaborators' instances it is injected into and the return type of the <code>validate</code> function. We don&rsquo;t have any behavior-wise relations between both. That brings us to the second question.</p>
+<h4 id="answer_2">2. How many tests would fail when the business rule for valid query changes?</h4>
+<p>From the previous question&rsquo;s answer, we conclude that not a single test will fail within the current constellation, which is way less than ideal. Clearly, we need to be informed if behavior changes (intentionally or unintentionally) to prevent regressions and bugs.</p>
+<h4 id="answer_3">3. How many tests should fail?</h4>
+<p>As far as I can tell, there is no correct answer to this question because it depends on the business rule that gets changed. We can say with confidence that we need to indicate that something got changed, so we need at least one failing test. On the other hand, we want to have as little as possible amount of tests failing. We don&rsquo;t want the whole test-suite to fail.</p>
+<h4 id="answer_4">4. How different would it be if we use a <code>stub</code> validator instead of the <code>mock</code>?</h4>
+<p>In this situation, there is no difference between using <code>stub</code> and <code>mock</code> in regards to the failing tests<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. When the business rule changes - we might go and change the shipping code. But we might <strong>not</strong> update all the places where we use a test-double to substitute the shipping implementation. So the test-doubles might not reflect that the shipping implementation changed. Hence the tests remain passing.</p>
+<h4 id="answer_5">5. What if we used an instance of the shipping <code>DefaultValidator</code> in the tests?</h4>
+<p>In this case, all tests where an instance of the validator&rsquo;s shipping implementation is used would fail, and we&rsquo;ll need to go and fix all these tests. This is far better than having no test failures, but updating many tests is not what we want to do either.</p>
+<h3 id="acceptance_test">Acceptance Test</h3>
+<p>From the answers of the <a href="#answer_2">2nd</a>, <a href="#answer_3">3rd</a>, and the <a href="#answer_5">5th</a> question, we realize that we must find a way to catch possible regressions when a business rule changes (intentionally or unintentionally). Having a failing test as an indication is what we are striving for, but we don&rsquo;t want the whole test suite to fail and require us to go back and fix loads of tests. Thinking about the test pyramid, we would have many micro tests, a bunch of acceptance tests, and so on. Given the situation we described above, we might miss a regression using the <code>test-doubles</code> in the micro tests. But, we could catch that regression with an acceptance test. We would yet have an indication in the form of a failing test for the regression, but at the same time, we will keep the failing tests to a minimum. The acceptance test is <strong>always using real instances</strong> of the whole structure being involved, except for the <em>boundaries</em>. For the <em>boundaries</em>, we use <code>test-doubles</code> in the acceptance test as well. The <em>boundaries</em> are the points where our system talks to an external system, like a database or a network. But we&rsquo;ve seen that the <code>test-doubles</code> are not a silver bullet, right? How do we make sure that the shipping implementation has the same behavior as the <code>test-double</code>? Let&rsquo;s find out.</p>
+<h3 id="contract-tests">Contract Tests</h3>
+<p>In the answers of the <a href="#answer_1">1st</a> and the <a href="#answer_4">4th</a> question and the discussion about the <a href="#acceptance_test">Acceptance Test</a>, we realize that no matter what kind of <code>test-double</code> we use - we have no relation in terms of behavior between the shipping code and the <code>test-double</code> implementation established. That&rsquo;s a big problem. This is where the contract tests shine. We use them to ensure that a <code>test-double</code> behavior is aligned with the shipping code&rsquo;s behavior. Check out the following video to see the contract tests in action:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/S3qItwfhtCw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-        </div>
+<h3 id="state-or-behaviour">State or Behaviour?</h3>
+<p>An important matter at this point is to examine what we are checking for. In the tests above, I didn&rsquo;t write a concrete validation line intentionally. One way to go is to <strong>verify a behavior</strong>. That means that we can check if something is being called (additionally with expected arguments). You&rsquo;ve probably seen people complaining that checking behavior leads to brittle tests that are getting coupled with the implementation details. Let&rsquo;s consider the situation from above - the <code>FindItems</code> or the <code>DeleteItems</code> classes. They call the <code>Repository</code> collaborator to <em>do the lookup</em>, or <em>do the cleanup</em> respectively. There is no state these classes are dealing with, but there is a critical behavior: <strong>do an action only if the validation passes</strong>. In that case, it makes perfect sense to verify the behavior. We definitely need an indication in case that behavior changes.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Choosing what and how to test in a given situation is not an easy decision. Over the years, I&rsquo;ve realized that it takes a lot of work and practice to build a good gut, and even then, there is no silver bullet or something like <code>the best approach</code>. We should continuously keep an eye on the process and keep balancing it out.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Considering JVM languages, namely Java or Kotlin, there are 2 differences between the mock and the stub: 1) Mocking the interface using a library like Mockito or Mockk comes with a considerable performance impact on the tests, so they will run way slower. 2) Having a stub will require a single change when we&rsquo;ll need to update it, and by using mocks, we&rsquo;ll need to go around the whole codebase and update the setup scripts, which means a lot more maintenance for the tests. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/tdd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">TDD</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/outside-in" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Outside-In</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/acceptance-test" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Acceptance Test</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/contract-tests" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Contract Tests</a>
+   </li>
+  
+</ul>
+<div class="mt6">
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/outside-in-tdd-on-android/" class="link black dim">
-        On Test-Driven Development
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      A quick overview in our industry I&rsquo;m in the IT industry, particularly in Android for roughly 10 years now, and one thing I can tell with great confidence is that this industry moves incredibly fast. Looking back all these years, it&rsquo;s been an extraordinary evolution of the OS itself, as well as the community around it. However, sometimes it feels like our industry lacks a lot of good practices and discipline in the development process, a lack of professionalism.
-    </div>
-  </div>
-</div>
-
-        </div>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jovmit" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       
+      
+      </div>
     </section>
-  </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/the-sequence-diagram/">The Sequence Diagram</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/outside-in-tdd-on-android/">On Test-Driven Development</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/simple-design/">Improving Design - Separating responsibilities</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/deal-with-legacy-code/">Refactoring Legacy Code</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

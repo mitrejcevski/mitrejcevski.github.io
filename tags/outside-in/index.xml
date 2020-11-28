@@ -6,7 +6,18 @@
     <description>Recent content in Outside-In on Jovche Mitrejchevski</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2020 22:00:00 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/outside-in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Nov 2020 09:08:00 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/outside-in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>State vs. Behaviour Verification</title>
+      <link>https://jovmit.io/posts/state_vs_behaviour/</link>
+      <pubDate>Sat, 28 Nov 2020 09:08:00 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/state_vs_behaviour/</guid>
+      <description>Suppose we have the following interface:
+interface Validator { fun validate(query: String): Boolean } and suppose it&amp;rsquo;s being used as a collaborator in a few places:
+class FindItems( val validator: Validator, val repository: Repository ) { fun search(keyword: String) { if (validator.validate(keyword)) { repository.findItemsContaining(keyword) } } } class DeleteItems( val validator: Validator, val repository: Repository ) { fun deleteMatches(value: String) { if (validator.validate(value)) { repository.deleteItemsMatching(value) } } } Of course, we would have some tests for these functionalities, which might look something like this respectively:</description>
+    </item>
+    
     <item>
       <title>The Sequence Diagram</title>
       <link>https://jovmit.io/posts/the-sequence-diagram/</link>

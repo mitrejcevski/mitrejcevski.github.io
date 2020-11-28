@@ -3,42 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jovmit.io/tags/acceptance-test/</loc>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jovmit.io/posts/</loc>
-    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/contract-tests/</loc>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jovmit.io/</loc>
-    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jovmit.io/tags/outside-in/</loc>
-    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jovmit.io/tags/sequence-diagram/</loc>
-    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <loc>https://jovmit.io/posts/state_vs_behaviour/</loc>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jovmit.io/tags/</loc>
-    <lastmod>2020-11-10T22:00:00+02:00</lastmod>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jovmit.io/tags/tdd/</loc>
+    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jovmit.io/tags/sequence-diagram/</loc>
     <lastmod>2020-11-10T22:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
