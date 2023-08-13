@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog Posts on Jovche Mitrejchevski</title>
+    <title>Blog Posts on Jov Mit</title>
     <link>https://jovmit.io/posts/</link>
-    <description>Recent content in Blog Posts on Jovche Mitrejchevski</description>
+    <description>Recent content in Blog Posts on Jov Mit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Nov 2020 09:08:00 +0200</lastBuildDate><atom:link href="https://jovmit.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,7 @@ class FindItems( val validator: Validator, val repository: Repository ) { fun se
       <guid>https://jovmit.io/posts/the-sequence-diagram/</guid>
       <description>⚠️ Disclaimer Any kinds of diagrams have nothing to do with TDD at all. We find the diagrams handy when we want to visualize, explain, teach, or learn something. That&amp;rsquo;s all. It&amp;rsquo;s a drawing on a sheet of paper that we throw afterward. We don&amp;rsquo;t keep the diagrams around; we don&amp;rsquo;t maintain them. That&amp;rsquo;d be a massive waste of time.
 Sequence Diagram Example
- What&amp;rsquo;s this Sequence Diagram thingy? As mentioned in the disclaimer, the sequence diagram is a tool we can use to visualize an approximation of where we want to go when working on the unit in question.</description>
+What&amp;rsquo;s this Sequence Diagram thingy? As mentioned in the disclaimer, the sequence diagram is a tool we can use to visualize an approximation of where we want to go when working on the unit in question.</description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@ fun search(query: String): List&amp;lt;String&amp;gt; { val allItems: List&amp;l
       <pubDate>Thu, 23 Jan 2020 10:00:00 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/deal-with-legacy-code/</guid>
-      <description>Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.</description>
+      <description>Intro Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general. I&amp;rsquo;m very thankful that he asked that because I took it as a motivation to record a series of screencast videos where I explain and demonstrate a bunch of techniques that everyone can learn and use in their daily job.</description>
     </item>
     
     <item>
@@ -110,7 +110,8 @@ This article is focused mainly on the UI tests in an Android application. Tradit
       <pubDate>Sat, 26 Aug 2017 07:20:21 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/android-notifications/</guid>
-      <description>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.</description>
+      <description>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.
+Displaying notifications on Android is fairly easy.</description>
     </item>
     
   </channel>

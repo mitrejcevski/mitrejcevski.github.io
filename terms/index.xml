@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terms on Jov Mit</title>
+    <link>https://jovmit.io/terms/</link>
+    <description>Recent content in Terms on Jov Mit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Sep 2022 14:15:25 +0200</lastBuildDate><atom:link href="https://jovmit.io/terms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lyrics Privacy Policy</title>
+      <link>https://jovmit.io/terms/lyrics-privacy-policy/</link>
+      <pubDate>Thu, 01 Sep 2022 14:15:25 +0200</pubDate>
+      
+      <guid>https://jovmit.io/terms/lyrics-privacy-policy/</guid>
+      <description>Privacy Policy
+Jov Mit built the Lyrics app as an Open Source app. This SERVICE is provided by Jov Mit at no cost and is intended for use as is.
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
+    </item>
+    
+    <item>
+      <title>Lyrics Terms and Conditions</title>
+      <link>https://jovmit.io/terms/lyrics-terms-and-conditions/</link>
+      <pubDate>Thu, 01 Sep 2022 14:15:25 +0200</pubDate>
+      
+      <guid>https://jovmit.io/terms/lyrics-terms-and-conditions/</guid>
+      <description>Terms &amp;amp; Conditions
+By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages or make derivative versions.</description>
+    </item>
+    
+  </channel>
+</rss>

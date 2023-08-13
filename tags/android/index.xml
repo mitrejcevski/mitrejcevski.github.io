@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on Jovche Mitrejchevski</title>
+    <title>Android on Jov Mit</title>
     <link>https://jovmit.io/tags/android/</link>
-    <description>Recent content in Android on Jovche Mitrejchevski</description>
+    <description>Recent content in Android on Jov Mit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Dec 2019 09:11:33 +0100</lastBuildDate><atom:link href="https://jovmit.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
@@ -59,7 +59,8 @@ This article is focused mainly on the UI tests in an Android application. Tradit
       <pubDate>Sat, 26 Aug 2017 07:20:21 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/android-notifications/</guid>
-      <description>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.</description>
+      <description>Almost all of the Android apps I’ve been working on were commercial apps, and almost all of them are using the push notifications capabilities. Push notifications are a nice way to keep your users engaged, and from the business perspective, taking the advantages they provide is crucial. Of course, there are situations when push notifications doesn’t apply or make sense, but we’re not gonna talk about that now.
+Displaying notifications on Android is fairly easy.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Refactoring on Jovche Mitrejchevski</title>
+    <title>Refactoring on Jov Mit</title>
     <link>https://jovmit.io/tags/refactoring/</link>
-    <description>Recent content in Refactoring on Jovche Mitrejchevski</description>
+    <description>Recent content in Refactoring on Jov Mit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 May 2020 08:46:04 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
@@ -23,8 +23,8 @@ fun search(query: String): List&amp;lt;String&amp;gt; { val allItems: List&amp;l
       <pubDate>Thu, 23 Jan 2020 10:00:00 +0200</pubDate>
       
       <guid>https://jovmit.io/posts/deal-with-legacy-code/</guid>
-      <description>Intro   Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
-Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general.</description>
+      <description>Intro Quite often in software development, we come to a point where we have to alter some code, whether to make it easier to read and understand or to add a new feature.
+Recently a friend of mine posted a piece of code in a public Slack channel, and he asked for resources that would help him improve not only that particular code but any legacy code in general. I&amp;rsquo;m very thankful that he asked that because I took it as a motivation to record a series of screencast videos where I explain and demonstrate a bunch of techniques that everyone can learn and use in their daily job.</description>
     </item>
     
   </channel>
