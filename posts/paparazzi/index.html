@@ -51,7 +51,7 @@ What&rsquo;s good about the Screenshot testing lately is that it gets fast, stab
 <meta itemprop="description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
 What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi"><meta itemprop="datePublished" content="2023-08-14T00:26:55+02:00" />
 <meta itemprop="dateModified" content="2023-08-14T00:26:55+02:00" />
-<meta itemprop="wordCount" content="785">
+<meta itemprop="wordCount" content="788">
 <meta itemprop="keywords" content="Android,Testing,Screenshot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Writing Screenshot Tests with Paparazzi"/>
 <meta name="twitter:description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
@@ -261,7 +261,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 4 minutes read </span>
-        <span class="f6 mv4 dib tracked"> - 785 words </span>
+        <span class="f6 mv4 dib tracked"> - 788 words </span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="introduction">Introduction</h2>
@@ -306,7 +306,7 @@ And then in your app level <code>build.gradle</code> add:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">..</span>.
 </span></span><span style="display:flex;"><span>    alias libs.plugins.paparazzi
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<p>That is enought for the setup. BTW, if you need help introducing version catalog in your app - comment below, and I&rsquo;ll write a tutorial.</p>
+<p>That is enough for the setup. BTW, if you need help introducing version catalog in your app - comment below, and I&rsquo;ll write a tutorial.</p>
 <h2 id="usage">Usage</h2>
 <p>Now we can go ahead and start writing screenshot tests. If you are using <code>Previews</code> for your composables, you are already in a great position, because writing screenshot tests for your composables will be as effortless as a copy-paste.</p>
 <blockquote>
@@ -326,16 +326,16 @@ And then in your app level <code>build.gradle</code> add:</p>
 </span></span><span style="display:flex;"><span>    LoginScreen(<span style="color:#f92672">..</span>.) <span style="color:#75715e">//&lt;- The composable to make a screenshot from.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<p>That&rsquo;s all! Now we can run this test. As we can examine form the example above, the API is super simple and easy to use. The rule allows us to create a configuration that suites us. All we need to do is wrap our composables in the <code>snapshot</code> lambda.</p>
-<h2 id="taking-screeshots">Taking screeshots</h2>
+<p>That&rsquo;s all! Now we can run this test. As we can examine from the example above, the API is super simple and easy to use. The rule allows us to create a configuration that suits us. All we need to do is wrap our composables in the <code>snapshot</code> lambda.</p>
+<h3 id="taking-screenshots">Taking Screenshots</h3>
 <p>Once we write a test and run it - it will pass. But it won&rsquo;t make a screenshot. It will pass because there was no screenshot created before. We need to generate screenshots from our tests initially, so then when we run the tests again, they will be checking against something.</p>
 <p>To create the screenshots, in the terminal, we need to run
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>./gradlew module:recordPaparazziDebug</span></span></code></pre></div>
 Running this command will generate the screenshots in the tests directory <code>snapshots</code> folder.</p>
 <p>Then, for subsequent runs, we can use
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>./gradlew module:verifyPaparazziDebug</span></span></code></pre></div> to check if we happened to break any of the composables.</p>
-<h2 id="leveraging-previews">Leveraging Previews</h2>
-<p>A very good and common practice in a typical Jetpack Compose codebase is writing <code>previews</code> for the composables. It allows the developers to see what a composable is rendering and how the UI it spits out looks like. When that is the case, writing the Paparazzi tests boils down to copy-pasting the preview into the <code>paparazzi.snapshot {}</code> lambda.</p>
+<h3 id="leveraging-previews">Leveraging Previews</h3>
+<p>A very good and common practice in a typical Jetpack Compose codebase is writing <code>previews</code> for the composables. It allows us and the other developers to see what a composable is rendering, and how the UI it spits out looks like. When that is the case, writing the Paparazzi tests boils down to copy-pasting the preview into the <code>paparazzi.snapshot {}</code> lambda.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>If you are looking into more resources to learn Jetpack Compose and Android Development, <a href="https://www.skool.com/android-devs?invite=e7235a1900bf49cb89c043e0fb9753d3">join my free training here</a>.</p>
 <p>Happy Coding!</p>
