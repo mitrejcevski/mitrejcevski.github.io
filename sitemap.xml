@@ -2,8 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jovmit.io/tags/android/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jovmit.io/posts/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jovmit.io/</loc>
-    <lastmod>2022-09-01T14:15:25+02:00</lastmod>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jovmit.io/tags/screenshot/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jovmit.io/tags/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jovmit.io/tags/testing/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jovmit.io/posts/paparazzi/</loc>
+    <lastmod>2023-08-14T00:26:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -27,11 +57,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jovmit.io/posts/</loc>
-    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jovmit.io/tags/contract-tests/</loc>
     <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -43,11 +68,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jovmit.io/posts/state_vs_behaviour/</loc>
-    <lastmod>2020-11-28T09:08:00+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jovmit.io/tags/</loc>
     <lastmod>2020-11-28T09:08:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -82,22 +102,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jovmit.io/tags/android/</loc>
-    <lastmod>2019-12-14T09:11:33+01:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jovmit.io/tags/di/</loc>
     <lastmod>2019-12-14T09:11:33+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jovmit.io/posts/koin-setup-android/</loc>
-    <lastmod>2019-12-14T09:11:33+01:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jovmit.io/tags/testing/</loc>
     <lastmod>2019-12-14T09:11:33+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -6,7 +6,17 @@
     <description>Recent content in Testing on Jov Mit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2019 09:11:33 +0100</lastBuildDate><atom:link href="https://jovmit.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Aug 2023 00:26:55 +0200</lastBuildDate><atom:link href="https://jovmit.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing Screenshot Tests with Paparazzi</title>
+      <link>https://jovmit.io/posts/paparazzi/</link>
+      <pubDate>Mon, 14 Aug 2023 00:26:55 +0200</pubDate>
+      
+      <guid>https://jovmit.io/posts/paparazzi/</guid>
+      <description>Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&amp;rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
+What&amp;rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi</description>
+    </item>
+    
     <item>
       <title>Setting up Koin for Android UI testing</title>
       <link>https://jovmit.io/posts/koin-setup-android/</link>

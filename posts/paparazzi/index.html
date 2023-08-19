@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Setting up Koin for Android UI testing | Jov Mit</title>
+    <title>Writing Screenshot Tests with Paparazzi | Jov Mit</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:">
+    <meta name="description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
+What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -39,19 +40,22 @@
 
     
     
-    <meta property="og:title" content="Setting up Koin for Android UI testing" />
-<meta property="og:description" content="Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:" />
+    <meta property="og:title" content="Writing Screenshot Tests with Paparazzi" />
+<meta property="og:description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
+What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jovmit.io/posts/koin-setup-android/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-12-14T09:11:33+01:00" />
-<meta property="article:modified_time" content="2019-12-14T09:11:33+01:00" />
-<meta itemprop="name" content="Setting up Koin for Android UI testing">
-<meta itemprop="description" content="Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:"><meta itemprop="datePublished" content="2019-12-14T09:11:33+01:00" />
-<meta itemprop="dateModified" content="2019-12-14T09:11:33+01:00" />
-<meta itemprop="wordCount" content="580">
-<meta itemprop="keywords" content="Android,Testing,DI," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setting up Koin for Android UI testing"/>
-<meta name="twitter:description" content="Problem definition Recently I&rsquo;ve come to a problem running my UI tests because of a DefinitionOverrideException. That&rsquo;s an exception thrown by the Koin library when we have a duplicated definition for a particular type. The way we use Koin on Android is by starting the container in the onCreate() method of the Application class and loading the relevant modules into the container. Here is how it may look like:"/>
+<meta property="og:url" content="https://jovmit.io/posts/paparazzi/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-14T00:26:55+02:00" />
+<meta property="article:modified_time" content="2023-08-14T00:26:55+02:00" />
+<meta itemprop="name" content="Writing Screenshot Tests with Paparazzi">
+<meta itemprop="description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
+What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi"><meta itemprop="datePublished" content="2023-08-14T00:26:55+02:00" />
+<meta itemprop="dateModified" content="2023-08-14T00:26:55+02:00" />
+<meta itemprop="wordCount" content="785">
+<meta itemprop="keywords" content="Android,Testing,Screenshot," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Writing Screenshot Tests with Paparazzi"/>
+<meta name="twitter:description" content="Introduction Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.
+What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is Paparazzi"/>
 
       
 <script type="application/javascript">
@@ -77,7 +81,7 @@ if (!doNotTrack) {
   
 
   
-  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/koin/insert_koin.jpg');">
+  <header class="cover bg-top" style="background-image: url('https://jovmit.io/images/paparazzi/paparazzi.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -195,7 +199,7 @@ if (!doNotTrack) {
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <div class="f2 f1-l fw2 white-90 mb0 lh-title">Setting up Koin for Android UI testing</div>
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">Writing Screenshot Tests with Paparazzi</div>
           
         
       </div>
@@ -227,7 +231,7 @@ if (!doNotTrack) {
   <div id="sharing" class="mt3 ananke-socials">
     
       
-      <a href="https://twitter.com/share?url=https://jovmit.io/posts/koin-setup-android/&amp;text=Setting%20up%20Koin%20for%20Android%20UI%20testing" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+      <a href="https://twitter.com/share?url=https://jovmit.io/posts/paparazzi/&amp;text=Writing%20Screenshot%20Tests%20with%20Paparazzi" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
         
         <span class="icon"> <svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 </span>
@@ -235,7 +239,7 @@ if (!doNotTrack) {
       </a>
     
       
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jovmit.io/posts/koin-setup-android/&amp;title=Setting%20up%20Koin%20for%20Android%20UI%20testing" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jovmit.io/posts/paparazzi/&amp;title=Writing%20Screenshot%20Tests%20with%20Paparazzi" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
         
         <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
@@ -247,55 +251,94 @@ if (!doNotTrack) {
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Setting up Koin for Android UI testing</h1>
+      <h1 class="f1 athelas mt3 mb1">Writing Screenshot Tests with Paparazzi</h1>
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2019-12-14T09:11:33+01:00">December 14, 2019</time>
+      <time class="f6 mv4 dib tracked" datetime="2023-08-14T00:26:55+02:00">August 14, 2023</time>
       
 
       
       
-        <span class="f6 mv4 dib tracked"> - 3 minutes read </span>
-        <span class="f6 mv4 dib tracked"> - 580 words </span>
+        <span class="f6 mv4 dib tracked"> - 4 minutes read </span>
+        <span class="f6 mv4 dib tracked"> - 785 words </span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/_BdgqavMj8o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<h2 id="problem-definition">Problem definition</h2>
-<p>Recently I&rsquo;ve come to a problem running my UI tests because of a <code>DefinitionOverrideException</code>. That&rsquo;s an exception thrown by the <a href="https://insert-koin.io/">Koin</a> library when we have a duplicated definition for a particular type. The way we use <a href="https://insert-koin.io/">Koin</a> on Android is by starting the container in the <code>onCreate()</code> method of the <code>Application</code> class and loading the relevant <em>modules</em> into the container. Here is how it may look like:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/a52a6abf4d3d081bf9a8c5959d09c8c4.js"></script>
-
-<p>The problem is that the default test runner uses this <code>Application</code> class to launch the app for the UI tests. It means that on the application startup, those <em>modules</em> will get loaded in the <a href="https://insert-koin.io/">Koin</a> container. However, in our tests we want to be flexible with the loaded <em>modules</em> - don&rsquo;t load the production <em>modules</em> and load only <em>modules</em> that are relevant for the current test cases. Most of the time we want to use classes different than the real production classes called Test-Doubles (<code>Mocks</code>/<code>Stubs</code>/etc.), to avoid making real <strong>network calls</strong>, or real <strong>database manipulation</strong>, and to control the output for a given input. That helps us make the tests reliable and fast, but more on that topic in another blog post. Now, normally we would like to load specific <em>module</em> per particular test case. Here is an example test setup:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/4389bba710befc592026502012ab4488.js"></script>
-
-<p>So, since the <em>module</em> in this test contains a definition for a type that was already loaded within the application startup, the <a href="https://insert-koin.io/">Koin</a> library throws that <code>DefinitionOverrideException</code>, meaning that we cannot override the definition that was already loaded.</p>
-<h2 id="solution">Solution</h2>
-<p>The way to solve this problem is for the tests to use an <code>Application</code> class different than the <strong>default</strong> <code>Application</code> class. So, we can define a <strong>testing</strong> <code>Application</code> class in the UI testing folder, because it will be relevant only for the UI tests. Here is an example of how it may look like:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/ade42b20172219f2e0b9667160cc7056.js"></script>
-
-<h4 id="an-empty-container">An empty container</h4>
-<p>In the <code>onCreate()</code> method of the <code>TestRoboApp</code> class we are starting an empty <a href="https://insert-koin.io/">Koin</a> container, and we are stopping it in the <code>onTerminate()</code> method. When running the tests, for each test case we have an empty container where we can load relevant <em>modules</em> that we need, and unload them when we are done. We can do so by using the <code>@Before</code> and <code>@After</code> annotated methods:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/9410651bd14061b97371de2c509a4ec3.js"></script>
-
-<h4 id="a-custom-test-runner">A custom test runner</h4>
-<p>Next, in order to use the newly created <strong>testing</strong> <code>Application</code> class instead of the <strong>default</strong> one, we have to define <em>custom test runner</em> and configure it to use the class we want. We can create this <em>custom test runner</em> inside the UI testing folder as well:</p>
-<script type="application/javascript" src="https://gist.github.com/mitrejcevski/c5f14b7c1d9412bdbe514a4128b04d81.js"></script>
-
-<p>All we have to do to configure this <em>custom test runner</em> is to override its <code>newApplication()</code> method and use the <strong>class name</strong> of our <strong>testing</strong> <code>Application</code> class.</p>
-<h4 id="replace-the-default-test-runner">Replace the default test runner</h4>
-<p>Ultimately, in our application&rsquo;s <code>build.gradle</code> file we need to replace the default test runner</p>
-<pre tabindex="0"><code>testInstrumentationRunner = &#34;androidx.test.runner.AndroidJUnitRunner&#34;
-</code></pre><p>with our <em>custom test runner</em>:</p>
-<pre tabindex="0"><code>testInstrumentationRunner = &#34;nl.jovmit.roboapp.RoboTestRunner&#34;
-</code></pre><p>Once we replace, we have to make sure to <em>sync</em> the project so the test runner replacement will get recognized. Once the sync is done, we can go ahead and use custom <em>modules</em> for particular UI tests.</p>
-<h2 id="wrap-up">Wrap up</h2>
-<p>We&rsquo;ve seen how we can take advantage of a <em>custom test runner</em> to make our tests more independent, and how we can benefit from it when using 3rd party libraries like <a href="https://insert-koin.io/">Koin</a>. I hope you find this article useful and applicable in your case. Feel free to <a href="https://twitter.com/jovchem">follow me on Twitter</a> so you will stay up to date with new content.</p>
-<a href="https://twitter.com/jovchem?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jovchem</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="introduction">Introduction</h2>
+<p>Screenshot testing is one of the most powerful ways to make sure your UI remains looking the same over time. With screenshot testing, we aren&rsquo;t only checking if the UI elements are present on the screen, but also if they are positioned well, and if they look as they should.</p>
+<p>What&rsquo;s good about the Screenshot testing lately is that it gets fast, stable and reliable way to test UI. In terms of Android, a bunch of frameworks are available lately, and one of them is <a href="https://github.com/cashapp/paparazzi">Paparazzi</a></p>
+<p>In this article we&rsquo;ll look into how to set it up and use it.</p>
+<h2 id="setup">Setup</h2>
+<p>Probably the most important thing to keep in mind before approaching Paparazzi is that <em>it must be setup in a module other than your main app module</em>. The problem is in the way and the order in which things are being compiled in Android, and <a href="https://twitter.com/jrodbx?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @jrodbx</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ explained it well, so if you are looking for the details - John got them all.</p>
+<p>That&rsquo;s in fact a good thing because it forces us to move the composables into a different module, and make them stateless. In general, that is a good practice. So go ahead and create a new module (if you haven&rsquo;t one already) for composables and their states.</p>
+<h3 id="dependencies">Dependencies</h3>
+<p>When it comes to the dependencies, there is only a single plugin dependency that we need to bring in.</p>
+<h4 id="plugin-application">Plugin Application</h4>
+<p>In your project level <code>build.gradle</code> add the following:</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>buildscript {
+</span></span><span style="display:flex;"><span>  repositories {
+</span></span><span style="display:flex;"><span>    mavenCentral()
+</span></span><span style="display:flex;"><span>    google()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  dependencies {
+</span></span><span style="display:flex;"><span>    classpath <span style="color:#e6db74">&#34;app.cash.paparazzi:paparazzi-gradle-plugin:version&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+And then in your app level <code>build.gradle</code> add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#34;app.cash.paparazzi&#34;</span></span></span></code></pre></div>
+<h4 id="plugins-dsl">Plugins DSL</h4>
+<p>If you are using plugins DSL, add the following:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>plugins {
+</span></span><span style="display:flex;"><span>  id <span style="color:#e6db74">&#34;app.cash.paparazzi&#34;</span> version <span style="color:#e6db74">&#34;&lt;paparazzi_version&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<h4 id="version-catalog">Version Catalog</h4>
+<p>Ultimately, if you are using Version Catalog (which you should), do this:</p>
+<p>In your <code>libs.versions.toml</code> in the <code>plugins</code> section, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>paparazzi = { id = <span style="color:#e6db74">&#34;app.cash.paparazzi&#34;</span>, version.ref = <span style="color:#e6db74">&#34;paparazzi-version&#34;</span> }</span></span></code></pre></div>
+<p>Next, in your root <code>build.gradle</code> plugins add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>plugins {
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span> alias libs.plugins.paparazzi apply <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>And ultimately, in your module&rsquo;s <code>build.gradle</code>, in the plugins, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>plugins {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>    alias libs.plugins.paparazzi
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>That is enought for the setup. BTW, if you need help introducing version catalog in your app - comment below, and I&rsquo;ll write a tutorial.</p>
+<h2 id="usage">Usage</h2>
+<p>Now we can go ahead and start writing screenshot tests. If you are using <code>Previews</code> for your composables, you are already in a great position, because writing screenshot tests for your composables will be as effortless as a copy-paste.</p>
+<blockquote>
+<p>Note: Paparazzi works with the traditional View system just as well. However, in this post we only talk about Composables.</p>
+</blockquote>
+<p>As established before, we should be in a module other than the main app module. It can be a single module where we host all our composable and their states, or we might have feature modules holding their own composables. Both are equally fine.</p>
+<h3 id="writing-tests">Writing Tests</h3>
+<p>The best thing about Paparazzi is that we write unit tests that run very fast. Plus they are stable and reliable. A Paparazzi test is very similar to a regular unit test. First we need to get the Paparazzi rule:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#a6e22e">@get</span>: Rule
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> paparazzi = Paparazzi(
+</span></span><span style="display:flex;"><span>    deviceConfig = <span style="color:#a6e22e">DeviceConfig</span>.PIXEL_5
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>Then we can use it to write a test:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">loginScreenSnapshot</span>() {
+</span></span><span style="display:flex;"><span>  paparazzi.snapshot {
+</span></span><span style="display:flex;"><span>    LoginScreen(<span style="color:#f92672">..</span>.) <span style="color:#75715e">//&lt;- The composable to make a screenshot from.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>That&rsquo;s all! Now we can run this test. As we can examine form the example above, the API is super simple and easy to use. The rule allows us to create a configuration that suites us. All we need to do is wrap our composables in the <code>snapshot</code> lambda.</p>
+<h2 id="taking-screeshots">Taking screeshots</h2>
+<p>Once we write a test and run it - it will pass. But it won&rsquo;t make a screenshot. It will pass because there was no screenshot created before. We need to generate screenshots from our tests initially, so then when we run the tests again, they will be checking against something.</p>
+<p>To create the screenshots, in the terminal, we need to run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>./gradlew module:recordPaparazziDebug</span></span></code></pre></div>
+Running this command will generate the screenshots in the tests directory <code>snapshots</code> folder.</p>
+<p>Then, for subsequent runs, we can use
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>./gradlew module:verifyPaparazziDebug</span></span></code></pre></div> to check if we happened to break any of the composables.</p>
+<h2 id="leveraging-previews">Leveraging Previews</h2>
+<p>A very good and common practice in a typical Jetpack Compose codebase is writing <code>previews</code> for the composables. It allows the developers to see what a composable is rendering and how the UI it spits out looks like. When that is the case, writing the Paparazzi tests boils down to copy-pasting the preview into the <code>paparazzi.snapshot {}</code> lambda.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>If you are looking into more resources to learn Jetpack Compose and Android Development, <a href="https://www.skool.com/android-devs?invite=e7235a1900bf49cb89c043e0fb9753d3">join my free training here</a>.</p>
+<p>Happy Coding!</p>
 <ul class="pa0">
   
    <li class="list di">
@@ -307,7 +350,7 @@ if (!doNotTrack) {
    </li>
   
    <li class="list di">
-     <a href="/tags/di/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">DI</a>
+     <a href="/tags/screenshot/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Screenshot</a>
    </li>
   
 </ul>
@@ -347,6 +390,10 @@ if (!doNotTrack) {
     <p class="f5 b mb3">Related</p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/posts/koin-setup-android/">Setting up Koin for Android UI testing</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/posts/android-testing-ui/">Testing Android UI with pleasure</a>
         </li>
